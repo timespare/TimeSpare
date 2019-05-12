@@ -47,28 +47,6 @@ class Signup extends React.Component {
                     <h2>Sign Up</h2>
                     {this.renderErrors()}
                     <br></br>
-                    <div className="signup-name">
-                        <input type="text"
-                            value={this.state.fname}
-                            onChange={this.handleInput('fname')}
-                            placeholder="First Name"
-                            className="firstname"
-                        />
-
-                        <input type="text"
-                            value={this.state.lname}
-                            onChange={this.handleInput('lname')}
-                            placeholder="Last Name"
-                            className="lastname"
-                        />
-                    </div>
-
-                    <input type="email"
-                        value={this.state.email}
-                        onChange={this.handleInput('email')}
-                        placeholder="Your email address"
-                        className="email"
-                    />
 
                     <input type="text"
                         value={this.state.username}

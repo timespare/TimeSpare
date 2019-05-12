@@ -60,7 +60,7 @@ class Login extends React.Component {
             <div className="login-session-form">
                 <form>
                     <div className="logo"></div>
-                    <h2>Log in to Shuttr</h2>
+                    <h2>Log in to TimeSpare</h2>
                     {this.renderErrors()}
                     <input type="text"
                         value={this.state.username}
@@ -79,7 +79,7 @@ class Login extends React.Component {
                     <button className="login" onClick={this.handleSubmit}>Log In</button>
 
                     <button className="demo-login" onClick={this.handleDemo}>Demo User</button>
-                    <p className="no-account">Not a Shuttr member? <a className="signup-link" href="/#/signup">Sign up!</a></p>
+                    <p className="no-account">Don't have an account? <a className="signup-link" href="/#/signup">Sign up!</a></p>
                 </form>
             </div>
         );
