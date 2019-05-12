@@ -1,4 +1,4 @@
-# TimeSpare
+# TimeSpare Proposal
 
 ### TimeSpare 
 TimeSpare is an employment-oriented network service that provides users access to quick and temporary job openings in their local area.   
