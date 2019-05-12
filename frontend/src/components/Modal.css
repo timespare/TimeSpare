@@ -1,0 +1,29 @@
+.modal-outer-container {
+  background: #ffffff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+}
+
+.modal-inner-container {
+  width: 531px;
+  background: #ffffff;
+  min-height: 300px;
+  box-shadow: 0 0 50px #d2b274;
+  overflow: hidden;
+}
+
+.modal-header {
+  box-sizing: border-box;
+  height: 105px;
+  width: 100%;
+  background: #ffffff;
+  color: #ff5661;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 105px;
+  padding-left: 20px;
+  box-shadow: 0 10px 5px #f8f3e9;
+}

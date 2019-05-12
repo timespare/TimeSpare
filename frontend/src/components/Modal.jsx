@@ -1,14 +1,24 @@
 import React from "react";
+import "./Modal.css";
 
 const Modal = props => {
-  return (
-    props.open && (
+  if (!props.open) {
+    return null;
+  } else {
+    return (
       <div onClick={props.onClose} className="modal-outer-container">
-        <div onClick={event => event.stopPropagation()}>{props.children}</div>
+        <div
+          onClick={event => event.stopPropagation()}
+          className="modal-inner-container"
+        >
+          <header className="modal-header">Log in </header>
+          {props.children}
+        </div>
       </div>
-    )
-  );
+    );
+  }
 };
 
+export default Modal;
 // entire screen absolute position
 // inner:width
