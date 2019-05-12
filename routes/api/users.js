@@ -59,13 +59,13 @@ router.post('/login', (req, res) => {
     return res.status(400).json(errors);
   }
 
-  const useranme = req.body.useranme;
+  const username = req.body.username;
   const password = req.body.password;
 
-  User.findOne({ useranme })
+  User.findOne({ username })
     .then(user => {
       if (!user) {
-        return res.status(404).json({ useranme: 'This user does not exist' });
+        return res.status(404).json({ username: 'This user does not exist' });
       }
 
       bcrypt.compare(password, user.password)
