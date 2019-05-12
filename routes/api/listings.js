@@ -15,11 +15,11 @@ router.get('/', (req, res) => {
 })
 
 // listings for a specific user
-router.get('/user/:user_id', (req, res) => {
-  Listing.find({user: req.params.user_id})
-  .then(listings => res.json(listings))
-  .catch(err => res.status(404).json({nolistingsfound: 'No Listings from the User'}));
-})
+// router.get('/user/:user_id', (req, res) => {
+//   Listing.find({user: req.params.user_id})
+//   .then(listings => res.json(listings))
+//   .catch(err => res.status(404).json({nolistingsfound: 'No Listings from the User'}));
+// })
 
 // one specific listing
 router.get('/:id', (req, res) => {
@@ -28,7 +28,7 @@ router.get('/:id', (req, res) => {
   .catch(err => res.status(404).json({nolistingfound: 'No Listing found with that ID'}));
 })
 
-// create a listing, not sure abt the url
+// create a listing
 router.post('/',
   passport.authenticate('jwt', {session: false}),
   (req, res) => {
@@ -51,7 +51,35 @@ router.post('/',
   }
 )
 
-// update a listing
+// update a listing, missing handler
+router.patch('/:id', (req, res) => {
+  const { errors, isValid } = validateListingInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+  Listing.findById(req.params.id)
+  .then(listing => {
+    listing.description = req.body.description;
+    listing.begin = req.body.begin;
+    listing.end = req.body.end;
+    listing.tags = req.body.tags;
+    listing.save().then(listing => res.json(listing));
+  })
+  .catch(err => res.status(400).json({updatelistingerror: 'Cannot update'}))
+})
 
 
 // destroy a listing
+router.delete('/:id', (req, res) => {
+  Listing.findByIdAndDelete(req.params.id, (err, listing) => {
+    if (err) {
+        res.json(err);  
+    } else {
+      res.json(listing);
+    }
+  })
+})
+
+module.exports = router;
