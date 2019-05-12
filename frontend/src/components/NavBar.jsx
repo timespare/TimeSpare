@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Logo from "./Logo";
 const Bar = props => {
+  const style = {
+    height: "92px",
+    display: "flex"
+  };
   return (
-    <header className="bar-container">
-      <h1 className="bar-webname">
-        <Link to="/">TimeSpare</Link>
-      </h1>
+    <header className="bar-container" style={style}>
+      <Logo />
       {props.children}
     </header>
   );
