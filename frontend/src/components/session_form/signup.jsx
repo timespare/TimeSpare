@@ -73,7 +73,8 @@ class Signup extends React.Component {
             placeholder="Re-Enter Your Password"
             className="password"
           />
-          <button onClick={this.handleSubmit}>Sign Up</button>
+          <NavBarButton onClick={this.handleSubmit} label="Sign Up" />
+
           <p className="no-account">Already have an account?</p>
           <NavBarButton
             label="Sign In"
