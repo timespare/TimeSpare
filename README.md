@@ -18,7 +18,7 @@ We will need to:
 
 ## Functionality & MVP
 
-   - [ ] User Authetication: sign up and log in
+   - [X] User Authetication: sign up and log in
    - [ ] Posting new listings, and a log of all listings
    - [ ] Viewing and editing bookings 
    - [ ] Search functionality based on categories or tags
@@ -70,7 +70,7 @@ Anticipated Challenges:
 **Yinglan Ou**,
 **Matthew Jang**,
 **Mengna Lin**,
-**Jinhua Chen**
+**Jin Chen**
 
 
 ### May 10 - May 12 (Weekend)
@@ -83,11 +83,22 @@ Anticipated Challenges:
   - Production proposal/README - **Matthew** 
   - Investigate Calendar API methods and test - **Everyone** 
 
-### May 13
+### May 13 (Monday)
   - Continue and complete the basic work from Sunday - **All**
-  - Render login and signup modals - **Mengna/Yinglan**
-  -
-  -
+  **Listings MVP**
+  Frontend (morning)
+  - User Auth Wrap-Up: Submit Button, input fields, CSS **Mena**
+  - Frontend routes: where the buttons will lead to (Index Home Page) 
+  - User Profile (aka. Listing Dashboard or User Show): (all the listings for that specific user + delete/edit buttons) (create new listing button) (user background) (dummy profile photo, aws?)
+  - Listings Index page: design decision (how the listing boxes will look like, display text for listings) **Matt/Mena**
+  - Listing Show as a modal? 
+  - Listing Create page (form) → date (calendar API) **Mena**
+  - reducers / actions / util **Yinglan**
+
+  Backend (afternoon)
+  - listings - get (10~15), id (current user), post, patch, delete **Yinglan/Mena**
+  - Display 30 listings on the home page (db) **Jin**
+  - Background (user profile) - not required **Jin**
 
 ### May 14
   -
