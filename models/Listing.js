@@ -26,7 +26,7 @@ const ListingSchema = new Schema({
     type: [String],
     required: true
   },
-  timestamp: {
+  date: {
     type: Date,
     default: Date.now
   }

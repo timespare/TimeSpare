@@ -6,10 +6,10 @@ const passport = require('passport');
 const Listing = require('../../models/Listing');
 const validateListingInput = require('../../validation/listings');
 
-// listings for user booked
 router.get('/', (req, res) => {
-  // dont know how to do, change it later
   Listing.find()
+  .sort({date: -1})
+  .limit(10)
   .then(listings => res.json(listings))
   .catch(err => res.status(404).json({nolistingsfound: 'No Listings found'}));
 })
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 router.get('/user/:user_id', (req, res) => {
   Listing.find({user: req.params.user_id})
   .then(listings => res.json(listings))
-  .catch(err => res.status(404).json({nolistingsfound: 'No Listings from the User'}));
+  .catch(err => res.status(404).json({nolistingsfound: 'No Listings nor the User'}));
 })
 
 // one specific listing
@@ -52,25 +52,28 @@ router.post('/',
 )
 
 // update a listing, missing handler
-router.patch('/:id', (req, res) => {
-  const { errors, isValid } = validateListingInput(req.body);
+router.patch('/:id', 
+  passport.authenticate('jwt', {session: false}),
+  (req, res) => {
+    const { errors, isValid } = validateListingInput(req.body);
 
-  if (!isValid) {
-    return res.status(400).json(errors);
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+
+    Listing.findByIdAndUpdate()
+
+    Listing.findById(req.params.id)
+    .then(listing => {
+      listing.description = req.body.description;
+      listing.begin = req.body.begin;
+      listing.end = req.body.end;
+      listing.tags = req.body.tags;
+      listing.save().then(listing => res.json(listing));
+    })
+    .catch(err => res.status(400).json({updatelistingerror: 'Cannot update'}))
   }
-
-  Listing.findByIdAndUpdate()
-
-  Listing.findById(req.params.id)
-  .then(listing => {
-    listing.description = req.body.description;
-    listing.begin = req.body.begin;
-    listing.end = req.body.end;
-    listing.tags = req.body.tags;
-    listing.save().then(listing => res.json(listing));
-  })
-  .catch(err => res.status(400).json({updatelistingerror: 'Cannot update'}))
-})
+)
 
 
 // destroy a listing
