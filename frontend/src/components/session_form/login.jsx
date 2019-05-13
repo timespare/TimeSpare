@@ -8,7 +8,6 @@ class Login extends React.Component {
       username: "",
       password: ""
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
   }
@@ -47,7 +46,6 @@ class Login extends React.Component {
 
   handleDemo(e) {
     e.preventDefault();
-    // this.setState({ username: "demo", password: "password" });
     this.props.processForm({ username: "demo", password: "password" });
   }
 
@@ -55,7 +53,7 @@ class Login extends React.Component {
     return (
       <div className="login-session-form">
         <form>
-          <div className="logo" />
+          {/* <div className="logo" /> */}
           {this.renderErrors()}
           <input
             type="text"
@@ -73,15 +71,10 @@ class Login extends React.Component {
             className="login-password"
           />
 
-          <button className="login" onClick={this.handleSubmit}>
-            Log In
-          </button>
-
-          <button className="demo-login" onClick={this.handleDemo}>
-            Demo User
-          </button>
+          <NavBarButton onClick={this.handleSubmit} label="Sign In" />
+          <NavBarButton onClick={this.handleDemo} label="Demo User LogIn" />
           <p className="no-account">
-            Don't have an account?{" "}
+            Don't have an account?
             <NavBarButton
               label="Sign Up"
               onClick={() => this.props.onSwitchButtonClick("Sign Up")}
