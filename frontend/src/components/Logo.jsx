@@ -8,7 +8,8 @@ const Logo = () => {
     fontWeight: "bold",
     textalign: "center",
     color: "#ff5661",
-    flexGrow: "1"
+    flexGrow: "1",
+    margin: "0"
   };
   return <h1 style={logoStyle}>TimeSpare</h1>;
 };

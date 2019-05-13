@@ -18,7 +18,7 @@ We will need to:
 
 ## Functionality & MVP
 
-   - [ ] User Authetication: sign up and log in
+   - [X] User Authetication: sign up and log in
    - [ ] Posting new listings, and a log of all listings
    - [ ] Viewing and editing bookings 
    - [ ] Search functionality based on categories or tags
@@ -70,7 +70,7 @@ Anticipated Challenges:
 **Yinglan Ou**,
 **Matthew Jang**,
 **Mengna Lin**,
-**Jinhua Chen**
+**Jin Chen**
 
 
 ### May 10 - May 12 (Weekend)
