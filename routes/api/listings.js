@@ -1,10 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const mongoose = require('mongoose');
-const passport = require('passport');
+const mongoose = require("mongoose");
+const passport = require("passport");
 
-const Listing = require('../../models/Listing');
-const validateListingInput = require('../../validation/listings');
+const Listing = require("../../models/Listing");
+const validateListingInput = require("../../validation/listings");
 
 router.get('/', (req, res) => {
   Listing.find()
@@ -23,15 +23,18 @@ router.get('/user/:user_id', (req, res) => {
 })
 
 // one specific listing
-router.get('/:id', (req, res) => {
+router.get("/:id", (req, res) => {
   Listing.findById(req.params.id)
-  .then(listing => res.json(listing))
-  .catch(err => res.status(404).json({nolistingfound: 'No Listing found with that ID'}));
-})
+    .then(listing => res.json(listing))
+    .catch(err =>
+      res.status(404).json({ nolistingfound: "No Listing found with that ID" })
+    );
+});
 
 // create a listing
-router.post('/',
-  passport.authenticate('jwt', {session: false}),
+router.post(
+  "/",
+  passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const { errors, isValid } = validateListingInput(req.body);
     if (!isValid) {
@@ -45,11 +48,15 @@ router.post('/',
       end: req.body.end,
       tags: req.body.tags,
       user: req.user.id
-    })
-
-    newListing.save().then(listing => res.json(listing));
+    });
+    newListing
+      .save()
+      .then(listing => res.json(listing))
+      .catch(err =>
+        res.status(402).json({ createlistingerror: "cannot create" })
+      );
   }
-)
+);
 
 // update a listing, missing handler
 router.patch('/:id', 
@@ -60,9 +67,6 @@ router.patch('/:id',
     if (!isValid) {
       return res.status(400).json(errors);
     }
-
-    // Listing.findByIdAndUpdate()
-
     Listing.findById(req.params.id)
     .then(listing => {
       listing.description = req.body.description;
@@ -77,14 +81,14 @@ router.patch('/:id',
 
 
 // destroy a listing
-router.delete('/:id', (req, res) => {
+router.delete("/:id", (req, res) => {
   Listing.findByIdAndDelete(req.params.id, (err, listing) => {
     if (err) {
-        res.json(err);  
+      res.json(err);
     } else {
       res.json(listing);
     }
-  })
-})
+  });
+});
 
 module.exports = router;

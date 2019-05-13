@@ -1,5 +1,5 @@
-const Validator = require('validator');
-const validText = require('./valid-text');
+const Validator = require("validator");
+const validText = require("./valid-text");
 
 module.exports = function validateListingInput(data) {
   let errors = {};
@@ -41,4 +41,4 @@ module.exports = function validateListingInput(data) {
     errors, 
     isValid: Object.keys(errors).length === 0
   };
-}
+};

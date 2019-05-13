@@ -1,10 +1,10 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ListingSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'users'
+    ref: "users"
   },
   title: {
     type: String, 
@@ -35,4 +35,4 @@ const ListingSchema = new Schema({
   }
 });
 
-module.exports = Listing = mongoose.model('listing', ListingSchema);
+module.exports = Listing = mongoose.model("listings", ListingSchema);
