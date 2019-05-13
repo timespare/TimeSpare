@@ -98,7 +98,7 @@ Anticipated Challenges:
   - Display 30 listings on the home page (db) - **Jin**
   - Background (user profile) - not required - **Jin**
 
-### May 14
+### May 14 (Tuesday)
   -
   - 
   - 
