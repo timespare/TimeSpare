@@ -18,6 +18,12 @@ const receiveErrors = errors => ({
   errors
 });
 
+export const removeErrors = () => {
+  return ({
+    type: REMOVE_ERRORS
+  })
+}
+
 export const login = user => dispatch =>
   UserAPIUtil.login(user).then(
     user => dispatch(receiveCurrentUser(user)),

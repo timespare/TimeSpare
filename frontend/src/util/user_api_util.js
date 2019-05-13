@@ -11,3 +11,5 @@ export const signup = data => {
 export const logout = () => {
   return axios.delete("/api/users/logout");
 };
+
+

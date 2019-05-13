@@ -45,15 +45,8 @@ class Login extends React.Component {
         e.preventDefault();
         // this.setState({ username: "demo", password: "password" });
         this.props.processForm({ username: "demo", password: "password" });
-        // const user = this.setState({ username: "demo", password: "password" });
-        // this.props.processForm(user).then(() => this.props.history.push("/photos") );
+        
     }
-    // , {} => {
-    //     // e.preventDefault();
-    //     const user = Object.assign({}, this.state);
-    //     this.props.processForm(user);
-    // });
-    // .then(() => this.props.history.push("/greeting"));
 
     render() {
         return (
