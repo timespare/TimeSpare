@@ -12,9 +12,6 @@ export const logout = () => {
   return axios.delete("/api/users/logout");
 };
 
-<<<<<<< HEAD
-
-=======
 export const setAuthToken = token => {
   if (token) {
     axios.defaults.headers.common["Authorization"] = token;
@@ -22,4 +19,3 @@ export const setAuthToken = token => {
     delete axios.defaults.headers.common["Authorization"];
   }
 };
->>>>>>> master

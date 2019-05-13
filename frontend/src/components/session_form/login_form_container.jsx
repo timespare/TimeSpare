@@ -1,20 +1,21 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { login } from '../../actions/user_actions';
-import { removeErrors } from '../../actions/user_actions';
-import Login from './login';
+import { connect } from "react-redux";
+import { login } from "../../actions/user_actions";
+import { removeErrors } from "../../actions/user_actions";
+import Login from "./login";
 
 const mapStateToProps = state => {
-    return ({
-        errors: state.errors.session
-    });
+  return {
+    errors: state.errors.session
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-    return ({
-        processForm: user => dispatch(login(user)),
-        removeErrors: () => dispatch(removeErrors())
-    });
+  return {
+    processForm: user => dispatch(login(user)),
+    removeErrors: () => dispatch(removeErrors())
+  };
 };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Login);

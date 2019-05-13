@@ -1,6 +1,5 @@
 import React from "react";
 import "./Modal.css";
-
 const Modal = props => {
   if (!props.open) {
     return null;
@@ -11,7 +10,7 @@ const Modal = props => {
           onClick={event => event.stopPropagation()}
           className="modal-inner-container"
         >
-          <header className="modal-header">Log in </header>
+          <header className="modal-header">{props.formType} </header>
           {props.children}
         </div>
       </div>
@@ -20,5 +19,3 @@ const Modal = props => {
 };
 
 export default Modal;
-// entire screen absolute position
-// inner:width
