@@ -12,6 +12,9 @@
   font-family: Montserrat;
 }
 
+.bar-container .nav-bar-button {
+  margin-left: 15px;
+}
 .nav-bar-button-transparent-background {
   background: transparent;
   color: #4e4e4e;
