@@ -1,6 +1,7 @@
 import React from "react";
 import NavBarButton from "../NavBarButton";
 import { withRouter } from "react-router";
+import SubmitButton from "../SubmitButton";
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -53,7 +54,6 @@ class Login extends React.Component {
     return (
       <div className="login-session-form">
         <form>
-          {/* <div className="logo" /> */}
           {this.renderErrors()}
           <input
             type="text"
@@ -71,8 +71,8 @@ class Login extends React.Component {
             className="login-password"
           />
 
-          <NavBarButton onClick={this.handleSubmit} label="Sign In" />
-          <NavBarButton onClick={this.handleDemo} label="Demo User LogIn" />
+          <SubmitButton onClick={this.handleSubmit} label="Sign In" />
+          <SubmitButton onClick={this.handleDemo} label="Demo User LogIn" />
           <p className="no-account">
             Don't have an account?
             <NavBarButton
