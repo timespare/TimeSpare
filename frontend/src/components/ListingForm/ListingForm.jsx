@@ -20,7 +20,7 @@ class ListingForm extends React.Component {
 
   handleInput(field) {
     return e => {
-      this.setState({ [field]: e.current_Target.value });
+      this.setState({ [field]: e.currentTarget.value });
     };
   }
   handleSubmit(e) {
