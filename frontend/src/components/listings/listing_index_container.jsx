@@ -6,17 +6,17 @@ import { getAllListings } from '../../actions/listings_actions';
 const mapStateToProps = state => {
     let listings = Object.values(state.entities.listings);
     // let users = state.entities.users;
-    return ({
+    return {
         listings: listings
         // users: users
-    })
-}
+    };
+};
 
 const mapDispatchToProps = dispatch => {
-    return ({
+    return {
         getAllListings: () => dispatch(getAllListings()),
         // fetchUsers: () => dispatch(fetchUsers())
-    })
-}
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListingIndex);

@@ -17,7 +17,6 @@ class ListingIndex extends React.Component {
                 />
             )
         });
-
         return (
             <div className="listing-index-container">
                 {listings}
@@ -25,5 +24,4 @@ class ListingIndex extends React.Component {
         );
     }
 }
-
 export default ListingIndex;

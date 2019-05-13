@@ -94,7 +94,7 @@ Anticipated Challenges:
   - Reducers / Actions / Util - **Yinglan**
 
   **Backend (afternoon)**
-  - Listings - get (10~15), id (current user), post, patch, delete - **Yinglan/Mena**
+  - Listings - get (10~15), id (current user), post, patch, delete - **Yinglan/Jin**
   - Display 30 listings on the home page (db) - **Jin**
   - Background (user profile) - not required - **Jin**
 
