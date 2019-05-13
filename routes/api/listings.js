@@ -61,7 +61,7 @@ router.patch('/:id',
       return res.status(400).json(errors);
     }
 
-    Listing.findByIdAndUpdate()
+    // Listing.findByIdAndUpdate()
 
     Listing.findById(req.params.id)
     .then(listing => {
