@@ -5,22 +5,40 @@ module.exports = function validateListingInput(data) {
   let errors = {};
 
   data.description = validText(data.description) ? data.description : "";
-
+  data.title = validText(data.title) ? data.title : "";
+  data.begin = validText(data.begin) ? data.begin : "";
+  data.end = validText(data.end) ? data.end : "";
+  
   if (!Validator.isLength(data.description, { min: 5 })) {
-    errors.text = "Listing must have at least 5 characters";
+    errors.description = 'Listing must have at least 5 characters'
+  }
+
+  if (!Validator.isLength(data.title, { min: 5 })) {
+    errors.title = 'Title must have at least 5 chars';
   }
 
   if (Validator.isEmpty(data.description)) {
-    errors.text = "Listing must have text";
+    errors.description = 'Listing must have description';
   }
 
-  // needa to have begin Time, and end time
-  // begin time should be ahead of end time
+  if (Validator.isEmpty(data.title)) {
+    errors.title = 'Listing must have title';
+  }
 
-  // tags array should not be empty
+  if (Validator.isEmpty(data.begin)) {
+    errors.begin = 'Listing must have a begin time'
+  }
+  
+  if (Validator.isEmpty(data.end)) {
+    errors.end = 'Listing must have an end time'
+  }
+
+  if (!Validator.isBefore(data.begin, data.end)) {
+    errors.time = 'Time is invalid'
+  }
 
   return {
-    errors,
+    errors, 
     isValid: Object.keys(errors).length === 0
   };
 };

@@ -6,6 +6,10 @@ const ListingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users"
   },
+  title: {
+    type: String, 
+    required: true
+  },
   description: {
     type: String,
     required: true
@@ -19,7 +23,10 @@ const ListingSchema = new Schema({
     required: true
   },
   tags: {
-    type: [String],
+    type: [String]
+  },
+  price: {
+    type: Number,
     required: true
   },
   date: {

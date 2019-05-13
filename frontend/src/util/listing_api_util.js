@@ -9,7 +9,7 @@ export const fetchListings = () => {
 
 // fetch all listings for the current user
 export const fetchCurrentUserListings = () => {
-  return axios.get("/api/listings");
+  return axios.get("/api/listings/current");
 };
 
 // create a new listing
@@ -19,7 +19,7 @@ export const addListing = data => {
 
 // edit a listing
 export const editListing = data => {
-  return axios.patch("/api/listings", data);
+  return axios.patch(`/api/listings/${data._id}`, data);
 };
 
 export const deleteListing = id => {
