@@ -22,7 +22,14 @@ router.get('/user/:user_id', (req, res) => {
   .catch(err => res.status(404).json({nolistingsfound: 'No Listings nor the User'}));
 })
 
-// one specific listing
+router.get('/current', 
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Listing.find({user: req.user._id})
+    .then(listings => res.json(listings))
+    .catch(err => res.status(404).json({ nolistingsfound: 'No Listings nor the User' }));
+})
+
 router.get("/:id", (req, res) => {
   Listing.findById(req.params.id)
     .then(listing => res.json(listing))
@@ -31,7 +38,6 @@ router.get("/:id", (req, res) => {
     );
 });
 
-// create a listing
 router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
@@ -47,8 +53,10 @@ router.post(
       begin: req.body.begin,
       end: req.body.end,
       tags: req.body.tags,
-      user: req.user.id
+      user: req.user.id,
+      price: req.body.price
     });
+    
     newListing
       .save()
       .then(listing => res.json(listing))
@@ -58,7 +66,6 @@ router.post(
   }
 );
 
-// update a listing, missing handler
 router.patch('/:id', 
   passport.authenticate('jwt', {session: false}),
   (req, res) => {
@@ -67,20 +74,21 @@ router.patch('/:id',
     if (!isValid) {
       return res.status(400).json(errors);
     }
+
     Listing.findById(req.params.id)
     .then(listing => {
       listing.description = req.body.description;
+      listing.title = req.body.title;
       listing.begin = req.body.begin;
       listing.end = req.body.end;
       listing.tags = req.body.tags;
+      listing.price = req.body.price;
       listing.save().then(listing => res.json(listing));
     })
     .catch(err => res.status(400).json({updatelistingerror: 'Cannot update'}))
   }
 )
 
-
-// destroy a listing
 router.delete("/:id", (req, res) => {
   Listing.findByIdAndDelete(req.params.id, (err, listing) => {
     if (err) {
