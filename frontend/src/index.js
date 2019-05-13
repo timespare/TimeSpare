@@ -9,6 +9,13 @@ import Root from "./root";
 
 // TODO: REMOVE AFTER TESTING
 import { login, signup } from "./actions/user_actions";
+import {
+  getAllListings,
+  getCurrentUserListings,
+  createListing,
+  editListing,
+  deleteListing
+} from "./actions/listing_actions";
 
 // TODO: END
 
@@ -49,6 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.login = login;
   window.signup = signup;
   window.logout = logout;
+  window.getAllListings = getAllListings;
+  window.getCurrentUserListings = getCurrentUserListings;
+  window.createListing = createListing;
+  window.editListing = editListing;
+  window.deleteListing = deleteListing;
   window.dispatch = store.dispatch;
   window.state = store.getState;
 
