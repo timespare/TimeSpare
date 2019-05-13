@@ -10,10 +10,7 @@ const validateListingInput = require("../../validation/listings");
 router.get("/", (req, res) => {
   // dont know how to do, change it later
   Listing.find()
-    .then(listings => {
-      debugger;
-      return res.json(listings);
-    })
+    .then(listings => res.json(listings))
     .catch(err =>
       res.status(404).json({ nolistingsfound: "No Listings found" })
     );
