@@ -1,0 +1,64 @@
+a{
+    color:#47649F;
+}
+
+body{
+    font-family:'helvetica';    
+}
+
+.the-box {
+  width: 1030px;
+  height: 274px;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px 0 #efefef;
+  border: solid 1px #e5e5e5;
+  background-color: #ffffff;
+}
+
+.title{
+  width: 944px;
+  height: 70px;
+  font-family: Poppins;
+  font-size: 27px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #484848;
+}
+
+.photo-profile{
+    border:1px solid #DDD;    
+}
+
+.listing-username h4{
+  width: 128px;
+  height: 28px;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #484848;  
+}
+
+.listing-time{
+    color:#ADB2BB;
+    font-size: 18px;
+}
+
+.post-body {
+  width: 915px;
+  height: 57px;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #484848;
+}
