@@ -83,11 +83,20 @@ Anticipated Challenges:
   - Production proposal/README - **Matthew** 
   - Investigate Calendar API methods and test - **Everyone** 
 
-### May 13
-  - Continue and complete the basic work from Sunday - **All**
-  - Render login and signup modals - **Mengna/Yinglan**
-  -
-  -
+### May 13 (Monday)
+  **Frontend (morning)**
+  - User Auth Wrap-Up: Submit Button, input fields, CSS - **Mena**
+  - Frontend routes: where the buttons will lead to (Index Home Page) 
+  - User Profile (aka. Listing Dashboard or User Show): (all the listings for that specific user + delete/edit buttons) (create new listing button) (user background) (dummy profile photo, aws?)
+  - Listings Index page: design decision (how the listing boxes will look like, display text for listings) - **Matt/Mena**
+  - Listing Show as a modal? 
+  - Listing Create page (form) → date (calendar API) - **Mena**
+  - Reducers / Actions / Util - **Yinglan**
+
+  **Backend (afternoon)**
+  - Listings - get (10~15), id (current user), post, patch, delete - **Yinglan/Mena**
+  - Display 30 listings on the home page (db) - **Jin**
+  - Background (user profile) - not required - **Jin**
 
 ### May 14
   -

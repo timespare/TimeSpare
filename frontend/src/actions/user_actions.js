@@ -4,7 +4,7 @@ import jwt_decode from "jwt-decode";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
-
+export const REMOVE_ERRORS = "REMOVE_ERRORS";
 const receiveCurrentUser = user => {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -23,7 +23,12 @@ const receiveErrors = errors => {
   };
 };
 
-// Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
+export const removeErrors = () => {
+  return {
+    type: REMOVE_ERRORS
+  };
+};
+
 export const login = user => dispatch =>
   UserAPIUtil.login(user)
     .then(res => {

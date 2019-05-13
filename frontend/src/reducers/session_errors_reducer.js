@@ -1,6 +1,7 @@
 import {
   RECEIVE_CURRENT_USER,
-  RECEIVE_SESSION_ERRORS
+  RECEIVE_SESSION_ERRORS,
+  REMOVE_ERRORS
 } from "../actions/user_actions";
 
 export default (state = [], action) => {
@@ -9,6 +10,8 @@ export default (state = [], action) => {
     case RECEIVE_SESSION_ERRORS:
       return action.errors;
     case RECEIVE_CURRENT_USER:
+      return [];
+    case REMOVE_ERRORS:
       return [];
     default:
       return state;
