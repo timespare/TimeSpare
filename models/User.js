@@ -10,6 +10,9 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  background: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now

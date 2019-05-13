@@ -6,12 +6,12 @@ module.exports = function validateListingInput(data) {
 
   data.description = validText(data.description) ? data.description : "";
 
-  if (Validator.isLength(data.description, { min: 5 })) {
-    errors.text = 'Listing must have at least 5 characters'
+  if (!Validator.isLength(data.description, { min: 5 })) {
+    errors.description = 'Listing must have at least 5 characters'
   }
 
   if (Validator.isEmpty(data.description)) {
-    errors.text = 'Listing must have text';
+    errors.description = 'Listing must have description';
   }
 
   // needa to have begin Time, and end time

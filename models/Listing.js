@@ -6,6 +6,10 @@ const ListingSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'users'
   },
+  title: {
+    type: String, 
+    required: true
+  },
   description: {
     type: String,
     required: true
@@ -22,7 +26,7 @@ const ListingSchema = new Schema({
     type: [String],
     required: true
   },
-  date: {
+  timestamp: {
     type: Date,
     default: Date.now
   }

@@ -15,11 +15,11 @@ router.get('/', (req, res) => {
 })
 
 // listings for a specific user
-// router.get('/user/:user_id', (req, res) => {
-//   Listing.find({user: req.params.user_id})
-//   .then(listings => res.json(listings))
-//   .catch(err => res.status(404).json({nolistingsfound: 'No Listings from the User'}));
-// })
+router.get('/user/:user_id', (req, res) => {
+  Listing.find({user: req.params.user_id})
+  .then(listings => res.json(listings))
+  .catch(err => res.status(404).json({nolistingsfound: 'No Listings from the User'}));
+})
 
 // one specific listing
 router.get('/:id', (req, res) => {
@@ -32,8 +32,8 @@ router.get('/:id', (req, res) => {
 router.post('/',
   passport.authenticate('jwt', {session: false}),
   (req, res) => {
+    // console.log(req.body);
     const { errors, isValid } = validateListingInput(req.body);
-
     if (!isValid) {
       return res.status(400).json(errors);
     }
@@ -58,6 +58,8 @@ router.patch('/:id', (req, res) => {
   if (!isValid) {
     return res.status(400).json(errors);
   }
+
+  Listing.findByIdAndUpdate()
 
   Listing.findById(req.params.id)
   .then(listing => {
