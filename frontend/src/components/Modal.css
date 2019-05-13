@@ -6,6 +6,7 @@
   justify-content: center;
   padding-top: 150px;
   font-family: Montserrat;
+  position: absolute;
 }
 
 .modal-inner-container {
