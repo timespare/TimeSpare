@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
   Listing.find()
   .sort({date: -1})
   .limit(10)
+  // .populate('user')
   .then(listings => res.json(listings))
   .catch(err => res.status(404).json({nolistingsfound: 'No Listings found'}));
 })
@@ -32,14 +33,13 @@ router.get('/:id', (req, res) => {
 router.post('/',
   passport.authenticate('jwt', {session: false}),
   (req, res) => {
-    // console.log(req.body);
     const { errors, isValid } = validateListingInput(req.body);
     if (!isValid) {
       return res.status(400).json(errors);
     }
 
-    // not sure if we put the user, or just the id
     const newListing = new Listing({
+      title: req.body.title,
       description: req.body.description,
       begin: req.body.begin,
       end: req.body.end,

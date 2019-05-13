@@ -23,7 +23,10 @@ const ListingSchema = new Schema({
     required: true
   },
   tags: {
-    type: [String],
+    type: [String]
+  },
+  price: {
+    type: Number,
     required: true
   },
   date: {
