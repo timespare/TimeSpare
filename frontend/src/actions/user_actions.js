@@ -37,11 +37,24 @@ export const login = user => dispatch =>
       dispatch(receiveErrors(err.response.data));
     });
 
-export const signup = user => dispatch =>
-  UserAPIUtil.signup(user).then(
-    user => dispatch(receiveCurrentUser(user)),
+// export const signup = user => dispatch =>
+//   UserAPIUtil.signup(user).then(
+//     user => dispatch(receiveCurrentUser(user)),
+//     err => dispatch(receiveErrors(err.response.data))
+//   );
+
+export const signup = user => dispatch => {
+  return UserAPIUtil.signup(user).then(
+    res => {
+      const { token } = res.data;
+      localStorage.setItem("jwtToken", token);
+      UserAPIUtil.setAuthToken(token);
+      const decoded = jwt_decode(token);
+      dispatch(receiveCurrentUser(decoded));
+    },
     err => dispatch(receiveErrors(err.response.data))
   );
+};
 
 // export const logout = () => dispatch =>
 //   UserAPIUtil.logout().then(_user => dispatch(logoutCurrentUser()));
