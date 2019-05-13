@@ -51,8 +51,20 @@ class Login extends React.Component {
   }
 
   render() {
+    const LoginInputStyle = {
+      width: "470px",
+      height: "60px",
+      borderRadius: "5px",
+      margin: "20px auto 0 auto",
+      display: "flex",
+      fontSize: "16px"
+    };
+    const SwitchStyle = {
+      display: "flex",
+      justifyContent: "center"
+    };
     return (
-      <div className="login-session-form">
+      <div>
         <form>
           {this.renderErrors()}
           <input
@@ -60,7 +72,7 @@ class Login extends React.Component {
             value={this.state.username}
             onChange={this.handleInput("username")}
             placeholder="Username"
-            className="login-username"
+            style={LoginInputStyle}
           />
 
           <input
@@ -68,19 +80,21 @@ class Login extends React.Component {
             value={this.state.password}
             onChange={this.handleInput("password")}
             placeholder="Password"
-            className="login-password"
+            style={LoginInputStyle}
           />
 
           <SubmitButton onClick={this.handleSubmit} label="Sign In" />
           <SubmitButton onClick={this.handleDemo} label="Demo User LogIn" />
-          <p className="no-account">
-            Don't have an account?
-            <NavBarButton
-              label="Sign Up"
-              onClick={() => this.props.onSwitchButtonClick("Sign Up")}
-              noBackground={true}
-            />
-          </p>
+          <div style={SwitchStyle}>
+            <p>
+              Don't have an account?
+              <NavBarButton
+                label="Sign Up"
+                onClick={() => this.props.onSwitchButtonClick("Sign Up")}
+                noBackground={true}
+              />
+            </p>
+          </div>
         </form>
       </div>
     );
