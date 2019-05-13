@@ -20,13 +20,29 @@ class ListingForm extends React.Component {
 
   handleInput(field) {
     return e => {
-      this.setState({ [field]: e.current_Target.value });
+      this.setState({ [field]: e.currentTarget.value });
     };
   }
   handleSubmit(e) {
     e.preventDefault();
-    const Listing = Object.assign({}, this.state);
-    this.props.action(Listing).then(() => this.history.push("/"));
+    const listing = Object.assign({}, this.state);
+    this.props.action(listing).then(() => this.state.history.push("/"));
+  }
+
+  renderErrors() {
+    const ErrorStyle = {
+      listStyle: "none",
+      paddingLeft: "0"
+    };
+    return (
+      <ul>
+        {Object.values(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`} style={ErrorStyle}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -54,7 +70,7 @@ class ListingForm extends React.Component {
             placeholder="Price"
             value
           />
-
+          {this.renderErrors}
           <SubmitButton
             onClick={this.handleSubmit}
             label={this.props.formType}
