@@ -5,10 +5,10 @@ import { getAllListings } from '../../actions/listings_actions';
 
 const mapStateToProps = state => {
     let listings = Object.values(state.entities.listings);
-    let users = state.entities.users;
+    // let users = state.entities.users;
     return ({
-        listings: listings,
-        users: users
+        listings: listings
+        // users: users
     })
 }
 
