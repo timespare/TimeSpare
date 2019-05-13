@@ -84,7 +84,6 @@ Anticipated Challenges:
   - Investigate Calendar API methods and test - **Everyone** 
 
 ### May 13 (Monday)
-  - Continue and complete the basic work from Sunday - **All**
   **Frontend (morning)**
   - User Auth Wrap-Up: Submit Button, input fields, CSS - **Mena**
   - Frontend routes: where the buttons will lead to (Index Home Page) 
