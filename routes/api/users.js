@@ -24,7 +24,7 @@ router.get(
 
 router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
-  console.log(req);
+
   if (!isValid) {
     return res.status(400).json(errors);
   }
@@ -112,5 +112,14 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+
+// router.get('/', (req, res) => {
+//   User.find()
+//     .sort({ date: -1 })
+//     .limit(10)
+//     .then(users => res.json(users))
+//     .catch(err => res.status(404).json({ noUsersfound: 'No users found' }));
+// })
 
 module.exports = router;

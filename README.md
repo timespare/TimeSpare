@@ -99,9 +99,9 @@ Anticipated Challenges:
   - Background (user profile) - not required - **Jin**
 
 ### May 14 (Tuesday)
-  -
-  - 
-  - 
+
+
+
 
 ### May 15
   - Complete Production README.md - **Matthew** 
