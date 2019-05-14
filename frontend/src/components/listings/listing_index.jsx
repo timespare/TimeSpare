@@ -47,9 +47,11 @@ class ListingIndex extends React.Component {
   render() {
     let listings = this.props.listings.map(listing => {
       return (
-        <div>
+        <div className="listing-index-box">
           <ListingIndexItem key={listing._id} listing={listing} />
-          {this.renderButton(this.props.isHome, listing)}
+          <div className="index-button">
+            {this.renderButton(this.props.isHome, listing)}
+          </div>
         </div>
       );
     });

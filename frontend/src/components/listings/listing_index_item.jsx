@@ -75,7 +75,7 @@ export default ListingIndexItem;
 //             </div>
 //         </div>
 //     )
-  
+
 // }
 
 // export default ListingIndexItem;

@@ -73,12 +73,11 @@ export const getCurrentUserListings = () => dispatch =>
   );
 
 export const createListing = listing => dispatch => {
-  debugger
   return ListingAPIUtil.addListing(listing).then(
     listing => dispatch(receiveAListing(listing.data)),
     errors => dispatch(receiveListingErrors(errors.response.data))
   );
-}
+};
 
 export const editListing = listing => dispatch =>
   ListingAPIUtil.editListing(listing).then(
