@@ -22,6 +22,7 @@ router.get('/user/:user_id', (req, res) => {
   .catch(err => res.status(404).json({nolistingsfound: 'No Listings nor the User'}));
 })
 
+// listings for current user
 router.get('/current', 
   passport.authenticate("jwt", { session: false }),
   (req, res) => {

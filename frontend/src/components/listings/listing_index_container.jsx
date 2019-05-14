@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ListingIndex from './listing_index';
-import { getAllListings } from '../../actions/listings_actions';
+import { getAllListings } from '../../actions/listing_actions';
 // import { fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = state => {
