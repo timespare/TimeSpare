@@ -5,8 +5,8 @@ import UserProfile from "./components/UserProfile";
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" component={Home} />
       <Route exact path="/profile" component={UserProfile} />
+      <Route exact path="/" component={Home} />
     </div>
   );
 }
