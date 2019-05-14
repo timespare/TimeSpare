@@ -1,6 +1,9 @@
 import React from 'react';
 import './listing_index_item.css';
 import { Link } from 'react-router-dom'
+import NavBarButton from '../NavBarButton';
+import Modal from '../Modal';
+import EditListingContainer from '../ListingForm/EditListingContainer';
 
 function formatDate(input) {
     let year = input.substring(0, 4);
@@ -11,7 +14,7 @@ function formatDate(input) {
     return { date: year + "/" + month + "/" + day, time: time };
 }
 
-const ListingIndexItem=({listing}) =>{
+const ListingIndexItem=({listing, isHome}) =>{
     // debugger
     return (
     <div className="listing-item-outer-container"> 
@@ -41,41 +44,3 @@ const ListingIndexItem=({listing}) =>{
 }
        
 export default ListingIndexItem;
-
-
-  // const showStyle = {
-
-    //         width: '128px',
-    //         height: '28px',
-    //         fontFamily: 'Poppins',
-    //         fontSize: '20px',
-    //         fontWeight: '600',
-    //         textDecoration: 'none',
-    //         // fontStyle: 'normal',
-    //         // fontStretch: 'normal',
-    //         // lineHeight: 'normal',
-    //         // letterSpacing: 'normal',
-    //         color: '#EF5462'
-    // }
-
-// const ListingIndexItem = ({listing}) => {
-//     // debugger
-//     return (
-//         <div className="the-box">
-//             {/* no frontend route yet to listing show */}
-//             <div>
-//                 <Link className="listing-show" to="">{listing.title}</Link>
-//             </div>
-//             <div>
-//                 <span>{listing.description}</span>
-//             </div>
-//             <div>
-//                 <span>{listing.begin}</span>
-//                 <span>{listing.end}</span>
-//             </div>
-//         </div>
-//     )
-
-// }
-
-// export default ListingIndexItem;
