@@ -6,6 +6,7 @@ import jwt_decode from "jwt-decode";
 import { setAuthToken } from "./util/user_api_util";
 import { logout } from "./actions/user_actions";
 import Root from "./root";
+import "./globalStyle.css";
 
 // TODO: REMOVE AFTER TESTING
 import { login, signup } from "./actions/user_actions";
