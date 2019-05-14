@@ -6,9 +6,10 @@
 
 .home-page-left,
 .home-page-right {
-  width: 20vw;
+  width: 15vw;
 }
 
 .home-page-middle {
-  width: 60vw;
+  width: 70vw;
+  /* display: flex; */
 }
