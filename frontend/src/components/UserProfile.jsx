@@ -7,7 +7,7 @@ import CreateListingContainer from "./ListingForm/CreateListingContainer";
 import EditListingContainer from "./ListingForm/EditListingContainer";
 import { connect } from "react-redux";
 import ListingIndexContainer from "./listings/listing_index_container";
-
+import "./Home.css";
 const mapStateToProps = state => ({
   currentUser: state.session.user
 });
@@ -33,30 +33,31 @@ class UserProfile extends React.Component {
       this.setState({ modalisOpen: false, formType: "" });
     };
     return (
-      <>
-        <NavBar>
-          <NavBarButton
-            label="Create Listing"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Create Listing" })
-            }
-            noBackground={true}
-          />
-          <NavBarButton
-            label="Edit Listing"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Edit Listing" })
-            }
-            noBackground={true}
-          />
-          <NavBarButton
-            label="Log Out"
-            onClick={this.props.logout}
-            link="/"
-            noBackground={true}
-          />
-        </NavBar>
-
+      <div className="home-container">
+        <div className="navbar-container">
+          <NavBar>
+            <NavBarButton
+              label="Create Listing"
+              onClick={() =>
+                this.setState({ modalisOpen: true, formType: "Create Listing" })
+              }
+              noBackground={true}
+            />
+            <NavBarButton
+              label="Edit Listing"
+              onClick={() =>
+                this.setState({ modalisOpen: true, formType: "Edit Listing" })
+              }
+              noBackground={true}
+            />
+            <NavBarButton
+              label="Log Out"
+              onClick={this.props.logout}
+              link="/"
+              noBackground={true}
+            />
+          </NavBar>
+        </div>
         <Modal
           open={this.state.modalisOpen}
           formType={this.state.formType}
@@ -68,8 +69,14 @@ class UserProfile extends React.Component {
           {this.state.formType === "Edit Listing" && <EditListingContainer />}
         </Modal>
 
-        <ListingIndexContainer isHome={false}/>
-      </>
+        <div className="home-page-content">
+          <div className="home-page-left" />
+          <div className="home-page-middle">
+            <ListingIndexContainer isHome={false} />
+          </div>
+          <div className="home-page-right" />
+        </div>
+      </div>
     );
   }
 

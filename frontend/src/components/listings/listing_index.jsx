@@ -41,8 +41,7 @@ class ListingIndex extends React.Component {
           >
             {this.state.formType === "Edit Listing" && <EditListingContainer />}
           </Modal>
-
-          <button onClick={listing => this.props.deleteListing(listing._id)}>
+          <button onClick={() => this.props.deleteListing(listing._id)}>
             Delete
           </button>
         </>
@@ -53,9 +52,11 @@ class ListingIndex extends React.Component {
   render() {
     let listings = this.props.listings.map(listing => {
       return (
-        <div>
+        <div className="listing-index-box">
           <ListingIndexItem key={listing._id} listing={listing} />
-          {this.renderButton(this.props.isHome, listing)}
+          <div className="index-button">
+            {this.renderButton(this.props.isHome, listing)}
+          </div>
         </div>
       );
     });

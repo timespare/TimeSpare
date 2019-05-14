@@ -1,0 +1,14 @@
+.home-container {
+}
+.home-page-content {
+  display: flex;
+}
+
+.home-page-left,
+.home-page-right {
+  width: 20vw;
+}
+
+.home-page-middle {
+  width: 60vw;
+}
