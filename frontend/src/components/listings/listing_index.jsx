@@ -1,17 +1,7 @@
 import React from "react";
 import ListingIndexItem from "./listing_index_item";
-import Modal from "../Modal";
-import EditListingContainer from "../ListingForm/EditListingContainer";
-import NavBarButton from "../NavBarButton";
-class ListingIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modalisOpen: false,
-      formType: ""
-    };
-  }
 
+class ListingIndex extends React.Component {
   componentDidMount() {
     if (this.props.isHome) {
       this.props.getAllListings();
@@ -21,9 +11,6 @@ class ListingIndex extends React.Component {
   }
 
   renderButton(isHome, listing) {
-    const onClose = () => {
-      this.setState({ modalisOpen: false, formType: "" });
-    };
     if (!isHome) {
       return (
         <>
