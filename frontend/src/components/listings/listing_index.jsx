@@ -1,17 +1,10 @@
 import React from "react";
 import ListingIndexItem from "./listing_index_item";
-import Modal from "../Modal";
-import EditListingContainer from "../ListingForm/EditListingContainer";
-import NavBarButton from "../NavBarButton";
-class ListingIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modalisOpen: false,
-      formType: ""
-    };
-  }
+import NavBarButton from '../NavBarButton';
+import Modal from '../Modal';
+import EditListingContainer from '../ListingForm/EditListingContainer';
 
+class ListingIndex extends React.Component {
   componentDidMount() {
     if (this.props.isHome) {
       this.props.getAllListings();
@@ -21,9 +14,6 @@ class ListingIndex extends React.Component {
   }
 
   renderButton(isHome, listing) {
-    const onClose = () => {
-      this.setState({ modalisOpen: false, formType: "" });
-    };
     if (!isHome) {
       return (
         <>
@@ -41,8 +31,7 @@ class ListingIndex extends React.Component {
           >
             {this.state.formType === "Edit Listing" && <EditListingContainer />}
           </Modal>
-
-          <button onClick={listing => this.props.deleteListing(listing._id)}>
+          <button onClick={() => this.props.deleteListing(listing._id)}>
             Delete
           </button>
         </>
@@ -53,9 +42,11 @@ class ListingIndex extends React.Component {
   render() {
     let listings = this.props.listings.map(listing => {
       return (
-        <div>
+        <div className="listing-index-box">
           <ListingIndexItem key={listing._id} listing={listing} />
-          {this.renderButton(this.props.isHome, listing)}
+          <div className="index-button">
+            {this.renderButton(this.props.isHome, listing)}
+          </div>
         </div>
       );
     });
