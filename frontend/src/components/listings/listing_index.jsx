@@ -1,17 +1,7 @@
 import React from "react";
 import ListingIndexItem from "./listing_index_item";
-import Modal from "../Modal";
-import EditListingContainer from "../ListingForm/EditListingContainer";
-import NavBarButton from "../NavBarButton";
-class ListingIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modalisOpen: false,
-      formType: ""
-    };
-  }
 
+class ListingIndex extends React.Component {
   componentDidMount() {
     if (this.props.isHome) {
       this.props.getAllListings();
@@ -20,51 +10,19 @@ class ListingIndex extends React.Component {
     }
   }
 
-<<<<<<< HEAD
-    render() {
-        let listings = this.props.listings.map(listing => {
-            return (
-                <ListingIndexItem
-                    key={listing.id}
-                    listing={listing}
-                />
-            )
-        });
-        return (
-            <div className="listing-index-container">
-                {listings}
-                {/* <br></br> */}
-            </div>
-        );
-=======
   renderButton(isHome, listing) {
-    const onClose = () => {
-      this.setState({ modalisOpen: false, formType: "" });
-    };
     if (!isHome) {
       return (
         <>
-          <NavBarButton
-            label="Edit Listing"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Edit Listing" })
-            }
-            noBackground={true}
-          />
-          <Modal
-            open={this.state.modalisOpen}
-            formType={this.state.formType}
-            onClose={onClose}
-          >
-            {this.state.formType === "Edit Listing" && <EditListingContainer />}
-          </Modal>
-
+          <h1>GG</h1>
+          <button onClick={listing => this.props.editListing(listing)}>
+            Edit
+          </button>
           <button onClick={listing => this.props.deleteListing(listing._id)}>
             Delete
           </button>
         </>
       );
->>>>>>> master
     }
   }
 
