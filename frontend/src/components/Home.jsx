@@ -60,18 +60,6 @@ class Home extends React.Component {
           {currentUser && (
             <NavBarButton label="Log Out" onClick={this.props.logout} />
           )}
-          {/* <NavBarButton
-            label="Create Listing"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Create Listing" })
-            }
-          />
-          <NavBarButton
-            label="Edit Listing"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Edit Listing" })
-            }
-          /> */}
         </NavBar>
         <Modal
           open={this.state.modalisOpen}
@@ -91,10 +79,6 @@ class Home extends React.Component {
               onClose={onClose}
             />
           )}
-          {this.state.formType === "Create Listing" && (
-            <CreateListingContainer />
-          )}
-          {this.state.formType === "Edit Listing" && <EditListingContainer />}
         </Modal>
       </>
     );
