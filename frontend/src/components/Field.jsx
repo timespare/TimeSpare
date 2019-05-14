@@ -19,7 +19,9 @@ const fieldContainer = {
 
 const fieldLeft = {
   width: "100px",
-  marginRight: "30px"
+  marginRight: "30px",
+  font: "14px",
+  fontWeight: "bold"
 };
 
 const fieldRight = {

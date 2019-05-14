@@ -5,7 +5,7 @@
   padding: 15px;
   margin: auto;
   width: 50%;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   box-shadow: 0 2px 8px 0 #efefef;
   background-color: #ffffff;
   /* display: flex;  */
@@ -60,20 +60,22 @@
   /* font-size: 20px;/ */
   font-weight: 600;
   float: left;
-  width: 50px;
-  height:50px;
+  width: 55px;
+  height:55px;
   background-color: pink;
 }
 
 .listing-item-middle-right {
-  font-size: 12px;
+  font-size: 12.5px;
   float: right;
   /* margin-right:auto; */
-  margin-right: 400px;
+  margin-right: 390px;
+   color: #484848;
 }
 
 span {
   display: block;
+   /* color: #484848; */
 }
 
 

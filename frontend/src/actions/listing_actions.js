@@ -46,6 +46,7 @@ const removeAListing = listingId => {
 };
 
 const receiveAListing = listing => {
+  // debugger
   return {
     type: RECEIVE_A_LISTING,
     listing
@@ -71,11 +72,13 @@ export const getCurrentUserListings = () => dispatch =>
     errors => dispatch(receiveListingErrors(errors.response.data))
   );
 
-export const createListing = listing => dispatch =>
-  ListingAPIUtil.addListing(listing).then(
+export const createListing = listing => dispatch => {
+  debugger
+  return ListingAPIUtil.addListing(listing).then(
     listing => dispatch(receiveAListing(listing.data)),
     errors => dispatch(receiveListingErrors(errors.response.data))
   );
+}
 
 export const editListing = listing => dispatch =>
   ListingAPIUtil.editListing(listing).then(
@@ -85,6 +88,6 @@ export const editListing = listing => dispatch =>
 
 export const deleteListing = id => dispatch =>
   ListingAPIUtil.deleteListing(id).then(
-    listing => dispatch(removeAListing(listing.id)),
+    listing => dispatch(removeAListing(listing.data._id)),
     errors => dispatch(receiveListingErrors(errors.response.data))
   );

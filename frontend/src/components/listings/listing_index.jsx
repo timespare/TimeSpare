@@ -14,11 +14,29 @@ class ListingIndex extends React.Component {
     if (!isHome) {
       return (
         <>
+<<<<<<< HEAD
           <h1>GG</h1>
           <button onClick={listing => this.props.editListing(listing)}>
             Edit
           </button>
           <button onClick={listing => this.props.deleteListing(listing._id)}>
+=======
+          <NavBarButton
+            label="Edit Listing"
+            onClick={() =>
+              this.setState({ modalisOpen: true, formType: "Edit Listing" })
+            }
+            noBackground={true}
+          />
+          <Modal
+            open={this.state.modalisOpen}
+            formType={this.state.formType}
+            onClose={onClose}
+          >
+            {this.state.formType === "Edit Listing" && <EditListingContainer />}
+          </Modal>
+          <button onClick={() => this.props.deleteListing(listing._id)}>
+>>>>>>> 189044f800591f6fb10353b099a5c4256219fc1e
             Delete
           </button>
         </>
