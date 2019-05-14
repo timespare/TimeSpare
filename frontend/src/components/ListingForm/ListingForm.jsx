@@ -9,7 +9,7 @@ class ListingForm extends React.Component {
     this.state = {
       title: "",
       description: "",
-      start: "",
+      begin: "",
       end: "",
       price: ""
     };
@@ -26,8 +26,10 @@ class ListingForm extends React.Component {
       this.setState({ [field]: e.currentTarget.value });
     };
   }
+
   handleSubmit(e) {
     e.preventDefault();
+    debugger
     const listing = Object.assign({}, this.state);
     this.props.action(listing);
     // .then(() => this.props.history.push("/"));
@@ -80,9 +82,9 @@ class ListingForm extends React.Component {
 
           <Field label="Start Time">
             <DateTime
-              value={this.state.start}
+              value={this.state.begin}
               onChange={moment =>
-                this.setState({ start: moment.format("LLLL") })
+                this.setState({ begin: moment.format("LLLL") })
               }
             />
           </Field>
@@ -90,7 +92,8 @@ class ListingForm extends React.Component {
           <Field label="End Time">
             <DateTime
               value={this.state.end}
-              onChange={moment => this.setState({ end: moment.format("x") })}
+              onChange={moment => 
+                this.setState({ end: moment.format("LLLL") })}
             />
           </Field>
 

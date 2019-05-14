@@ -14,6 +14,7 @@ export const fetchCurrentUserListings = () => {
 
 // create a new listing
 export const addListing = data => {
+  // debugger
   return axios.post("/api/listings", data);
 };
 
