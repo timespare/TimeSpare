@@ -7,15 +7,19 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 
 const styles = {
     card: {
         minWidth: 275,
-        maxWidth: 500,
+        maxWidth: 600,
         display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',
-        width: '40%'
+        // padding: theme.spacing.unit * 2
+        // flexGrow: 1
+        // spacing: '16'
+        // width: '40%'
     },
     bullet: {
         display: 'inline-block',
@@ -23,11 +27,11 @@ const styles = {
         transform: 'scale(0.8)',
     },
     title: {
-        fontSize: 14,
+        fontSize: 20,
     },
     pos: {
         marginBottom: 12,
-    },
+    }
 };
 
 function ListingIndexItem(props) {
@@ -52,6 +56,9 @@ function ListingIndexItem(props) {
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
                     {listing.description}
                 </Typography>
+                <Grid item>
+                    <Typography variant="subtitle1">${listing.price}</Typography>
+                </Grid>
                 <Typography >
                     {listing.begin}
                 </Typography>
@@ -59,10 +66,10 @@ function ListingIndexItem(props) {
                     {listing.end}
                 </Typography>
             </CardContent>
-            <CardActions>
+            <CardContent>
                 <Button size="small">Tags</Button>
                 {/* <Button size="small">Tags</Button> */}
-            </CardActions>
+            </CardContent>
         </Card>
     );
 }

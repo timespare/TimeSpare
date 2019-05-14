@@ -20,6 +20,7 @@ class ListingIndex extends React.Component {
         return (
             <div className="listing-index-container">
                 {listings}
+                {/* <br></br> */}
             </div>
         );
     }
