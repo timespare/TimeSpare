@@ -85,6 +85,6 @@ export const editListing = listing => dispatch =>
 
 export const deleteListing = id => dispatch =>
   ListingAPIUtil.deleteListing(id).then(
-    listing => dispatch(removeAListing(listing.id)),
+    listing => dispatch(removeAListing(listing.data._id)),
     errors => dispatch(receiveListingErrors(errors.response.data))
   );

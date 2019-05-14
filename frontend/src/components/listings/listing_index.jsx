@@ -14,10 +14,8 @@ class ListingIndex extends React.Component {
     if (!isHome) {
       return (
         <>
-          <button onClick={listing => this.props.editListing(listing)}>
-            Edit
-          </button>
-          <button onClick={listing => this.props.deleteListing(listing._id)}>
+          <button onClick={() => this.props.editListing(listing)}>Edit</button>
+          <button onClick={() => this.props.deleteListing(listing._id)}>
             Delete
           </button>
         </>
