@@ -41,8 +41,7 @@ class ListingIndex extends React.Component {
           >
             {this.state.formType === "Edit Listing" && <EditListingContainer />}
           </Modal>
-
-          <button onClick={listing => this.props.deleteListing(listing._id)}>
+          <button onClick={() => this.props.deleteListing(listing._id)}>
             Delete
           </button>
         </>
