@@ -6,6 +6,9 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import LoginFormContainer from "./session_form/login_form_container";
 import CreateListingContainer from "./ListingForm/CreateListingContainer";
 import EditListingContainer from "./ListingForm/EditListingContainer";
+import ListingIndexContainer from "./listings/listing_index_container";
+
+
 import { connect } from "react-redux";
 import { logout } from "../actions/user_actions";
 const mapStateToProps = state => ({
@@ -14,6 +17,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
 });
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -58,9 +62,15 @@ class Home extends React.Component {
             />
           )}
           {currentUser && (
-            <NavBarButton label="Log Out" onClick={this.props.logout} />
+            <NavBarButton
+              label="Log Out"
+              onClick={this.props.logout}
+              link={"/"}
+            />
           )}
         </NavBar>
+        <ListingIndexContainer />
+
         <Modal
           open={this.state.modalisOpen}
           formType={this.state.formType}
@@ -80,6 +90,7 @@ class Home extends React.Component {
             />
           )}
         </Modal>
+
       </>
     );
   }

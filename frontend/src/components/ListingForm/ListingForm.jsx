@@ -26,8 +26,7 @@ class ListingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const listing = Object.assign({}, this.state);
-    this.props.action(listing);
-    // .then(() => this.props.history.push("/"));
+    this.props.action(listing).then(() => this.props.history.push("/"));
   }
 
   renderErrors() {

@@ -26,16 +26,7 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-<<<<<<< HEAD
-    this.props.processForm(user).then(
-      () => this.props.history.push("/profile")
-      // err => console.log("1" + err)
-    );
-
-    this.props.onClose;
-=======
     this.props.processForm(user);
->>>>>>> 9b275ff28e099df23f7ec7f6df62bce9c21d9787
   }
 
   renderErrors() {

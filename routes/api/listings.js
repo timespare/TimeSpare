@@ -26,8 +26,8 @@ router.get("/user/:user_id", (req, res) => {
     );
 });
 
-router.get(
-  "/current",
+// listings for current user
+router.get('/current', 
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Listing.find({ user: req.user._id })
