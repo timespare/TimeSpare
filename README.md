@@ -34,16 +34,6 @@ We will need to:
    - [ ] In-site payment functionality
    - [ ] Hosting on marketplace
 
-## Lo-fi Mockups
-### Splash Page
-![splashpage](https://s3-us-west-1.amazonaws.com/shuttr-dev-seeds/SplashPage.png)
-
-### Homepage
-![homepage](https://s3-us-west-1.amazonaws.com/shuttr-dev-seeds/Homepage.png)
-
-### User Profile
-![userprofile](https://s3-us-west-1.amazonaws.com/shuttr-dev-seeds/User+Profile.png)
-
 ## Technologies & Technical Challenges
 
 `HTML5` / `SCSS` / `MongoDB` / `Express.js` / `React.js` / `Redux` / `Node.js` / `JavaScript` / `Calendar API` / `Animate CSS`
