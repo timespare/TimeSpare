@@ -27,12 +27,8 @@ router.get("/user/:user_id", (req, res) => {
 });
 
 // listings for current user
-<<<<<<< HEAD
-router.get('/current', 
-=======
 router.get(
   "/current",
->>>>>>> master
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Listing.find({ user: req.user._id })
