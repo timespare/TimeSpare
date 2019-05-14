@@ -5,8 +5,7 @@ import Modal from "./Modal";
 import SignupFormContainer from "./session_form/signup_form_container";
 import LoginFormContainer from "./session_form/login_form_container";
 import ListingIndexContainer from "./listings/listing_index_container";
-
-
+import "./Home.css";
 import { connect } from "react-redux";
 import { logout } from "../actions/user_actions";
 const mapStateToProps = state => ({
@@ -40,37 +39,45 @@ class Home extends React.Component {
     };
     const currentUser = this.props.currentUser;
     return (
-      <>
-        <NavBar>
-          {!!currentUser || (
-            <NavBarButton
-              label="Sign In"
-              noBackground="true"
-              onClick={() =>
-                this.setState({ modalisOpen: true, formType: "Sign In" })
-              }
-            />
-          )}
-          {!!currentUser || (
-            <NavBarButton
-              label="Sign Up"
-              onClick={() =>
-                this.setState({ modalisOpen: true, formType: "Sign Up" })
-              }
-            />
-          )}
-          {currentUser && <NavBarButton label="My Profile" link="/profile" />}
-          {currentUser && (
-            <NavBarButton
-              label="Log Out"
-              onClick={this.props.logout}
-              link="/"
-              noBackground={true}
-            />
-          )}
-        </NavBar>
+      <div className="home-container">
+        <div className="navbar-container">
+          <NavBar>
+            {!!currentUser || (
+              <NavBarButton
+                label="Sign In"
+                noBackground="true"
+                onClick={() =>
+                  this.setState({ modalisOpen: true, formType: "Sign In" })
+                }
+              />
+            )}
+            {!!currentUser || (
+              <NavBarButton
+                label="Sign Up"
+                onClick={() =>
+                  this.setState({ modalisOpen: true, formType: "Sign Up" })
+                }
+              />
+            )}
+            {currentUser && <NavBarButton label="My Profile" link="/profile" />}
+            {currentUser && (
+              <NavBarButton
+                label="Log Out"
+                onClick={this.props.logout}
+                link="/"
+                noBackground={true}
+              />
+            )}
+          </NavBar>
+        </div>
+        <div className="home-page-content">
+          <div className="home-page-left" />
+          <div className="home-page-middle">
+            <ListingIndexContainer isHome={true} />
+          </div>
 
-        <ListingIndexContainer isHome={true}/>
+          <div className="home-page-right" />
+        </div>
 
         <Modal
           open={this.state.modalisOpen}
@@ -90,7 +97,7 @@ class Home extends React.Component {
             />
           )}
         </Modal>
-      </>
+      </div>
     );
   }
 }

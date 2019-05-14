@@ -1,7 +1,17 @@
 import React from "react";
 import ListingIndexItem from "./listing_index_item";
-
+import Modal from "../Modal";
+import EditListingContainer from "../ListingForm/EditListingContainer";
+import NavBarButton from "../NavBarButton";
 class ListingIndex extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalisOpen: false,
+      formType: ""
+    };
+  }
+
   componentDidMount() {
     if (this.props.isHome) {
       this.props.getAllListings();
@@ -11,13 +21,27 @@ class ListingIndex extends React.Component {
   }
 
   renderButton(isHome, listing) {
+    const onClose = () => {
+      this.setState({ modalisOpen: false, formType: "" });
+    };
     if (!isHome) {
       return (
         <>
-          <button onClick={listing => this.props.editListing(listing)}>
-            Edit
-          </button>
-          <button onClick={listing => this.props.deleteListing(listing._id)}>
+          <NavBarButton
+            label="Edit Listing"
+            onClick={() =>
+              this.setState({ modalisOpen: true, formType: "Edit Listing" })
+            }
+            noBackground={true}
+          />
+          <Modal
+            open={this.state.modalisOpen}
+            formType={this.state.formType}
+            onClose={onClose}
+          >
+            {this.state.formType === "Edit Listing" && <EditListingContainer />}
+          </Modal>
+          <button onClick={() => this.props.deleteListing(listing._id)}>
             Delete
           </button>
         </>
@@ -28,9 +52,11 @@ class ListingIndex extends React.Component {
   render() {
     let listings = this.props.listings.map(listing => {
       return (
-        <div>
+        <div className="listing-index-box">
           <ListingIndexItem key={listing._id} listing={listing} />
-          {this.renderButton(this.props.isHome, listing)}
+          <div className="index-button">
+            {this.renderButton(this.props.isHome, listing)}
+          </div>
         </div>
       );
     });
