@@ -1,5 +1,8 @@
 import React from "react";
 import SubmitButton from "../SubmitButton";
+import DateTime from "../DateTime";
+import "../session_form/form.css";
+import Field from "../Field";
 class ListingForm extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +29,8 @@ class ListingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const listing = Object.assign({}, this.state);
-    this.props.action(listing).then(() => this.props.history.push("/"));
+    this.props.action(listing);
+    // .then(() => this.props.history.push("/"));
   }
 
   renderErrors() {
@@ -49,26 +53,38 @@ class ListingForm extends React.Component {
   render() {
     return (
       <div>
-        <form>
-          <input
-            type="text"
-            value={this.state.title}
-            onChange={this.handleInput("title")}
-            placeholder="Title"
-          />
+        <form className="form">
+          <Field label="Title">
+            <input
+              type="text"
+              value={this.state.title}
+              onChange={this.handleInput("title")}
+              label="Title"
+            />
+          </Field>
+          
+          <Field label="Description">
+            <textarea
+              value={this.state.description}
+              onChange={this.handleInput("description")}
+            />
+          </Field>
+          <Field label="Price">
+            <input
+              type="number"
+              value={this.state.price}
+              onChange={this.handleInput("price")}
+            />
+          </Field>
 
-          <textarea
-            value={this.state.description}
-            onChange={this.handleInput("description")}
-            placeholder="Description"
-          />
+          <Field label="Start Time">
+            <DateTime value={this.state.start} />
+          </Field>
 
-          <input
-            type="number"
-            value={this.state.price}
-            onChange={this.handleInput("price")}
-            placeholder="Price"
-          />
+          <Field label="End Time">
+            <DateTime value={this.state.end} />
+          </Field>
+
           {this.renderErrors()}
           <SubmitButton
             onClick={this.handleSubmit}

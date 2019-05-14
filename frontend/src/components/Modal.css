@@ -18,7 +18,7 @@
   background: #ffffff;
   min-height: 300px;
   box-shadow: 0 0 50px #d2b274;
-  overflow: hidden;
+  /* overflow: hidden; */
   border-radius: 5px;
   box-sizing: border-box;
 }

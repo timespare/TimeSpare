@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBarButton.css";
 const NavBarButton = props => {
-  // pass in onClick actions,link
   const { onClick, link, label, noBackground } = props;
   let additionalClass = "";
   if (noBackground) {

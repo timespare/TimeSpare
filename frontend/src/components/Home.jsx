@@ -4,9 +4,8 @@ import NavBarButton from "./NavBarButton";
 import Modal from "./Modal";
 import SignupFormContainer from "./session_form/signup_form_container";
 import LoginFormContainer from "./session_form/login_form_container";
-import CreateListingContainer from "./ListingForm/CreateListingContainer";
-import EditListingContainer from "./ListingForm/EditListingContainer";
 import ListingIndexContainer from "./listings/listing_index_container";
+
 
 import { connect } from "react-redux";
 import { logout } from "../actions/user_actions";
@@ -60,11 +59,13 @@ class Home extends React.Component {
               }
             />
           )}
+          {currentUser && <NavBarButton label="My Profile" link="/profile" />}
           {currentUser && (
             <NavBarButton
               label="Log Out"
               onClick={this.props.logout}
-              link={"/"}
+              link="/"
+              noBackground={true}
             />
           )}
         </NavBar>
@@ -80,7 +81,6 @@ class Home extends React.Component {
             <LoginFormContainer
               onSwitchButtonClick={onSwitch}
               onClose={onClose}
-              // success={this.onClose}
             />
           )}
           {this.state.formType === "Sign Up" && (
