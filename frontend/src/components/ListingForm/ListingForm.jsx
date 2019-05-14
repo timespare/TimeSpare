@@ -11,7 +11,7 @@ class ListingForm extends React.Component {
       description: "",
       start: "",
       end: "",
-      price: 0
+      price: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
@@ -38,6 +38,7 @@ class ListingForm extends React.Component {
       listStyle: "none",
       paddingLeft: "0"
     };
+
     return (
       <ul>
         {Object.values(this.props.errors).map((error, i) => (
@@ -61,7 +62,7 @@ class ListingForm extends React.Component {
               label="Title"
             />
           </Field>
-
+          
           <Field label="Description">
             <textarea
               value={this.state.description}
@@ -70,7 +71,7 @@ class ListingForm extends React.Component {
           </Field>
           <Field label="Price">
             <input
-              type="text"
+              type="number"
               value={this.state.price}
               onChange={this.handleInput("price")}
             />
@@ -83,6 +84,7 @@ class ListingForm extends React.Component {
           <Field label="End Time">
             <DateTime value={this.state.end} />
           </Field>
+
           {this.renderErrors()}
           <SubmitButton
             onClick={this.handleSubmit}

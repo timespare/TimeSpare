@@ -29,7 +29,9 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.createNewUser(user).then(() => this.props.history.push("/"));
+    this.props
+      .createNewUser(user)
+      .then(() => this.props.history.push("/profile"));
   }
 
   renderErrors() {

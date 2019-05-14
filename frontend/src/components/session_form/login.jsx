@@ -20,9 +20,7 @@ class Login extends React.Component {
   }
 
   handleInput(type) {
-    return e => {
-      this.setState({ [type]: e.currentTarget.value });
-    };
+    return e => this.setState({ [type]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
@@ -50,6 +48,9 @@ class Login extends React.Component {
   handleDemo(e) {
     e.preventDefault();
     this.props.processForm({ username: "demo", password: "password" });
+    // .then(() => {
+    //   this.props.history.push("/profile");
+    // });
   }
 
   render() {
