@@ -4,12 +4,6 @@ import NavBarButton from "./NavBarButton";
 import Modal from "./Modal";
 import SignupFormContainer from "./session_form/signup_form_container";
 import LoginFormContainer from "./session_form/login_form_container";
-<<<<<<< HEAD
-import CreateListingContainer from "./ListingForm/CreateListingContainer";
-import EditListingContainer from "./ListingForm/EditListingContainer";
-import ListingIndexContainer from "./listings/listing_index_container";
-
-=======
 import ListingIndexContainer from "./listings/listing_index_container";
 
 
@@ -22,7 +16,6 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
 });
 
->>>>>>> master
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -76,9 +69,6 @@ class Home extends React.Component {
             />
           )}
         </NavBar>
-<<<<<<< HEAD
-        <ListingIndexContainer />
-=======
 
         <ListingIndexContainer isHome={true}/>
 
@@ -100,7 +90,6 @@ class Home extends React.Component {
             />
           )}
         </Modal>
->>>>>>> master
       </>
     );
   }

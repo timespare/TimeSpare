@@ -1,125 +1,62 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import './listing_index_item.css';
+import { Link } from 'react-router-dom'
 
-const styles = {
-    card: {
-        minWidth: 300,
-        maxWidth: 600,
-<<<<<<< HEAD
-        maxHeight: 250,
-=======
-        maxHeight: 300,
->>>>>>> master
-        display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        marginBottom: '40px'
-        // mb: 'margin-bottom'
-        // columnGap: '400px'
-        // padding: theme.spacing.unit * 2
-        // flexGrow: 1
-        // spacing: '16'
-        // width: '40%'
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        width: '944px',
-        height: '70px',
-        fontFamily: 'Poppins',
-        fontSize: '27px',
-        fontWeight: '600',
-        fontStyle: 'normal',
-        fontStretch: 'normal',
-        lineHeight: 'normal',
-        letterSpacing: 'normal',
-        color: '#484848'
-    },
-    pos: {
-        marginBottom: 12,
-    },
-    show: {
-        width: '128px',
-        height: '28px',
-        fontFamily: 'Poppins',
-        fontSize: '20px',
-        fontWeight: '600',
-        fontStyle: 'normal',
-        fontStretch: 'normal',
-        lineHeight: 'normal',
-        letterSpacing: 'normal',
-        color: '#484848'
-    },
-    subtitle: {
-        width: '150px',
-        height: '57px',
-        fontFamily: 'Poppins',
-        fontSize: '18px',
-        fontWeight: 'normal',
-        fontStyle: 'normal',
-        fontStretch: 'normal',
-        lineHeight: 'normal',
-        letterSpacing: 'normal',
-        color: '#484848',
-        position: 'relative',
-        left: '5px'
-    }
-};
+function formatDate(input) {
+    let year = input.substring(0, 4);
+    let month = input.substring(5, 7);
+    let day = input.substring(8, 10);
+    let time = input.substring(11, 16);
 
-function ListingIndexItem(props) {
-    const { classes } = props;
-    const listing = props.listing;
-    // const bull = <span className={classes.bullet}>•</span>;
-
-    return (
-        // <div>
-        //     
-        // </div>
-        // <div>
-        //     <span>{listing.description}</span>
-        // </div>
-        // <div>
-        //     <span>{listing.begin}</span>
-        //     <span>{listing.end}</span>
-        // </div>
-        <Card className={classes.card}>
-            <CardContent>
-                <Typography className={classes.title} color="textSecondary" gutterBottom>
-                    {listing.description}
-                </Typography>
-                <Link className="listing-show" to="">{listing.title}</Link>
-                <Typography className={classes.subtitle}>${listing.price}</Typography>
-                <Typography >
-                    Start: {listing.begin}
-                </Typography>
-                <Typography >
-                    End: {listing.end}
-                </Typography>
-            </CardContent>
-            <CardContent>
-                <Button size="small">Tags</Button>
-                {/* <Button size="small">Tags</Button> */}
-            </CardContent>
-        </Card>
-    );
+    return { date: year + "/" + month + "/" + day, time: time };
 }
 
-ListingIndexItem.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
+const ListingIndexItem=({listing}) =>{
+    // debugger
+    return (
+    <div className="listing-item-outer-container"> 
+        {/* <div className="listing-item-inner-container"> */}
+            <div className="listing-item-header"> 
+                <span>{listing.title}</span>
+            </div>
+            <div className="listing-item-middle-layer">
+                <div className="listing-item-middle-left">
+                    <Link to="">{listing.creatorImgUrl}</Link>
+                    {/* Profile Picture */}
+                </div>
+                <div className="listing-item-middle-right">
+                    {/* <span>{listing.username}</span> */}
+                    <span>Username</span>
+                    <span><b>Start</b>: {formatDate(listing.begin).date} @ {formatDate(listing.begin).time}</span>
+                    {/* <br></br> */}
+                    <span><b>End</b>: {formatDate(listing.end).date} @ {formatDate(listing.end).time}</span>
+                    <span><b>Price</b>: ${listing.price}</span>
+                </div>
+            </div>
+            <div className="listing-item-lower-layer">
+                <span>{listing.description}</span>
+            </div>
+        {/* </div> */}
+    </div>)
+}
+       
+export default ListingIndexItem;
 
-export default withStyles(styles)(ListingIndexItem);
+
+  // const showStyle = {
+
+    //         width: '128px',
+    //         height: '28px',
+    //         fontFamily: 'Poppins',
+    //         fontSize: '20px',
+    //         fontWeight: '600',
+    //         textDecoration: 'none',
+    //         // fontStyle: 'normal',
+    //         // fontStretch: 'normal',
+    //         // lineHeight: 'normal',
+    //         // letterSpacing: 'normal',
+    //         color: '#EF5462'
+    // }
 
 // const ListingIndexItem = ({listing}) => {
 //     // debugger

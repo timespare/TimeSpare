@@ -1,10 +1,6 @@
 import { connect } from 'react-redux';
 import ListingIndex from './listing_index';
-<<<<<<< HEAD
-import { getAllListings } from '../../actions/listing_actions';
-=======
 import { getAllListings, getCurrentUserListings, editListing, deleteListing } from '../../actions/listing_actions';
->>>>>>> master
 // import { fetchUsers } from '../../actions/user_actions';
 
 const mapStateToProps = state => {
