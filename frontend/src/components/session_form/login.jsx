@@ -18,15 +18,18 @@ class Login extends React.Component {
   }
 
   handleInput(type) {
-    return e => {
-      this.setState({ [type]: e.currentTarget.value });
-    };
+    return e => this.setState({ [type]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push("/"));
+    this.props.processForm(user).then(
+      () => this.props.history.push("/profile")
+      // err => console.log("1" + err)
+    );
+
+    this.props.onClose;
   }
 
   renderErrors() {
@@ -48,6 +51,9 @@ class Login extends React.Component {
   handleDemo(e) {
     e.preventDefault();
     this.props.processForm({ username: "demo", password: "password" });
+    // .then(() => {
+    //   this.props.history.push("/profile");
+    // });
   }
 
   render() {
