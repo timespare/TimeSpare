@@ -58,7 +58,11 @@ class Home extends React.Component {
             />
           )}
           {currentUser && (
-            <NavBarButton label="Log Out" onClick={this.props.logout} />
+            <NavBarButton
+              label="Log Out"
+              onClick={this.props.logout}
+              link={"/"}
+            />
           )}
         </NavBar>
         <Modal
