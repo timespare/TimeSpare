@@ -16,6 +16,9 @@ const styles = {
         display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',
+        marginBottom: '40px'
+        // mb: 'margin-bottom'
+        // columnGap: '400px'
         // padding: theme.spacing.unit * 2
         // flexGrow: 1
         // spacing: '16'
