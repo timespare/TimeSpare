@@ -6,10 +6,21 @@ import {
 import { connect } from "react-redux";
 // import {}
 
-const mapStateToProps = state => ({
-  errors: state.errors.listings,
-  formType: "Create Listing"
-});
+const mapStateToProps = state => {
+  const listing = {
+    title: "",
+    description: "",
+    begin: "",
+    end: "",
+    price: ""
+  }
+  return {
+    listing: listing,
+    errors: state.errors.listings,
+    formType: "Create Listing"
+  }
+}
+
 
 const mapDispatchToProps = dispatch => ({
   action: listing => dispatch(createListing(listing)),

@@ -17,6 +17,12 @@ import {
   editListing,
   deleteListing
 } from "./actions/listing_actions";
+import {
+  createBooking,
+  getBooking,
+  deleteBooking,
+  getCurrentUserBookings
+} from "./actions/booking_actions";
 
 // TODO: END
 
@@ -59,11 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
   window.logout = logout;
   window.getAllListings = getAllListings;
   window.getCurrentUserListings = getCurrentUserListings;
-  window.createListing = createListing;
+  window.createBooking = createListing;
   window.editListing = editListing;
   window.deleteListing = deleteListing;
   window.dispatch = store.dispatch;
   window.state = store.getState;
-
+  window.createBooking = createBooking;
+  window.getBooking = getBooking;
+  window.getCurrentUserBookings = getCurrentUserBookings;
+  window.deleteBooking = deleteBooking;
   ReactDOM.render(<Root store={store} />, root);
 });

@@ -6,7 +6,8 @@ import {
 import { connect } from "react-redux";
 // import {}
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
+  listing: ownProps.listing,
   errors: state.errors.listings,
   formType: "Edit Listing"
 });

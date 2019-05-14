@@ -66,7 +66,6 @@ class UserProfile extends React.Component {
           {this.state.formType === "Create Listing" && (
             <CreateListingContainer />
           )}
-          {this.state.formType === "Edit Listing" && <EditListingContainer />}
         </Modal>
 
         <div className="home-page-content">
