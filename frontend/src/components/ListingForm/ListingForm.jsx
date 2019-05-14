@@ -54,7 +54,6 @@ class ListingForm extends React.Component {
             value={this.state.title}
             onChange={this.handleInput("title")}
             placeholder="Title"
-            value
           />
 
           <textarea
@@ -68,7 +67,6 @@ class ListingForm extends React.Component {
             value={this.state.price}
             onChange={this.handleInput("price")}
             placeholder="Price"
-            value
           />
           {this.renderErrors}
           <SubmitButton
