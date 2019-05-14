@@ -13,7 +13,7 @@ class ListingIndex extends React.Component {
             return (
                 < ListingIndexItem
                     key={listing.id}
-                    photo={listing}
+                    listing={listing}
                 />
             )
         });

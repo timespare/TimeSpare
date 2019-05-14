@@ -1,18 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ListingIndexItem = props => {
-
+const ListingIndexItem = ({listing}) => {
+    // debugger
     return (
-        <div className="listings-index-div">
-            <Link to={`/listings/${props.listing.id}`}><div className="the-box"></div></Link>
-            <div className="listing-index-detail">
-                <Link to={`/listings/${props.listing.id}`}><h1 className="listing-index-description">{props.listing.description}</h1></Link>
-                {/* <Link to={`/listings/${props.listing.id}`}><h3 className="listing-index-username">By {props.listing.user}</h3></Link> */}
+        <div className="the-box">
+            {/* no frontend route yet to listing show */}
+            <div>
+                <Link className="listing-show" to="">{listing.title}</Link>
             </div>
-            {/* <Link to={`/listings/${props.listing.id}`}><img className="listing-image" src={props.listing.creatorImgUrl} alt="" /></Link> */}
+            <div>
+                <span>{listing.description}</span>
+            </div>
+            <div>
+                <span>{listing.begin}</span>
+                <span>{listing.end}</span>
+            </div>
         </div>
-    );
+    )
+  
 }
 
 export default ListingIndexItem;
