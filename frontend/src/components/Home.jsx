@@ -8,12 +8,17 @@ import CreateListingContainer from "./ListingForm/CreateListingContainer";
 import EditListingContainer from "./ListingForm/EditListingContainer";
 import { connect } from "react-redux";
 import { logout } from "../actions/user_actions";
-const mapStateToProps = state => ({
-  currentUser: state.session.user
-});
+
+const mapStateToProps = state => {
+  debugger
+  return {
+    currentUser: state.session.user
+  }  
+}
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout())
 });
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +42,7 @@ class Home extends React.Component {
       this.setState({ formType: formType });
     };
     const currentUser = this.props.currentUser;
+    
     return (
       <>
         <NavBar>
@@ -60,18 +66,6 @@ class Home extends React.Component {
           {currentUser && (
             <NavBarButton label="Log Out" onClick={this.props.logout} />
           )}
-          {/* <NavBarButton
-            label="Create Listing"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Create Listing" })
-            }
-          />
-          <NavBarButton
-            label="Edit Listing"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Edit Listing" })
-            }
-          /> */}
         </NavBar>
         <Modal
           open={this.state.modalisOpen}
