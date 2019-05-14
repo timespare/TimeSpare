@@ -8,7 +8,6 @@ import CreateListingContainer from "./ListingForm/CreateListingContainer";
 import EditListingContainer from "./ListingForm/EditListingContainer";
 import ListingIndexContainer from "./listings/listing_index_container";
 
-
 import { connect } from "react-redux";
 import { logout } from "../actions/user_actions";
 const mapStateToProps = state => ({
@@ -91,7 +90,6 @@ class Home extends React.Component {
             />
           )}
         </Modal>
-
       </>
     );
   }
