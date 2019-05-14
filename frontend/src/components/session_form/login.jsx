@@ -2,6 +2,8 @@ import React from "react";
 import NavBarButton from "../NavBarButton";
 import { withRouter } from "react-router";
 import SubmitButton from "../SubmitButton";
+import Input from "../Input";
+import "./form.css";
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -18,15 +20,13 @@ class Login extends React.Component {
   }
 
   handleInput(type) {
-    return e => {
-      this.setState({ [type]: e.currentTarget.value });
-    };
+    return e => this.setState({ [type]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => this.props.history.push("/"));
+    this.props.processForm(user);
   }
 
   renderErrors() {
@@ -48,39 +48,32 @@ class Login extends React.Component {
   handleDemo(e) {
     e.preventDefault();
     this.props.processForm({ username: "demo", password: "password" });
+    // .then(() => {
+    //   this.props.history.push("/profile");
+    // });
   }
 
   render() {
-    const LoginInputStyle = {
-      width: "470px",
-      height: "60px",
-      borderRadius: "5px",
-      margin: "20px auto 0 auto",
-      display: "flex",
-      fontSize: "16px"
-    };
     const SwitchStyle = {
       display: "flex",
       justifyContent: "center"
     };
     return (
       <div>
-        <form>
+        <form className="form">
           {this.renderErrors()}
-          <input
+          <Input
             type="text"
             value={this.state.username}
             onChange={this.handleInput("username")}
             placeholder="Username"
-            style={LoginInputStyle}
           />
 
-          <input
+          <Input
             type="password"
             value={this.state.password}
             onChange={this.handleInput("password")}
             placeholder="Password"
-            style={LoginInputStyle}
           />
 
           <SubmitButton onClick={this.handleSubmit} label="Sign In" />

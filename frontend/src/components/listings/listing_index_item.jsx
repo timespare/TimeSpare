@@ -13,7 +13,11 @@ const styles = {
     card: {
         minWidth: 300,
         maxWidth: 600,
+<<<<<<< HEAD
         maxHeight: 250,
+=======
+        maxHeight: 300,
+>>>>>>> master
         display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',

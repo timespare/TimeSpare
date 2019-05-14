@@ -5,7 +5,7 @@ import {
 
 const initialState = {
   isAuthenticated: false,
-  user: {}
+  user: undefined
 };
 
 const userReducer = (state = initialState, action) => {

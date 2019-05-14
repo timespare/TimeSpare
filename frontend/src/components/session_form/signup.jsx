@@ -2,6 +2,8 @@ import React from "react";
 import NavBarButton from "../NavBarButton";
 import { withRouter } from "react-router";
 import SubmitButton from "../SubmitButton";
+import Input from "../Input";
+import "./form.css";
 class Signup extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +29,9 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.createNewUser(user).then(() => this.props.history.push("/"));
+    this.props
+      .createNewUser(user)
+      .then(() => this.props.history.push("/profile"));
   }
 
   renderErrors() {
@@ -47,14 +51,6 @@ class Signup extends React.Component {
   }
 
   render() {
-    const LoginInputStyle = {
-      width: "470px",
-      height: "60px",
-      borderRadius: "5px",
-      margin: "20px auto 0 auto",
-      display: "flex",
-      fontSize: "16px"
-    };
     const SwitchStyle = {
       // padding: "0  0 auto",
       display: "flex",
@@ -62,29 +58,25 @@ class Signup extends React.Component {
     };
     return (
       <div>
-        <form>
-          <div />
+        <form className="form">
           {this.renderErrors()}
-          <input
+          <Input
             type="text"
             value={this.state.username}
             onChange={this.handleInput("username")}
             placeholder="Username"
-            style={LoginInputStyle}
           />
-          <input
+          <Input
             type="password"
             value={this.state.password}
             onChange={this.handleInput("password")}
             placeholder="Password"
-            style={LoginInputStyle}
           />
-          <input
+          <Input
             type="password"
             value={this.state.password2}
             onChange={this.handleInput("password2")}
             placeholder="Re-Enter Your Password"
-            style={LoginInputStyle}
           />
           <SubmitButton onClick={this.handleSubmit} label="Sign Up" />
           <div style={SwitchStyle}>

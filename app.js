@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
-const db = require('./config/keys').mongoURI;
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const passport = require('passport');
+const db = require("./config/keys").mongoURI;
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const passport = require("passport");
 
 const users = require("./routes/api/users");
 const listings = require("./routes/api/listings");
+const bookings = require("./routes/api/bookings");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -16,13 +17,14 @@ mongoose
 app.get("/", (req, res) => res.send("I know!"));
 
 app.use(passport.initialize());
-require('./config/passport')(passport);
+require("./config/passport")(passport);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
 app.use("/api/listings", listings);
+app.use("/api/bookings", bookings);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
