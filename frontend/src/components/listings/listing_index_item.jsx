@@ -30,10 +30,45 @@ const styles = {
         transform: 'scale(0.8)',
     },
     title: {
-        fontSize: 20,
+        width: '944px',
+        height: '70px',
+        fontFamily: 'Poppins',
+        fontSize: '27px',
+        fontWeight: '600',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: 'normal',
+        color: '#484848'
     },
     pos: {
         marginBottom: 12,
+    },
+    show: {
+        width: '128px',
+        height: '28px',
+        fontFamily: 'Poppins',
+        fontSize: '20px',
+        fontWeight: '600',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: 'normal',
+        color: '#484848'
+    },
+    subtitle: {
+        width: '150px',
+        height: '57px',
+        fontFamily: 'Poppins',
+        fontSize: '18px',
+        fontWeight: 'normal',
+        fontStyle: 'normal',
+        fontStretch: 'normal',
+        lineHeight: 'normal',
+        letterSpacing: 'normal',
+        color: '#484848',
+        position: 'relative',
+        left: '5px'
     }
 };
 
@@ -55,18 +90,16 @@ function ListingIndexItem(props) {
         // </div>
         <Card className={classes.card}>
             <CardContent>
-                <Link className="listing-show" to="">{listing.title}</Link>
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
                     {listing.description}
                 </Typography>
-                <Grid item>
-                    <Typography variant="subtitle1">${listing.price}</Typography>
-                </Grid>
+                <Link className="listing-show" to="">{listing.title}</Link>
+                <Typography className={classes.subtitle}>${listing.price}</Typography>
                 <Typography >
-                    {listing.begin}
+                    Start: {listing.begin}
                 </Typography>
                 <Typography >
-                    {listing.end}
+                    End: {listing.end}
                 </Typography>
             </CardContent>
             <CardContent>
