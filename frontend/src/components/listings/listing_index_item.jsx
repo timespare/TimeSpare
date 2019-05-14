@@ -17,7 +17,11 @@ class ListingIndexItem extends React.Component {
   }
 
   renderButton(listing, isHome) {
-   
+    if (isHome) {
+      return <h1>jin</h1>
+    } else {
+      return <h1>dope</h1>
+    }
   }
 
   render() {
