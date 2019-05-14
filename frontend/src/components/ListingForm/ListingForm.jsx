@@ -29,7 +29,7 @@ class ListingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
+
     const listing = Object.assign({}, this.state);
     this.props.action(listing);
     // .then(() => this.props.history.push("/"));
@@ -92,8 +92,7 @@ class ListingForm extends React.Component {
           <Field label="End Time">
             <DateTime
               value={this.state.end}
-              onChange={moment => 
-                this.setState({ end: moment.format("LLLL") })}
+              onChange={moment => this.setState({ end: moment.format("LLLL") })}
             />
           </Field>
 
