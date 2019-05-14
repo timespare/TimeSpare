@@ -38,14 +38,21 @@ class UserProfile extends React.Component {
             onClick={() =>
               this.setState({ modalisOpen: true, formType: "Create Listing" })
             }
+            noBackground={true}
           />
           <NavBarButton
             label="Edit Listing"
             onClick={() =>
               this.setState({ modalisOpen: true, formType: "Edit Listing" })
             }
+            noBackground={true}
           />
-          <NavBarButton label="Log Out" onClick={this.props.logout} link="/" />
+          <NavBarButton
+            label="Log Out"
+            onClick={this.props.logout}
+            link="/"
+            noBackground={true}
+          />
         </NavBar>
 
         <Modal
