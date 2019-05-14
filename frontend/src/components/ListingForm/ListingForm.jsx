@@ -26,7 +26,7 @@ class ListingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const listing = Object.assign({}, this.state);
-    this.props.action(listing).then(() => this.state.history.push("/"));
+    this.props.action(listing).then(() => this.props.history.push("/"));
   }
 
   renderErrors() {
@@ -70,7 +70,7 @@ class ListingForm extends React.Component {
             placeholder="Price"
             value
           />
-          {this.renderErrors}
+          {this.renderErrors()}
           <SubmitButton
             onClick={this.handleSubmit}
             label={this.props.formType}

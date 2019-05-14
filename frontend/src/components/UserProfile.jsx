@@ -45,7 +45,7 @@ class UserProfile extends React.Component {
               this.setState({ modalisOpen: true, formType: "Edit Listing" })
             }
           />
-          <NavBarButton label="Log Out" onClick={this.props.logout} />
+          <NavBarButton label="Log Out" onClick={this.props.logout} link="/" />
         </NavBar>
 
         <Modal
