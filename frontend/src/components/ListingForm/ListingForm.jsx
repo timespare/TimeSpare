@@ -51,6 +51,7 @@ class ListingForm extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <form className="form">
@@ -62,7 +63,7 @@ class ListingForm extends React.Component {
               label="Title"
             />
           </Field>
-          
+
           <Field label="Description">
             <textarea
               value={this.state.description}
@@ -78,11 +79,19 @@ class ListingForm extends React.Component {
           </Field>
 
           <Field label="Start Time">
-            <DateTime value={this.state.start} />
+            <DateTime
+              value={this.state.start}
+              onChange={moment =>
+                this.setState({ start: moment.format("LLLL") })
+              }
+            />
           </Field>
 
           <Field label="End Time">
-            <DateTime value={this.state.end} />
+            <DateTime
+              value={this.state.end}
+              onChange={moment => this.setState({ end: moment.format("x") })}
+            />
           </Field>
 
           {this.renderErrors()}

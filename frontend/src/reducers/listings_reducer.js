@@ -13,7 +13,6 @@ const listingsReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER_LISTINGS:
       return Object.assign({}, action.listings);
     case RECEIVE_A_LISTING:
-      debugger
       let l = action.listing;
       return Object.assign({}, state, { [l._id]: l });
     case REMOVE_A_LISTING:
