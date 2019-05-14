@@ -11,8 +11,9 @@ import Grid from '@material-ui/core/Grid';
 
 const styles = {
     card: {
-        minWidth: 275,
+        minWidth: 300,
         maxWidth: 600,
+        maxHeight: 250,
         display: 'block',
         marginLeft: 'auto',
         marginRight: 'auto',
