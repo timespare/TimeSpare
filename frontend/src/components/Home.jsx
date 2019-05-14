@@ -6,6 +6,8 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import LoginFormContainer from "./session_form/login_form_container";
 import CreateListingContainer from "./ListingForm/CreateListingContainer";
 import EditListingContainer from "./ListingForm/EditListingContainer";
+import ListingIndexContainer from "./listings/listing_index_container";
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -69,6 +71,7 @@ class Home extends React.Component {
             {this.state.formType === "Edit Listing" && <EditListingContainer />}
           </Modal>
         </NavBar>
+        <ListingIndexContainer />
       </>
     );
   }
