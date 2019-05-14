@@ -6,6 +6,14 @@ import SignupFormContainer from "./session_form/signup_form_container";
 import LoginFormContainer from "./session_form/login_form_container";
 import CreateListingContainer from "./ListingForm/CreateListingContainer";
 import EditListingContainer from "./ListingForm/EditListingContainer";
+import { logout } from "../actions/user_actions";
+import { connect } from "react-redux";
+const mapStateToProps = state => ({
+  currentUser: state.session.user
+});
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout())
+});
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -26,31 +34,26 @@ class Home extends React.Component {
     return (
       <>
         <NavBar>
-          <NavBarButton
-            label="Sign In"
-            noBackground="true"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Sign In" })
-            }
-          />
-          <NavBarButton
-            label="Sign Up"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Sign Up" })
-            }
-          />
-          <NavBarButton
-            label="Create Listing"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Create Listing" })
-            }
-          />
-          <NavBarButton
-            label="Edit Listing"
-            onClick={() =>
-              this.setState({ modalisOpen: true, formType: "Edit Listing" })
-            }
-          />
+          {!!this.props.currentUser || (
+            <NavBarButton
+              label="Sign In"
+              noBackground="true"
+              onClick={() =>
+                this.setState({ modalisOpen: true, formType: "Sign In" })
+              }
+            />
+          )}
+          {!!this.props.currentUser || (
+            <NavBarButton
+              label="Sign Up"
+              onClick={() =>
+                this.setState({ modalisOpen: true, formType: "Sign Up" })
+              }
+            />
+          )}
+          {this.props.currentUser && (
+            <NavBarButton label="Sign Out" onClick={this.props.logout} />
+          )}
 
           <Modal
             open={this.state.modalisOpen}
@@ -58,7 +61,10 @@ class Home extends React.Component {
             onClose={onClose}
           >
             {this.state.formType === "Sign In" && (
-              <LoginFormContainer onSwitchButtonClick={onSwitch} />
+              <LoginFormContainer
+                onSwitchButtonClick={onSwitch}
+                onClose={onClose}
+              />
             )}
             {this.state.formType === "Sign Up" && (
               <SignupFormContainer onSwitchButtonClick={onSwitch} />
@@ -74,4 +80,7 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
