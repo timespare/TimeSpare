@@ -4,23 +4,40 @@ import ListingIndexItem from './listing_index_item';
 class ListingIndex extends React.Component {
 
     componentDidMount() {
-        this.props.getAllListings();
-        // this.props.fetchUsers();
+        if (this.props.isHome) {
+            this.props.getAllListings();
+        } else {
+            this.props.getCurrentUserListings();
+        }
+    }
+    
+    renderButton(isHome, listing) {
+        debugger
+        if (!isHome) {
+            return (
+                <>
+                    <button onClick={(listing) => this.props.editListing(listing)}>Edit</button>
+                    <button onClick={(listing) => this.props.deleteListing(listing._id)}>Delete</button>
+                </>
+            )
+        }
     }
 
     render() {
         let listings = this.props.listings.map(listing => {
             return (
-                <ListingIndexItem
-                    key={listing.id}
-                    listing={listing}
-                />
+                <div>
+                    <ListingIndexItem
+                        key={listing._id}
+                        listing={listing}
+                    />
+                    {this.renderButton(this.props.isHome, listing)}
+                </div>
             )
         });
         return (
             <div className="listing-index-container">
                 {listings}
-                {/* <br></br> */}
             </div>
         );
     }

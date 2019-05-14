@@ -6,6 +6,8 @@ import Modal from "./Modal";
 import CreateListingContainer from "./ListingForm/CreateListingContainer";
 import EditListingContainer from "./ListingForm/EditListingContainer";
 import { connect } from "react-redux";
+import ListingIndexContainer from "./listings/listing_index_container";
+
 const mapStateToProps = state => ({
   currentUser: state.session.user
 });
@@ -58,6 +60,8 @@ class UserProfile extends React.Component {
           )}
           {this.state.formType === "Edit Listing" && <EditListingContainer />}
         </Modal>
+
+        <ListingIndexContainer isHome={false}/>
       </>
     );
   }

@@ -69,7 +69,8 @@ class Home extends React.Component {
             />
           )}
         </NavBar>
-        <ListingIndexContainer />
+
+        <ListingIndexContainer isHome={true}/>
 
         <Modal
           open={this.state.modalisOpen}
