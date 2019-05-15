@@ -37,6 +37,10 @@ class ListingIndexItem extends React.Component {
                         this.setState({ modalisOpen: true, formType: "Edit Listing" })
                     }
                 />
+                <NavBarButton 
+                    label="Delete" 
+                    onClick={() => this.props.deleteListing(listing._id)} 
+                />
 
                 <Modal
                     open={this.state.modalisOpen}
@@ -56,6 +60,7 @@ class ListingIndexItem extends React.Component {
 
   render() {
     const { listing, isHome } = this.props;
+
     return (
       <div className="listing-item-outer-container">
         {/* <div className="listing-item-inner-container"> */}
@@ -84,6 +89,7 @@ class ListingIndexItem extends React.Component {
           <button class="btn book">Book Me!</button>
         </div>
         {/* {this.renderButton(listing, isHome)} */}
+        {this.renderButton(listing, isHome)}
       </div>)
   }
 }

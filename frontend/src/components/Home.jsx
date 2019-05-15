@@ -8,6 +8,7 @@ import ListingIndexContainer from "./listings/listing_index_container";
 import "./Home.css";
 import { connect } from "react-redux";
 import { logout } from "../actions/user_actions";
+
 const mapStateToProps = state => ({
   currentUser: state.session.user
 });
