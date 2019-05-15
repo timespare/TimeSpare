@@ -16,13 +16,13 @@ class ListingIndexItem extends React.Component {
     return { date: year + "/" + month + "/" + day, time: time };
   }
 
-  renderButton(listing, isHome) {
-    if (isHome) {
-      return <h1>jin</h1>
-    } else {
-      return <h1>dope</h1>
-    }
-  }
+  // renderButton(listing, isHome) {
+  //   if (isHome) {
+  //     return <h1>jin</h1>
+  //   } else {
+  //     return <h1>dope</h1>
+  //   }
+  // }
 
   render() {
     const { listing, isHome } = this.props;
@@ -40,7 +40,7 @@ class ListingIndexItem extends React.Component {
           </div>
           <div className="listing-item-middle-right">
             {/* <span>{listing.username}</span> */}
-            <span>Username</span>
+            <span>{listing.user.username}</span>
             <span><b>Start</b>: {this.formatDate(listing.begin).date} @ {this.formatDate(listing.begin).time}</span>
             {/* <br></br> */}
             <span><b>End</b>: {this.formatDate(listing.end).date} @ {this.formatDate(listing.end).time}</span>
@@ -50,7 +50,7 @@ class ListingIndexItem extends React.Component {
         <div className="listing-item-lower-layer">
           <span>{listing.description}</span>
         </div>
-        {this.renderButton(listing, isHome)}
+        {/* {this.renderButton(listing, isHome)} */}
       </div>)
   }
 }
