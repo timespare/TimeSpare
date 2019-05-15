@@ -26,11 +26,13 @@ router.post(
   (req, res) => {
     const newBooking = new Booking({
       user: req.user.id,
-      listing: req.body.listingId
+      listing: req.body.listing
     });
     newBooking
       .save()
-      .then(booking => res.json(booking))
+      .then(booking => 
+        res.json(booking)
+      )
       .catch(err =>
         res.status(402).json({ createbookingerror: "cannot create booking" })
       );
