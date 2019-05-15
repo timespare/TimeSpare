@@ -4,7 +4,6 @@ import NavBar from "./NavBar";
 import { logout } from "../actions/user_actions";
 import Modal from "./Modal";
 import CreateListingContainer from "./ListingForm/CreateListingContainer";
-import EditListingContainer from "./ListingForm/EditListingContainer";
 import { connect } from "react-redux";
 import ListingIndexContainer from "./listings/listing_index_container";
 import "./Home.css";

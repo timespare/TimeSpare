@@ -7,11 +7,13 @@ class ListingForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      description: "",
-      begin: "",
-      end: "",
-      price: ""
+      title: this.props.listing.title,
+      description: this.props.listing.description,
+      begin: this.props.listing.begin,
+      end: this.props.listing.end,
+      price: this.props.listing.price,
+      id: this.props.listing._id,
+      _id: this.props.listing._id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
