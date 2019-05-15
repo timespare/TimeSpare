@@ -1,6 +1,9 @@
 import React from 'react';
 import './listing_index_item.css';
 import { Link } from 'react-router-dom'
+import NavBarButton from '../NavBarButton';
+import Modal from '../Modal';
+import EditListingContainer from '../ListingForm/EditListingContainer';
 
 class ListingIndexItem extends React.Component {
   constructor(props) {
@@ -26,7 +29,6 @@ class ListingIndexItem extends React.Component {
 
   render() {
     const { listing, isHome } = this.props;
-
     return (
       <div className="listing-item-outer-container">
         {/* <div className="listing-item-inner-container"> */}
@@ -54,5 +56,5 @@ class ListingIndexItem extends React.Component {
       </div>)
   }
 }
-
+      
 export default ListingIndexItem;
