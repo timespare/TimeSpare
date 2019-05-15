@@ -86,7 +86,7 @@ class ListingIndexItem extends React.Component {
           <span>{listing.description}</span>
         </div>
         <div className="listing-item-button">
-          <button onClick={() => this.props.createBooking({ book: listing.id })} class="btn book">Book Me!</button>
+          <button onClick={(booking) => this.props.createBooking({ book: listing.id })} class="btn book">Book Me!</button>
         </div>
         {/* {this.renderButton(listing, isHome)} */}
         {this.renderButton(listing, isHome)}
