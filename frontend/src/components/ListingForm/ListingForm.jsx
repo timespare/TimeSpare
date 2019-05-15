@@ -3,6 +3,7 @@ import SubmitButton from "../SubmitButton";
 import DateTime from "../DateTime";
 import "../session_form/form.css";
 import Field from "../Field";
+
 class ListingForm extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +34,15 @@ class ListingForm extends React.Component {
     e.preventDefault();
 
     const listing = Object.assign({}, this.state);
-    this.props.action(listing);
+    this.props.action(listing).then(
+      listing => {
+        this.props.onClose();
+        this.props.receiveAListing(listing);
+      },
+      err => {
+        this.props.receiveListingErrors(err);
+      }
+    );
     // .then(() => this.props.history.push("/"));
   }
 
@@ -55,7 +64,6 @@ class ListingForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <form className="form">

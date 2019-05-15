@@ -1,18 +1,18 @@
-import React from 'react';
-import './listing_index_item.css';
-import { Link } from 'react-router-dom'
-import NavBarButton from '../NavBarButton';
-import Modal from '../Modal';
-import EditListingContainer from '../ListingForm/EditListingContainer';
+import React from "react";
+import "./listing_index_item.css";
+import { Link } from "react-router-dom";
+import NavBarButton from "../NavBarButton";
+import Modal from "../Modal";
+import EditListingContainer from "../ListingForm/EditListingContainer";
 
 class ListingIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        modalisOpen: false,
-        formType: ""
-    }
-  } 
+      modalisOpen: false,
+      formType: ""
+    };
+  }
 
   formatDate(input) {
     let year = input.substring(0, 4);
@@ -22,39 +22,37 @@ class ListingIndexItem extends React.Component {
 
     return { date: year + "/" + month + "/" + day, time: time };
   }
-  
+
   renderButton(listing, isHome) {
     if (!isHome) {
-        const onClose = () => {
-            this.setState({ modalisOpen: false, formType: "" });
-        };
+      const onClose = () => {
+        this.setState({ modalisOpen: false, formType: "" });
+      };
 
-        return (
-            <>
-                <NavBarButton
-                    label="Edit Listing"
-                    onClick={() => 
-                        this.setState({ modalisOpen: true, formType: "Edit Listing" })
-                    }
-                />
-                <NavBarButton 
-                    label="Delete" 
-                    onClick={() => this.props.deleteListing(listing._id)} 
-                />
+      return (
+        <>
+          <NavBarButton
+            label="Edit Listing"
+            onClick={() =>
+              this.setState({ modalisOpen: true, formType: "Edit Listing" })
+            }
+          />
+          <NavBarButton
+            label="Delete"
+            onClick={() => this.props.deleteListing(listing._id)}
+          />
 
-                <Modal
-                    open={this.state.modalisOpen}
-                    formType={this.state.formType}
-                    onClose={onClose}
-                >
-                    {this.state.formType === "Edit Listing" && (
-                        <EditListingContainer listing={listing}
-                            onClose={onClose}
-                        />
-                    )}
-                </Modal>
-            </>
-        )
+          <Modal
+            open={this.state.modalisOpen}
+            formType={this.state.formType}
+            onClose={onClose}
+          >
+            {this.state.formType === "Edit Listing" && (
+              <EditListingContainer listing={listing} onClose={onClose} />
+            )}
+          </Modal>
+        </>
+      );
     }
   }
 
@@ -75,18 +73,27 @@ class ListingIndexItem extends React.Component {
           <div className="listing-item-middle-right">
             {/* <span>{listing.username}</span> */}
             <span>{listing.user.username}</span>
-            <span><b>Start</b>: {this.formatDate(listing.begin).date} @ {this.formatDate(listing.begin).time}</span>
+            <span>
+              <b>Start</b>: {this.formatDate(listing.begin).date} @{" "}
+              {this.formatDate(listing.begin).time}
+            </span>
             {/* <br></br> */}
-            <span><b>End</b>: {this.formatDate(listing.end).date} @ {this.formatDate(listing.end).time}</span>
-            <span><b>Price</b>: ${listing.price}</span>
+            <span>
+              <b>End</b>: {this.formatDate(listing.end).date} @{" "}
+              {this.formatDate(listing.end).time}
+            </span>
+            <span>
+              <b>Price</b>: ${listing.price}
+            </span>
           </div>
         </div>
         <div className="listing-item-lower-layer">
           <span>{listing.description}</span>
         </div>
         {this.renderButton(listing, isHome)}
-      </div>)
+      </div>
+    );
   }
 }
-      
+
 export default ListingIndexItem;

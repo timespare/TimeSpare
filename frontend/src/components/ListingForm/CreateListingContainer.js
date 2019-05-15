@@ -1,9 +1,11 @@
 import ListingForm from "./ListingForm";
 import {
-  createListing,
-  removeListingErrors
+  removeListingErrors,
+  receiveAListing,
+  receiveListingErrors
 } from "../../actions/listing_actions";
 import { connect } from "react-redux";
+import { addListing } from "../../util/listing_api_util";
 // import {}
 
 const mapStateToProps = state => {
@@ -13,18 +15,20 @@ const mapStateToProps = state => {
     begin: "",
     end: "",
     price: ""
-  }
+  };
   return {
     listing: listing,
     errors: state.errors.listings,
     formType: "Create Listing"
-  }
-}
-
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
-  action: listing => dispatch(createListing(listing)),
-  removeErrors: () => dispatch(removeListingErrors())
+  action: listing => addListing(listing),
+  removeErrors: () => dispatch(removeListingErrors()),
+  receiveAListing: listing => dispatch(receiveAListing(listing.data)),
+  receiveListingErrors: errors =>
+    dispatch(receiveListingErrors(errors.response.data))
 });
 
 export default connect(
