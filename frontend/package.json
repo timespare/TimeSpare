@@ -19,10 +19,15 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postinstall": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
+  },
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
   },
   "eslintConfig": {
     "extends": "react-app"
