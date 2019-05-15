@@ -19,6 +19,7 @@ class ListingIndex extends React.Component {
           listing={listing} 
           isHome={this.props.isHome} 
           deleteListing={this.props.deleteListing}
+          createBooking={this.props.createBooking}
           />
         </div>
       );

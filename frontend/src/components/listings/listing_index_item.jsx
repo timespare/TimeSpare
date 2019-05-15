@@ -57,7 +57,7 @@ class ListingIndexItem extends React.Component {
   }
 
   render() {
-    const { listing, isHome } = this.props;
+    const { listing, isHome, booking } = this.props;
 
     return (
       <div className="listing-item-outer-container">
@@ -67,8 +67,9 @@ class ListingIndexItem extends React.Component {
         </div>
         <div className="listing-item-middle-layer">
           <div className="listing-item-middle-left">
-            <Link to="">{listing.creatorImgUrl}</Link>
+            {/* <Link to="">{listing.creatorImgUrl}</Link> */}
             {/* Profile Picture */}
+            {/* <p className="emoji">🤓</p> */}
           </div>
           <div className="listing-item-middle-right">
             {/* <span>{listing.username}</span> */}
@@ -90,6 +91,10 @@ class ListingIndexItem extends React.Component {
         <div className="listing-item-lower-layer">
           <span>{listing.description}</span>
         </div>
+        <div className="listing-item-button">
+          <button onClick={(booking) => this.props.createBooking({ book: listing.id })} class="btn book">Book Me!</button>
+        </div>
+        {/* {this.renderButton(listing, isHome)} */}
         {this.renderButton(listing, isHome)}
       </div>
     );
