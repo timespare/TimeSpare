@@ -22,7 +22,7 @@ class ListingIndexItem extends React.Component {
 
     return { date: year + "/" + month + "/" + day, time: time };
   }
-
+  
   renderButton(listing, isHome) {
     if (!isHome) {
         const onClose = () => {
@@ -79,7 +79,7 @@ class ListingIndexItem extends React.Component {
         <div className="listing-item-lower-layer">
           <span>{listing.description}</span>
         </div>
-        {this.renderButton(listing, isHome)}
+        {/* {this.renderButton(listing, isHome)} */}
       </div>)
   }
 }
