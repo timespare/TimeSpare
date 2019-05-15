@@ -56,7 +56,7 @@ class UserProfile extends React.Component {
           onClose={onClose}
         >
           {this.state.formType === "Create Listing" && (
-            <CreateListingContainer />
+            <CreateListingContainer onClose={onClose} />
           )}
         </Modal>
 
