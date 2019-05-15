@@ -7,11 +7,14 @@ import CreateListingContainer from "./ListingForm/CreateListingContainer";
 import { connect } from "react-redux";
 import ListingIndexContainer from "./listings/listing_index_container";
 import "./Home.css";
+import BookingIndex from "./bookings/bookingIndex";
+import { getCurrentUserBookings } from "../actions/booking_actions";
 const mapStateToProps = state => ({
   currentUser: state.session.user
 });
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  getCurrentUserBookings: () => dispatch(getCurrentUserBookings())
 });
 
 class UserProfile extends React.Component {
@@ -21,6 +24,9 @@ class UserProfile extends React.Component {
       modalisOpen: false,
       formType: ""
     };
+  }
+  componentDidMount() {
+    this.props.getCurrentUserBookings();
   }
   componentDidUpdate(prevProp) {
     if (this.props.currentUser && !prevProp.currentUser) {
@@ -64,6 +70,8 @@ class UserProfile extends React.Component {
           <div className="home-page-left" />
           <div className="home-page-middle">
             <ListingIndexContainer isHome={false} />
+            <h3>My Bookings</h3>
+            <BookingIndex />
           </div>
           <div className="home-page-right" />
         </div>

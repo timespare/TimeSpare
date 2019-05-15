@@ -28,7 +28,6 @@ class ListingIndexItem extends React.Component {
       const onClose = () => {
         this.setState({ modalisOpen: false, formType: "" });
       };
-
       return (
         <>
           <NavBarButton
@@ -41,7 +40,6 @@ class ListingIndexItem extends React.Component {
             label="Delete"
             onClick={() => this.props.deleteListing(listing._id)}
           />
-
           <Modal
             open={this.state.modalisOpen}
             formType={this.state.formType}
@@ -52,6 +50,15 @@ class ListingIndexItem extends React.Component {
             )}
           </Modal>
         </>
+      );
+    } else {
+      return (
+        <button
+          onClick={booking => this.props.createBooking({ book: listing.id })}
+          class="btn"
+        >
+          Book Me!
+        </button>
       );
     }
   }
@@ -91,11 +98,12 @@ class ListingIndexItem extends React.Component {
         <div className="listing-item-lower-layer">
           <span>{listing.description}</span>
         </div>
-        <div className="listing-item-button">
-          <button onClick={(booking) => this.props.createBooking({ book: listing.id })} class="btn book">Book Me!</button>
-        </div>
+
         {/* {this.renderButton(listing, isHome)} */}
-        {this.renderButton(listing, isHome)}
+
+        <div className="listing-item-button">
+          {this.renderButton(listing, isHome)}
+        </div>
       </div>
     );
   }
