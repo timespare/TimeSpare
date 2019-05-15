@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   const logoStyle = {
@@ -9,9 +10,10 @@ const Logo = () => {
     textalign: "center",
     color: "#ff5661",
     flexGrow: "1",
-    margin: "0"
+    margin: "0",
+    textDecoration: 'none'
   };
-  return <h1 style={logoStyle}>TimeSpare</h1>;
+  return <Link to="/" style={logoStyle}>TimeSpare</Link>;
 };
 
 export default Logo;
