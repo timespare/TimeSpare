@@ -23,7 +23,6 @@ router.get(
 router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
-
   (req, res) => {
     const newBooking = new Booking({
       user: req.user.id,
