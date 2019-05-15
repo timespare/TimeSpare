@@ -59,7 +59,7 @@ class ListingIndexItem extends React.Component {
   }
 
   render() {
-    const { listing, isHome } = this.props;
+    const { listing, isHome, booking } = this.props;
 
     return (
       <div className="listing-item-outer-container">
@@ -86,7 +86,7 @@ class ListingIndexItem extends React.Component {
           <span>{listing.description}</span>
         </div>
         <div className="listing-item-button">
-          <button class="btn book">Book Me!</button>
+          <button onClick={() => this.props.createBooking({ book: listing.id })} class="btn book">Book Me!</button>
         </div>
         {/* {this.renderButton(listing, isHome)} */}
         {this.renderButton(listing, isHome)}

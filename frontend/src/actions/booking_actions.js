@@ -30,6 +30,7 @@ const receiveBookings = bookings => {
     bookings: convertBookingArrayToObject(bookings)
   };
 };
+
 export const getBooking = id => dispatch =>
   BookingAPIUtil.fetchBooking(id).then(booking =>
     dispatch(receiveBooking(booking.data))

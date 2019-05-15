@@ -7,6 +7,7 @@ import {
   deleteListing
 } from "../../actions/listing_actions";
 // import { fetchUsers } from '../../actions/user_actions';
+import { createBooking } from "../../actions/booking_actions";
 
 const mapStateToProps = state => {
   let listings = Object.values(state.entities.listings);
@@ -21,7 +22,8 @@ const mapDispatchToProps = dispatch => {
   return {
     getAllListings: () => dispatch(getAllListings()),
     getCurrentUserListings: () => dispatch(getCurrentUserListings()),
-    deleteListing: id => dispatch(deleteListing(id))
+    deleteListing: id => dispatch(deleteListing(id)),
+    createBooking: (booking) => dispatch(createBooking(booking))
     // fetchUsers: () => dispatch(fetchUsers())
   };
 };
