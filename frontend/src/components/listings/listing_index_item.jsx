@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import NavBarButton from '../NavBarButton';
 import Modal from '../Modal';
 import EditListingContainer from '../ListingForm/EditListingContainer';
+import ListingModal from './listing_modal';
 
 class ListingIndexItem extends React.Component {
   constructor(props) {
@@ -80,6 +81,7 @@ class ListingIndexItem extends React.Component {
           <span>{listing.description}</span>
         </div>
         {/* {this.renderButton(listing, isHome)} */}
+        {/* <ListingModal listing={listing}/> */}
       </div>)
   }
 }
