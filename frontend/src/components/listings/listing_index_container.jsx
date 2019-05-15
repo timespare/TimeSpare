@@ -21,7 +21,6 @@ const mapDispatchToProps = dispatch => {
   return {
     getAllListings: () => dispatch(getAllListings()),
     getCurrentUserListings: () => dispatch(getCurrentUserListings()),
-    editListing: listing => dispatch(editListing(listing)),
     deleteListing: id => dispatch(deleteListing(id))
     // fetchUsers: () => dispatch(fetchUsers())
   };
