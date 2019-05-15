@@ -7,6 +7,8 @@ import CreateListingContainer from "./ListingForm/CreateListingContainer";
 import { connect } from "react-redux";
 import ListingIndexContainer from "./listings/listing_index_container";
 import "./Home.css";
+import EditProfileContainer from './edit_profile/edit_profile_container';
+
 const mapStateToProps = state => ({
   currentUser: state.session.user
 });
@@ -43,9 +45,9 @@ class UserProfile extends React.Component {
               noBackground={true}
             />
             <NavBarButton
-              label="Edit Listing"
+              label="Edit Profile"
               onClick={() =>
-                this.setState({ modalisOpen: true, formType: "Edit Listing" })
+                this.setState({ modalisOpen: true, formType:"Edit Profile" })
               }
               noBackground={true}
             />
@@ -64,6 +66,9 @@ class UserProfile extends React.Component {
         >
           {this.state.formType === "Create Listing" && (
             <CreateListingContainer />
+          )}
+          {this.state.formType === "Edit Profile" && (
+            <EditProfileContainer />
           )}
         </Modal>
 
