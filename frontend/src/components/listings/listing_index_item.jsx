@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import NavBarButton from '../NavBarButton';
 import Modal from '../Modal';
 import EditListingContainer from '../ListingForm/EditListingContainer';
-import ListingModal from './listing_modal';
 
 class ListingIndexItem extends React.Component {
   constructor(props) {
@@ -38,6 +37,10 @@ class ListingIndexItem extends React.Component {
                         this.setState({ modalisOpen: true, formType: "Edit Listing" })
                     }
                 />
+                <NavBarButton 
+                    label="Delete" 
+                    onClick={() => this.props.deleteListing(listing._id)} 
+                />
 
                 <Modal
                     open={this.state.modalisOpen}
@@ -57,6 +60,7 @@ class ListingIndexItem extends React.Component {
 
   render() {
     const { listing, isHome } = this.props;
+
     return (
       <div className="listing-item-outer-container">
         {/* <div className="listing-item-inner-container"> */}
@@ -80,8 +84,7 @@ class ListingIndexItem extends React.Component {
         <div className="listing-item-lower-layer">
           <span>{listing.description}</span>
         </div>
-        {/* {this.renderButton(listing, isHome)} */}
-        {/* <ListingModal listing={listing}/> */}
+        {this.renderButton(listing, isHome)}
       </div>)
   }
 }
