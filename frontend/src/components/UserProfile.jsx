@@ -43,13 +43,6 @@ class UserProfile extends React.Component {
               noBackground={true}
             />
             <NavBarButton
-              label="Edit Listing"
-              onClick={() =>
-                this.setState({ modalisOpen: true, formType: "Edit Listing" })
-              }
-              noBackground={true}
-            />
-            <NavBarButton
               label="Log Out"
               onClick={this.props.logout}
               link="/"
@@ -63,7 +56,7 @@ class UserProfile extends React.Component {
           onClose={onClose}
         >
           {this.state.formType === "Create Listing" && (
-            <CreateListingContainer />
+            <CreateListingContainer onClose={onClose} />
           )}
         </Modal>
 
