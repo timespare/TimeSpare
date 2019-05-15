@@ -31,7 +31,7 @@ const receiveCurrentUserListings = listings => {
   };
 };
 
-const receiveListingErrors = errors => {
+export const receiveListingErrors = errors => {
   return {
     type: RECEIVE_LISTING_ERRORS,
     errors
@@ -45,7 +45,7 @@ const removeAListing = listingId => {
   };
 };
 
-const receiveAListing = listing => {
+export const receiveAListing = listing => {
   // debugger
   return {
     type: RECEIVE_A_LISTING,
