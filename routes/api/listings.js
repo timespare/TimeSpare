@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
   Listing.find()
     .sort({ date: -1 })
     .limit(10)
-    // .populate('user')
+    .populate('user')
     .then(listings => res.json(listings))
     .catch(err =>
       res.status(404).json({ nolistingsfound: "No Listings found" })
