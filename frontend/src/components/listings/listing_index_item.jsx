@@ -64,8 +64,9 @@ class ListingIndexItem extends React.Component {
         </div>
         <div className="listing-item-middle-layer">
           <div className="listing-item-middle-left">
-            <Link to="">{listing.creatorImgUrl}</Link>
+            {/* <Link to="">{listing.creatorImgUrl}</Link> */}
             {/* Profile Picture */}
+            {/* <p className="emoji">🤓</p> */}
           </div>
           <div className="listing-item-middle-right">
             {/* <span>{listing.username}</span> */}
@@ -78,6 +79,9 @@ class ListingIndexItem extends React.Component {
         </div>
         <div className="listing-item-lower-layer">
           <span>{listing.description}</span>
+        </div>
+        <div className="listing-item-button">
+          <button class="btn book">Book Me!</button>
         </div>
         {/* {this.renderButton(listing, isHome)} */}
       </div>)

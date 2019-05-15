@@ -42,7 +42,7 @@
   /* overflow: auto; */
   /* column-count: 2; */
   /* justify-content: space-between; */
-  position:relative;
+  position: relative;
  /* dis */
 }
 
@@ -60,7 +60,7 @@
 .listing-item-middle-left {
   /* font-size: 20px; */
   font-family: Poppins;
-  font-size: 16px;
+  /* font-size: 16px; */
   /* float: left; */
   margin-left:0;
   /* font-family: Poppins; */
@@ -68,9 +68,10 @@
   font-weight: 600;
   /* float: left; */
   width: 55px;
-  height:55px;
+  height: 55px;
   background-color: pink;
 }
+
 
 .listing-item-middle-right {
   padding-left: 20px;
@@ -78,7 +79,7 @@
   /* float: right; */
   /* margin-right:auto; */
   margin-right: 0px;
-   color: #484848;
+  color: #484848;
 }
 
 span {
@@ -86,10 +87,17 @@ span {
   
 }
 
-
-
-
-
+.btn {
+  border: 2px solid #ff5661;
+  background-color: white;
+  color: #ff5661;
+  padding: 5px 5px;
+  font-size: 12px;
+  cursor: pointer;
+  /* margin-right: 0px; */
+  /* position: absolute;  */
+  margin-left: 345px;
+}
 
 
 
