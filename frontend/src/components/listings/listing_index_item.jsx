@@ -8,6 +8,10 @@ import EditListingContainer from '../ListingForm/EditListingContainer';
 class ListingIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+        modalisOpen: false,
+        formType: ""
+    }
   } 
 
   formatDate(input) {
@@ -20,7 +24,34 @@ class ListingIndexItem extends React.Component {
   }
 
   renderButton(listing, isHome) {
-   
+    if (!isHome) {
+        const onClose = () => {
+            this.setState({ modalisOpen: false, formType: "" });
+        };
+
+        return (
+            <>
+                <NavBarButton
+                    label="Edit Listing"
+                    onClick={() => 
+                        this.setState({ modalisOpen: true, formType: "Edit Listing" })
+                    }
+                />
+
+                <Modal
+                    open={this.state.modalisOpen}
+                    formType={this.state.formType}
+                    onClose={onClose}
+                >
+                    {this.state.formType === "Edit Listing" && (
+                        <EditListingContainer listing={listing}
+                            onClose={onClose}
+                        />
+                    )}
+                </Modal>
+            </>
+        )
+    }
   }
 
   render() {
@@ -38,7 +69,7 @@ class ListingIndexItem extends React.Component {
           </div>
           <div className="listing-item-middle-right">
             {/* <span>{listing.username}</span> */}
-            <span>Username</span>
+            <span>{listing.user.username}</span>
             <span><b>Start</b>: {this.formatDate(listing.begin).date} @ {this.formatDate(listing.begin).time}</span>
             {/* <br></br> */}
             <span><b>End</b>: {this.formatDate(listing.end).date} @ {this.formatDate(listing.end).time}</span>
