@@ -46,7 +46,6 @@ const removeAListing = listingId => {
 };
 
 export const receiveAListing = listing => {
-  // debugger
   return {
     type: RECEIVE_A_LISTING,
     listing

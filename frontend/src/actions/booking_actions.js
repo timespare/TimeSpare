@@ -36,10 +36,11 @@ export const getBooking = id => dispatch =>
     dispatch(receiveBooking(booking.data))
   );
 
-export const createBooking = booking => dispatch =>
-  BookingAPIUtil.createBooking(booking).then(booking =>
+export const createBooking = booking => dispatch => {
+  return BookingAPIUtil.createBooking(booking).then(booking =>
     dispatch(receiveBooking(booking.data))
   );
+}
 
 export const getCurrentUserBookings = () => dispatch =>
   BookingAPIUtil.fetchCurrentUserBookings().then(bookings =>
