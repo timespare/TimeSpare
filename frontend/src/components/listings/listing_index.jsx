@@ -14,10 +14,7 @@ class ListingIndex extends React.Component {
     let listings = this.props.listings.map(listing => {
       return (
         <div className="listing-index-box">
-          <ListingIndexItem key={listing._id} listing={listing} isHome={this.props.isHome}/>
-          {/* <div className="index-button">
-            {this.renderButton(this.props.isHome, listing)}
-          </div> */}
+          <ListingIndexItem key={listing._id} listing={listing} isHome={this.props.isHome} />
         </div>
       );
     });
