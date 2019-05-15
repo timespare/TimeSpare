@@ -6,7 +6,6 @@
   "scripts": {
     "server:debug": "nodemon --inspect app.js",
     "server": "nodemon app.js",
-    "postinstall": "webpack",
     "start": "node app.js"
   },
   "repository": {
