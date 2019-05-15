@@ -53,19 +53,15 @@ class ListingIndexItem extends React.Component {
       );
     } else {
       return (
-        <button
-          onClick={booking => this.props.createBooking({ book: listing.id })}
-          class="btn"
-        >
-          Book Me!
-        </button>
-      );
+        <div className="listing-item-button">
+          <button onClick={() => this.props.createBooking({ listingId: listing._id })} className="btn book">Book Me!</button>
+        </div>
+      )
     }
   }
 
   render() {
-    const { listing, isHome, booking } = this.props;
-
+    const { listing, isHome } = this.props;
     return (
       <div className="listing-item-outer-container">
         {/* <div className="listing-item-inner-container"> */}
@@ -98,9 +94,6 @@ class ListingIndexItem extends React.Component {
         <div className="listing-item-lower-layer">
           <span>{listing.description}</span>
         </div>
-
-        {/* {this.renderButton(listing, isHome)} */}
-
         <div className="listing-item-button">
           {this.renderButton(listing, isHome)}
         </div>

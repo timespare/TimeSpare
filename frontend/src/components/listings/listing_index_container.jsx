@@ -3,7 +3,6 @@ import ListingIndex from "./listing_index";
 import {
   getAllListings,
   getCurrentUserListings,
-  editListing,
   deleteListing
 } from "../../actions/listing_actions";
 // import { fetchUsers } from '../../actions/user_actions';
