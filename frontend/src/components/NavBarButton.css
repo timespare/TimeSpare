@@ -18,6 +18,10 @@
   color: #ff5661;
 }
 
+.bar-container {
+  max-height: 50px;
+}
+
 .bar-container .nav-bar-button {
   margin-left: 15px;
 }

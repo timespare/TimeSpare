@@ -102,9 +102,11 @@ all on your free time.</h3>
                 
             </div>
 
-            <div className="description">
-                Description
-            </div>
+            {/* <div className="description">
+                    <div className="splash-box-2">
+
+                    </div>
+            </div> */}
 
             </div>
         );
