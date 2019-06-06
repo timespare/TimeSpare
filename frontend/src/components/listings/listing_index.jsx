@@ -11,11 +11,10 @@ class ListingIndex extends React.Component {
   }
 
   render() {
-    let listings = this.props.listings.map(listing => {
+    let listings = this.props.listings.map((listing, i) => {
       return (
-        <div className="listing-index-box">
+        <div className="listing-index-box" key={i}>
           <ListingIndexItem 
-          key={listing._id} 
           listing={listing} 
           isHome={this.props.isHome} 
           deleteListing={this.props.deleteListing}

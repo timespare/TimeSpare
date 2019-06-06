@@ -98,8 +98,8 @@ class ListingIndexItem extends React.Component {
         <div className="listing-item-tags">
           <ul className="tags">
             {
-              listing.tags.map(tag => {
-                return <li className="tag">{tag}</li>
+              listing.tags.map((tag, i) => {
+                return <li className="tag" key={i}>{tag}</li>
               })
             }
           </ul>
