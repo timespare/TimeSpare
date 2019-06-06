@@ -113,6 +113,25 @@ router.post("/login", (req, res) => {
   });
 });
 
+// rate a user
+router.patch("/:id/rate", (req, res) => {
+  User.findById(req.params.id)
+    .then(user => {
+      user.rating = Math.round(
+        (req.body.rating + user.rateBase * user.rating) / (user.rateBase + 1)
+      );
+      user.rateBase = user.rateBase + 1;
+      user.save().then(user => res.json(user));
+    })
+    .catch(err => res.status(400).json({ rateuUerError: "Cannot rate user" }));
+});
+
+// visit another user's profile
+router.get("/:id", (req, res) => {
+  User.findById(req.params.id)
+    .then(user => res.json(user))
+    .catch(err => res.status(404).json({ noUserError: "User not found" }));
+});
 
 // router.get('/', (req, res) => {
 //   User.find()
