@@ -1,4 +1,4 @@
-html, body, header, nav, h1, a,
+html, body, header, nav, h1,
 ul, li, strong, main, button, i,
 section, img, div, h2, p, form,
 fieldset, label, input, textarea,
@@ -19,11 +19,11 @@ ul {
   list-style: none;
 }
 
-img {
+/* img {
   display: block;
   /* // width: 100%; */
-  height: auto;
-}
+  /* height: auto; */
+/*  */
 
 /* input[type="password"],
 input[type="email"],
@@ -35,10 +35,10 @@ button {
   -moz-appearance: none;
 } */
 
-button,
+/* button,
 input[type="submit"] {
   cursor: pointer;
-}
+} */
 
 .splash {
   position: fixed;
@@ -49,7 +49,8 @@ input[type="submit"] {
   z-index: -1;
   background-size: cover;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
+  max-height: 630px;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -58,17 +59,27 @@ input[type="submit"] {
 }
 
 .splash-box {
+  background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.3), 
+                     rgba(20,20,20, .3)), url("work2.jpg");
+  background-size: contain;
+  /* height: auto; */
+  /* background-color: #fd5c63; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 640px;
-  height: 300px;
+  width: 100%;
+  height: 500px;
   position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* opacity: 0.5; */
 }
 
 .splash-box > h1 {
-  justify-self: center;
+  /* justify-self: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 48px;
   font-weight: 600;
@@ -76,34 +87,51 @@ input[type="submit"] {
   text-align: center;
   margin-top: 37.520px;
   margin-bottom: 5px;
-  /* // text-shadow: 2px 2px darkgrey; */
+  // text-shadow: 2px 2px darkgrey; */
+  color: white;
+  /* mix-blend-mode: difference; */
+  width: 678px;
+  height: 60px;
+  font-family: SourceSansPro;
+  font-size: 48px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  /* color: #ffffff; */
 }
 
 .splash-box > h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  color: black;
-  /* // color:grey */
-  width: 640px;
+  width: 520px;
+  height: 56px;
+  opacity: 0.9;
+  font-family: SourceSansPro;
+  font-size: 21px;
+  font-weight: 150;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
   text-align: center;
-  margin-top: 26px;
-  margin-bottom: 50px;
-  /* // text-shadow: 2px 2px darkgrey; */
+  color: white;
 }
 
 .explore {
-  background: white;
+  background: #ff5661;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 22px;
-  padding: 18.5px 55.5px;
+  font-size: 18px;
+  padding: 16px 55.5px;
   border-radius: 3px;
   text-align: center;
+  text-decoration: none;
+  color: white;
 }
 
 .explore:hover {
   transition: 0.2s;
-  background: white;
-  color: orange;
+  background:  #ff5661;
+  color: white;
 }
