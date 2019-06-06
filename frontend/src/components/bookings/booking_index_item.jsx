@@ -28,7 +28,7 @@ const BookingIndexItem = ({ listing }) => {
         </div>
         <div className="listing-item-middle-right">
           {/* <span>{listing.username}</span> */}
-          <span>{listing.user.username}</span>
+          {/* <span>{listing.user.username}</span> */}
           <span>
             <b>Start</b>: {formatDate(listing.begin).date} @{" "}
             {formatDate(listing.begin).time}
