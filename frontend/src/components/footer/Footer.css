@@ -1,9 +1,11 @@
 .footer {
   position: absolute;
+  /* margin-top: -1400px; */
   display: flex;
   justify-content: center;
   align-items: center;
   background: #00000033;
+  top: 955px;
   bottom: 0px;
   right: 0;
   left: 0;
