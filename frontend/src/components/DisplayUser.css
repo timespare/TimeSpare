@@ -1,0 +1,15 @@
+.du-contents {
+}
+.user-rating-form-container {
+  margin: auto;
+  width: 200px;
+  position: relative;
+  /* border: 1px solid grey; */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.user-rating-form {
+  display: inline;
+}
+
+/* TODO: fix stylings later */
