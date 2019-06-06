@@ -6,7 +6,8 @@
   "scripts": {
     "server:debug": "nodemon --inspect app.js",
     "server": "nodemon app.js",
-    "start": "node app.js"
+    "start": "node app.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "validator": "^10.11.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.0"
+    "nodemon": "^1.19.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }
