@@ -12,6 +12,12 @@
   font-family: Montserrat;
 }
 
+.nav-bar-button:hover {
+  transition: 0.2s;
+  background:  white;
+  color: #ff5661;
+}
+
 .bar-container .nav-bar-button {
   margin-left: 15px;
 }

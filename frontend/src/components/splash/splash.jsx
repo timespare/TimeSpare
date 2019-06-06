@@ -99,6 +99,11 @@ all on your free time.</h3>
                     <br />
                     <Link to="/home" className="explore">Explore Listings</Link>
                 </div>
+                
+            </div>
+
+            <div className="description">
+                Description
             </div>
 
             </div>
