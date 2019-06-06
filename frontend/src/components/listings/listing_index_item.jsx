@@ -54,7 +54,7 @@ class ListingIndexItem extends React.Component {
     } else {
       return (
         <div className="listing-item-button">
-          <button onClick={() => this.props.createBooking({ listingId: listing._id })} className="btn book">Book Me!</button>
+          <button onClick={() => this.props.createBooking({ listing: listing })} className="btn book">Book Me!</button>
         </div>
       )
     }
