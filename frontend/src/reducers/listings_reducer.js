@@ -2,7 +2,8 @@ import {
   RECEIVE_ALL_LISTINGS,
   RECEIVE_CURRENT_USER_LISTINGS,
   RECEIVE_A_LISTING,
-  REMOVE_A_LISTING
+  REMOVE_A_LISTING,
+  RECEIVE_SEARCHED_LISTINGS
 } from "../actions/listing_actions";
 
 const listingsReducer = (state = {}, action) => {
@@ -11,6 +12,8 @@ const listingsReducer = (state = {}, action) => {
     case RECEIVE_ALL_LISTINGS:
       return Object.assign({}, state, action.listings);
     case RECEIVE_CURRENT_USER_LISTINGS:
+      return Object.assign({}, action.listings);
+    case RECEIVE_SEARCHED_LISTINGS:
       return Object.assign({}, action.listings);
     case RECEIVE_A_LISTING:
       let l = action.listing;
