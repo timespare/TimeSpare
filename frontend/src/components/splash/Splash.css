@@ -185,8 +185,8 @@ input[type="submit"] {
   width: 90%;
   height: 100%;
   font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
   /* Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important; */
- 
 }
 
 .right {
@@ -196,7 +196,7 @@ input[type="submit"] {
 .splash-box-2 {
     background-image: url("work.jpg");
     background-size: contain;
-    display: flex;
+    /* display: block; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -208,7 +208,7 @@ input[type="submit"] {
     background-size: cover;
 }
 
-span
-{
+/* span {
     display: block;
-}
+    white-space: normal;
+} */
