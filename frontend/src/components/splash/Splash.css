@@ -165,7 +165,7 @@ input[type="submit"] {
 }
 
 .left-title {
-  padding: 20px;
+  padding: 10px;
   /* width: 382px;
   height: 240px; */
   font-family: 'Montserrat', sans-serif;
@@ -181,10 +181,11 @@ input[type="submit"] {
 }
 
 .left-description {
-    padding: 20px;
-
+  padding: 10px;
   width: 90%;
   height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  /* Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important; */
  
 }
 
