@@ -89,3 +89,10 @@ export const deleteListing = id => dispatch =>
     listing => dispatch(removeAListing(listing.data._id)),
     errors => dispatch(receiveListingErrors(errors.response.data))
   );
+
+export const getAnotherUserListings = userId => dispatch => {
+  return ListingAPIUtil.fetchAnotherUserListings(userId).then(
+    listings => dispatch(receiveAllListings(listings.data)),
+    error => dispatch(receiveListingErrors(error.response.data))
+  );
+};

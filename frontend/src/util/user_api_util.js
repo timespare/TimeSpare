@@ -19,3 +19,12 @@ export const setAuthToken = token => {
     delete axios.defaults.headers.common["Authorization"];
   }
 };
+
+// TODO: check the incoming data keys.
+export const rateUser = data => {
+  return axios.patch(`api/users/${data.id}/rate`, data);
+};
+
+export const fetchAnotherUser = id => {
+  return axios.get(`api/users/${id}`);
+};
