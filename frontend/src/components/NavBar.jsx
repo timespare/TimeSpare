@@ -10,7 +10,6 @@ const Bar = props => {
   return (
     <header className="bar-container" style={style}>
       <Logo />
-
       {props.children}
     </header>
   );
