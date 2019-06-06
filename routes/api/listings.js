@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
   Listing.find()
     .sort({ date: -1 })
     .limit(10)
-    .populate('user')
+    .populate("user")
     .then(listings => res.json(listings))
     .catch(err =>
       res.status(404).json({ nolistingsfound: "No Listings found" })
@@ -47,6 +47,16 @@ router.get("/:id", (req, res) => {
     .catch(err =>
       res.status(404).json({ nolistingfound: "No Listing found with that ID" })
     );
+});
+
+router.get("/search", (req, res) => {
+  Listing.find({ title: { $regex: /req.body.keyword/ } }).then(listings =>
+    res.json(listings).catch(error =>
+      res.status(404).json({
+        nolistingsfound: "No match listings are found with this keyword"
+      })
+    )
+  );
 });
 
 router.post(
