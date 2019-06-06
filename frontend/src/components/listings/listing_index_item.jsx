@@ -62,6 +62,7 @@ class ListingIndexItem extends React.Component {
 
   render() {
     const { listing, isHome } = this.props;
+    // debugger
     return (
       <div className="listing-item-outer-container">
         {/* <div className="listing-item-inner-container"> */}
@@ -93,6 +94,15 @@ class ListingIndexItem extends React.Component {
         </div>
         <div className="listing-item-lower-layer">
           <span>{listing.description}</span>
+        </div>
+        <div className="listing-item-tags">
+          <ul className="tags">
+            {
+              listing.tags.map(tag => {
+                return <li className="tag">{tag}</li>
+              })
+            }
+          </ul>
         </div>
         <div className="listing-item-button">
           {this.renderButton(listing, isHome)}
