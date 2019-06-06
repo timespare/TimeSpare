@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
 // listings for a specific user
 router.get("/user/:user_id", (req, res) => {
   Listing.find({ user: req.params.user_id })
+    .sort({ date: -1 })
     .then(listings => res.json(listings))
     .catch(err =>
       res.status(404).json({ nolistingsfound: "No Listings nor the User" })
@@ -32,6 +33,7 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Listing.find({ user: req.user._id })
+      .sort({ date: -1 })
       .then(listings => res.json(listings))
       .catch(err =>
         res.status(404).json({ nolistingsfound: "No Listings nor the User" })

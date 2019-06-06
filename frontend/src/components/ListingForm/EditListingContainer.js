@@ -1,8 +1,10 @@
 import ListingForm from "./ListingForm";
 import {
-  editListing,
-  removeListingErrors
+  removeListingErrors,
+  receiveAListing,
+  receiveListingErrors
 } from "../../actions/listing_actions";
+import { editListing } from "../../util/listing_api_util";
 import { connect } from "react-redux";
 // import {}
 
@@ -13,7 +15,10 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  action: listing => dispatch(editListing(listing)),
+  receiveAListing: listing => dispatch(receiveAListing(listing.data)),
+  receiveListingErrors: errors =>
+    dispatch(receiveListingErrors(errors.response.data)),
+  action: listing => editListing(listing),
   removeErrors: () => dispatch(removeListingErrors())
 });
 
