@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import NavBar from "../NavBar";
 import NavBarButton from "../NavBarButton";
 import Modal from "../Modal";
@@ -6,6 +7,7 @@ import SignupFormContainer from "../session_form/signup_form_container";
 import LoginFormContainer from "../session_form/login_form_container";
 import { connect } from "react-redux";
 import { logout } from "../../actions/user_actions";
+import "./Splash.css";
 
 const mapStateToProps = state => ({
     currentUser: state.session.user
@@ -82,6 +84,21 @@ class Splash extends React.Component {
                         />
                     )}
                 </Modal>
+            
+            <div className="splash">
+                <div className="slide1"></div>
+                <div className="slide2"></div>
+                <div className="slide3"></div>
+                <div className="slide4"></div>
+                <div className="splash-box">
+                    <h1 className="splash-tagline">Share your talents with the world.</h1>
+                    <br />
+                    <h3 className="splash-description">Join the TimeSpare community, home to millions of opportunities.</h3>
+                    <br />
+                    <Link to="/home" className="explore">Explore Listings</Link>
+                </div>
+            </div>
+
             </div>
         );
     }

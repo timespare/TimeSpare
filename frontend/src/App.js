@@ -7,9 +7,9 @@ import Splash from "./components/splash/Splash";
 function App() {
   return (
     <div className="App">
-      <Route exact path="/profile" component={UserProfile} />
-      {/* <Route exact path="/" component={Home} /> */}
       <Route exact path="/" component={Splash} />
+      <Route exact path="/profile" component={UserProfile} />
+      <Route exact path="/home" component={Home} />
       {/* <Route path="/current" component={} /> */}
     </div>
   );
