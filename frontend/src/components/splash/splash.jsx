@@ -108,9 +108,11 @@ all on your free time.</h3>
                         Introducing TimeSpare
                     </div>
                     <div className="left-description">
-                        Donate your time to locals who want to show others pockets of their community and snippets of their lives. Make new experiences and friends,
-    all while making money during your free time.
-                    </div>
+                            <span>Sometimes, you find yourself with some free-time. You’re tired of laying around in bed all Saturday, or waiting for your next customer as an Uber driver. </span>
+                            <span>TimeSpare fills those idle times with purposeful work by connecting you with locals around you who need your skills.
+            
+        We believe that good things happen when people help each other, whether across town or towards their dreams. Opportunities appear, open up, and become reality. </span>
+               </div>
                 </div>
 
                 <div className="right">
