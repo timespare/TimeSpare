@@ -104,7 +104,13 @@ all on your free time.</h3>
 
             <div className="description">
                 <div className="left">
-                    A sample of how it works
+                    <div className="left-title">
+                        Introducing TimeSpare
+                    </div>
+                    <div className="left-description">
+                        Donate your time to locals who want to show others pockets of their community and snippets of their lives. Make new experiences and friends,
+    all while making money during your free time.
+                    </div>
                 </div>
 
                 <div className="right">
