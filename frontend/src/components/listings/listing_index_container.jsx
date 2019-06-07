@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => {
     getAllListings: () => dispatch(getAllListings()),
     getCurrentUserListings: () => dispatch(getCurrentUserListings()),
     deleteListing: id => dispatch(deleteListing(id)),
-    createBooking: (booking) => dispatch(createBooking(booking))
+    createBooking: booking => dispatch(createBooking(booking))
     // fetchUsers: () => dispatch(fetchUsers())
   };
 };
