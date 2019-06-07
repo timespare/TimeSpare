@@ -43,7 +43,6 @@ class DisplayedUser extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     this.props.rateUser({
       id: this.props.displayedUser._id,
       rating: parseInt(this.state.rating)
@@ -70,6 +69,7 @@ class DisplayedUser extends React.Component {
         <NavBarButton
           label="need to be fixed login button"
           noBackground={false}
+          link="/"
         />
       </NavBar>
     );
