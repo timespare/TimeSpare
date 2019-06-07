@@ -101,9 +101,8 @@ export const deleteListing = id => dispatch =>
     errors => dispatch(receiveListingErrors(errors.response.data))
   );
 
-export const getAnotherUserListings = userId => dispatch => {
-  return ListingAPIUtil.fetchAnotherUserListings(userId).then(
+export const getAnotherUserListings = userId => dispatch =>
+  ListingAPIUtil.fetchAnotherUserListings(userId).then(
     listings => dispatch(receiveAllListings(listings.data)),
     error => dispatch(receiveListingErrors(error.response.data))
   );
-};

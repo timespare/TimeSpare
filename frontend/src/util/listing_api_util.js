@@ -31,5 +31,5 @@ export const deleteListing = id => {
 };
 
 export const fetchAnotherUserListings = id => {
-  return axios.get(`api/user/${id}`);
+  return axios.get(`/api/listings/user/${id}`);
 };
