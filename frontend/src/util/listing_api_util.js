@@ -12,6 +12,10 @@ export const fetchCurrentUserListings = () => {
   return axios.get("/api/listings/current");
 };
 
+export const fetchListingsSearchResult = () => {
+  return axios.get("/api/listings/search");
+};
+
 // create a new listing
 export const addListing = data => {
   return axios.post("/api/listings", data);
