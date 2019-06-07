@@ -19,13 +19,13 @@ const NavBarButton = props => {
     );
   } else {
     return (
-      <a
+      <Link
         href="javascript:void 0"
         className={"nav-bar-button " + additionalClass}
         onClick={onClick}
       >
         {label}
-      </a>
+      </Link>
     );
   }
 };

@@ -1,0 +1,46 @@
+.footer {
+  position: absolute;
+  /* margin-top: -1400px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00000033;
+  top: 960px;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+  color: white;
+  height: 50px;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  /* font: none;
+  color: none;
+  text-align: none;
+  text-decoration: none;
+  vertical-align: none;
+  box-sizing: none; */
+}
+
+.footer > a {
+  padding: 10px 40px 10px 40px;
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  i {
+    margin-right: 5px;
+    font-size: 14px;
+  }
+}
+
+.footer > a:hover {
+  transition: 0.2s;
+  background:  white;
+  color: #ff5661;
+  
+}
+

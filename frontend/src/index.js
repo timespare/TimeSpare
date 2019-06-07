@@ -9,7 +9,12 @@ import Root from "./root";
 import "./globalStyle.css";
 
 // TODO: REMOVE AFTER TESTING
-import { login, signup } from "./actions/user_actions";
+import {
+  login,
+  signup,
+  fetchAnotherUser,
+  rateUser
+} from "./actions/user_actions";
 import {
   getAllListings,
   getCurrentUserListings,
@@ -74,5 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getBooking = getBooking;
   window.getCurrentUserBookings = getCurrentUserBookings;
   window.deleteBooking = deleteBooking;
+  window.fetchAnotherUser = fetchAnotherUser;
+  window.rateUser = rateUser;
   ReactDOM.render(<Root store={store} />, root);
 });

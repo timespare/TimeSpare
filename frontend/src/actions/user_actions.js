@@ -1,10 +1,14 @@
 import * as UserAPIUtil from "../util/user_api_util";
 import jwt_decode from "jwt-decode";
+import { getUserListings } from "./listing_actions";
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const REMOVE_ERRORS = "REMOVE_ERRORS";
+export const RECEIVE_ANOTHER_USER = "RECEIVE_ANOTHER_USER";
+export const RECEIVE_NO_USER_ERRORS = "RECEIVE_NO_USER_ERRORS";
+export const RECEIVE_CANNOT_RATE_ERRORS = "RECEIVE_CANNOT_RATE_ERRORS";
 const receiveCurrentUser = user => {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -26,6 +30,26 @@ const receiveErrors = errors => {
 export const removeErrors = () => {
   return {
     type: REMOVE_ERRORS
+  };
+};
+
+export const receiveAnotherUser = user => {
+  return {
+    type: RECEIVE_ANOTHER_USER,
+    user
+  };
+};
+
+export const receiveNoUserError = errors => {
+  return {
+    type: RECEIVE_NO_USER_ERRORS,
+    errors
+  };
+};
+export const receiveCannotRateError = errors => {
+  return {
+    type: RECEIVE_CANNOT_RATE_ERRORS,
+    errors
   };
 };
 
@@ -71,4 +95,19 @@ export const logout = () => dispatch => {
   UserAPIUtil.setAuthToken(false);
   // Dispatch a logout action
   dispatch(logoutCurrentUser());
+};
+
+export const rateUser = userRating => dispatch => {
+  debugger;
+  return UserAPIUtil.rateUser(userRating).then(
+    user => dispatch(receiveAnotherUser(user.data)),
+    errors => dispatch(receiveCannotRateError(errors.response.data))
+  );
+};
+
+export const fetchAnotherUser = id => dispatch => {
+  return UserAPIUtil.fetchAnotherUser(id).then(
+    user => dispatch(receiveAnotherUser(user.data)),
+    errors => dispatch(receiveNoUserError(errors.response.data))
+  );
 };

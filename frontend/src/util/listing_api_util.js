@@ -29,3 +29,7 @@ export const editListing = data => {
 export const deleteListing = id => {
   return axios.delete(`/api/listings/${id}`);
 };
+
+export const fetchAnotherUserListings = id => {
+  return axios.get(`api/user/${id}`);
+};
