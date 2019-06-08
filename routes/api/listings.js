@@ -40,6 +40,22 @@ router.get(
       );
   }
 );
+// { $regex: /req.body.keyword/ }
+router.get("/search", (req, res) => {
+  // let str = `${req.query.keyword}` + "/i";
+  // console.log(str);
+  let regex = new RegExp(`${req.query.keyword}`);
+  // console.log(regex);
+  Listing.find({
+    title: { $regex: regex }
+  })
+    .then(listings => res.json(listings))
+    .catch(error =>
+      res.status(404).json({
+        nolistingsfound: "No match listings are found with this keyword"
+      })
+    );
+});
 
 router.get("/:id", (req, res) => {
   Listing.findById(req.params.id)
@@ -47,16 +63,6 @@ router.get("/:id", (req, res) => {
     .catch(err =>
       res.status(404).json({ nolistingfound: "No Listing found with that ID" })
     );
-});
-
-router.get("/search", (req, res) => {
-  Listing.find({ title: { $regex: /req.body.keyword/ } }).then(listings =>
-    res.json(listings).catch(error =>
-      res.status(404).json({
-        nolistingsfound: "No match listings are found with this keyword"
-      })
-    )
-  );
 });
 
 router.post(

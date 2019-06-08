@@ -8,7 +8,7 @@ export const RECEIVE_LISTING_ERRORS = "RECEIVE_LISTING_ERRORS";
 export const RECEIVE_A_LISTING = "RECEIVE_A_LISTING";
 export const REMOVE_A_LISTING = "REMOVE_A_LISTING";
 export const REMOVE_LISTING_ERRORS = "REMOVE_LISTING_ERRORS";
-export const RECEIVE_SEARCHED_LISTINGS = "RECEIVED_SEARCHED_LISTINGS";
+export const RECEIVE_SEARCHED_LISTINGS = "RECEIVE_SEARCHED_LISTINGS";
 const convertListingArrayToObject = arr => {
   let obj = {};
   for (let i = 0; i < arr.length; i++) {
@@ -31,9 +31,9 @@ const receiveCurrentUserListings = listings => {
   };
 };
 
-const receiveSearchedListings = listings => {
+export const receiveSearchedListings = listings => {
   return {
-    typr: RECEIVE_SEARCHED_LISTINGS,
+    type: RECEIVE_SEARCHED_LISTINGS,
     listings: convertListingArrayToObject(listings)
   };
 };
@@ -76,8 +76,8 @@ export const getCurrentUserListings = () => dispatch =>
     listings => dispatch(receiveCurrentUserListings(listings.data)),
     errors => dispatch(receiveListingErrors(errors.response.data))
   );
-export const getSearchedListing = () => dispatch =>
-  ListingAPIUtil.fetchListingsSearchResult().then(
+export const getSearchedListings = keyword => dispatch =>
+  ListingAPIUtil.fetchListingsSearchResult(keyword).then(
     listings => dispatch(receiveSearchedListings(listings.data)),
     errors => dispatch(receiveListingErrors(errors.response.data))
   );
