@@ -3,16 +3,18 @@ import ListingIndex from "./listing_index";
 import {
   getAllListings,
   getCurrentUserListings,
-  deleteListing
+  deleteListing,
+  receiveSearchedListings,
+  getSearchedListings
 } from "../../actions/listing_actions";
 // import { fetchUsers } from '../../actions/user_actions';
 import { createBooking } from "../../actions/booking_actions";
 
 const mapStateToProps = state => {
   let listings = Object.values(state.entities.listings);
-  // let users = state.entities.users;
   return {
-    listings: listings
+    listings: listings,
+    keyword: ""
     // users: users
   };
 };
@@ -20,6 +22,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getAllListings: () => dispatch(getAllListings()),
+    getSearchedListings: keyword => dispatch(getSearchedListings(keyword)),
+    receiveSearchedListings: () => dispatch(receiveSearchedListings()),
     getCurrentUserListings: () => dispatch(getCurrentUserListings()),
     deleteListing: id => dispatch(deleteListing(id)),
     createBooking: booking => dispatch(createBooking(booking))

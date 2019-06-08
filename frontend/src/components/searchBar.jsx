@@ -1,6 +1,5 @@
 import React from "react";
-
-const searchBar = ({ keyword, onChange }) => {
+const searchBar = ({ keyword, onSubmit, onChange }) => {
   const SearchBarOuter = {
     // background: "pink",
     padding: "8px",
@@ -22,28 +21,33 @@ const searchBar = ({ keyword, onChange }) => {
     boxShadow: "0 0 50px #d2b274",
     zIndex: "3"
   };
-  //   Document.querySelector("#searchBar").addEventListener("keypress", function(
-  //     e
-  //   ) {
-  //     let key = e.which || e.keyCode;
-  //     if (key === 13) {
+
+  //   const keydown = function(event) {
+  //     if (event.keyCode === 13) {
+  //       document.getElementById("btnSearch").click();
   //     }
-  //   });
+  //   };
+
+  window.onload = function() {
+    document
+      .getElementById("searchBar")
+      .addEventListener("keypress", function(e) {
+        var key = e.which || e.keyCode;
+        if (key === 13) {
+          onSubmit();
+        }
+      });
+  };
   return (
     <div style={SearchBarOuter}>
-      {/* <form> */}
       <input
-        //   type="submit"
         id="searchBar"
         value={keyword}
         style={searchInput}
         placeholder="Search Listings..."
         value={keyword}
-        // onChange={onChange}
-        //   onChange={this.form.submit()}
+        onChange={onChange}
       />
-      {/* <input type="submit" value="Submit" /> */}
-      {/* </form> */}
     </div>
   );
 };
