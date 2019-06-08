@@ -19,11 +19,12 @@ router.post(
     const newReview = new Review({
       title: req.body.title,
       body: req.body.body,
-      user: req.body._id, // listing owner
+      user: req.body.ownerId, // listing owner
       author: req.user.id // currentUser/commenter
     });
     newReview
       .save()
+      .then(review => review.populate("author", "username").execPopulate()) // execPopulate returns a promise
       .then(review => res.json(review))
       .catch(err =>
         res.status(402).json({ createReviewError: "cannot create review." })
@@ -37,7 +38,9 @@ router.get("/user/:user_id", (req, res) => {
   Review.find({ user: req.params.user_id })
     .sort({ date: -1 })
     .limit(15)
-    .populate("author")
+    .populate("author", "username")
     .then(review => res.json(review))
     .catch(err => res.status(404).json({ noReviewFound: "No review found" }));
 });
+
+module.exports = router;

@@ -7,7 +7,9 @@ import "./DisplayUser.css";
 import NavBar from "./NavBar";
 import NavBarButton from "./NavBarButton";
 import SubmitButton from "./SubmitButton";
+import ReviewForm from "./reviews/reviewForm";
 import { rateUser, fetchAnotherUser, logout } from "../actions/user_actions";
+import { getUserReviews, createReview } from "../actions/review_actions";
 import { getAnotherUserListings } from "../actions/listing_actions";
 
 const mapStateToProps = state => {
@@ -23,6 +25,8 @@ const mapDispatchToProps = dispatch => {
     rateUser: userRating => dispatch(rateUser(userRating)),
     getUserListings: userId => dispatch(getAnotherUserListings(userId)),
     fetchAnotherUser: userId => dispatch(fetchAnotherUser(userId)),
+    getUserReviews: userId => dispatch(getUserReviews(userId)),
+    createReview: review => dispatch(createReview(review)),
     logout: () => dispatch(logout())
   };
 };
@@ -127,6 +131,9 @@ class DisplayedUser extends React.Component {
               rate the user:
               {ratingForm}
             </div>
+          </div>
+          <div className="review-form-container">
+            <ReviewForm />
           </div>
         </div>
       </div>

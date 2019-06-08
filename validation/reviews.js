@@ -4,15 +4,15 @@ const validText = require("./valid-text");
 module.exports = function validateReviewInput(data) {
   let errors = {};
 
-  data.body = validText(data.description) ? data.description : "";
+  data.body = validText(data.body) ? data.body : "";
   data.title = validText(data.title) ? data.title : "";
 
   if (Validator.isEmpty(data.title)) {
-    error.title = "Review must have title";
+    errors.title = "Review must have title";
   }
 
   if (Validator.isEmpty(data.body)) {
-    error.body = "Review must have body";
+    errors.body = "Review must have body";
   }
 
   if (!Validator.isLength(data.title, { min: 2 })) {
