@@ -74,6 +74,46 @@ class DisplayedUser extends React.Component {
       </NavBar>
     );
 
+    let ratingForm = (
+      <form className="user-rating-form">
+        <input
+          type="radio"
+          name="rating"
+          value="1"
+          onChange={this.handleRateChange}
+        />
+        <input
+          type="radio"
+          name="rating"
+          value="2"
+          onChange={this.handleRateChange}
+        />
+        <input
+          type="radio"
+          name="rating"
+          value="3"
+          onChange={this.handleRateChange}
+        />
+        <input
+          type="radio"
+          name="rating"
+          value="4"
+          onChange={this.handleRateChange}
+        />
+        <input
+          type="radio"
+          name="rating"
+          value="5"
+          onChange={this.handleRateChange}
+        />
+        <SubmitButton
+          onClick={this.handleSubmit}
+          link={`/users/${displayedUser._id}`}
+          label="Submit score"
+        />
+      </form>
+    );
+
     return (
       <div className="du-container">
         {navBar}
@@ -85,31 +125,7 @@ class DisplayedUser extends React.Component {
             <div className="user-rating-show">{displayedUser.rating}</div>
             <div className="user-rating-form-container">
               rate the user:
-              <form className="user-rating-form">
-                <input
-                  type="radio"
-                  name="rating"
-                  value="1"
-                  onChange={this.handleRateChange}
-                />
-                <input
-                  type="radio"
-                  name="rating"
-                  value="2"
-                  onChange={this.handleRateChange}
-                />
-                <input
-                  type="radio"
-                  name="rating"
-                  value="3"
-                  onChange={this.handleRateChange}
-                />
-                <SubmitButton
-                  onClick={this.handleSubmit}
-                  link={`/users/${displayedUser._id}`}
-                  label="Submit score"
-                />
-              </form>
+              {ratingForm}
             </div>
           </div>
         </div>
