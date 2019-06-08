@@ -1,0 +1,24 @@
+.review-item-container {
+  border: 1px solid black;
+  display: flex;
+  padding: 30px;
+}
+
+.review-item-left {
+  width: 25%;
+  display: flex;
+}
+
+.review-item-left img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.review-item-left div {
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.review-item-right {
+  width: 75%;
+}

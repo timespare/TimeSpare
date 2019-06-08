@@ -8,6 +8,7 @@ import NavBar from "./NavBar";
 import NavBarButton from "./NavBarButton";
 import SubmitButton from "./SubmitButton";
 import ReviewForm from "./reviews/reviewForm";
+import ReviewCollection from "./reviews/reviewCollection";
 import { rateUser, fetchAnotherUser, logout } from "../actions/user_actions";
 import { getUserReviews, createReview } from "../actions/review_actions";
 import { getAnotherUserListings } from "../actions/listing_actions";
@@ -44,6 +45,7 @@ class DisplayedUser extends React.Component {
     const userId = this.props.match.params.userId;
     this.props.getUserListings(userId);
     this.props.fetchAnotherUser(userId);
+    this.props.getUserReviews(userId);
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -134,6 +136,9 @@ class DisplayedUser extends React.Component {
           </div>
           <div className="review-form-container">
             <ReviewForm />
+          </div>
+          <div className="review-collection-container">
+            <ReviewCollection />
           </div>
         </div>
       </div>
