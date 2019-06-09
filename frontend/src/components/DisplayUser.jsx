@@ -7,7 +7,10 @@ import "./DisplayUser.css";
 import NavBar from "./NavBar";
 import NavBarButton from "./NavBarButton";
 import SubmitButton from "./SubmitButton";
+import ReviewForm from "./reviews/reviewForm";
+import ReviewCollection from "./reviews/reviewCollection";
 import { rateUser, fetchAnotherUser, logout } from "../actions/user_actions";
+import { getUserReviews, createReview } from "../actions/review_actions";
 import { getAnotherUserListings } from "../actions/listing_actions";
 
 const mapStateToProps = state => {
@@ -23,6 +26,8 @@ const mapDispatchToProps = dispatch => {
     rateUser: userRating => dispatch(rateUser(userRating)),
     getUserListings: userId => dispatch(getAnotherUserListings(userId)),
     fetchAnotherUser: userId => dispatch(fetchAnotherUser(userId)),
+    getUserReviews: userId => dispatch(getUserReviews(userId)),
+    createReview: review => dispatch(createReview(review)),
     logout: () => dispatch(logout())
   };
 };
@@ -40,6 +45,7 @@ class DisplayedUser extends React.Component {
     const userId = this.props.match.params.userId;
     this.props.getUserListings(userId);
     this.props.fetchAnotherUser(userId);
+    this.props.getUserReviews(userId);
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -74,6 +80,46 @@ class DisplayedUser extends React.Component {
       </NavBar>
     );
 
+    let ratingForm = (
+      <form className="user-rating-form">
+        <input
+          type="radio"
+          name="rating"
+          value="1"
+          onChange={this.handleRateChange}
+        />
+        <input
+          type="radio"
+          name="rating"
+          value="2"
+          onChange={this.handleRateChange}
+        />
+        <input
+          type="radio"
+          name="rating"
+          value="3"
+          onChange={this.handleRateChange}
+        />
+        <input
+          type="radio"
+          name="rating"
+          value="4"
+          onChange={this.handleRateChange}
+        />
+        <input
+          type="radio"
+          name="rating"
+          value="5"
+          onChange={this.handleRateChange}
+        />
+        <SubmitButton
+          onClick={this.handleSubmit}
+          link={`/users/${displayedUser._id}`}
+          label="Submit score"
+        />
+      </form>
+    );
+
     return (
       <div className="du-container">
         {navBar}
@@ -85,32 +131,14 @@ class DisplayedUser extends React.Component {
             <div className="user-rating-show">{displayedUser.rating}</div>
             <div className="user-rating-form-container">
               rate the user:
-              <form className="user-rating-form">
-                <input
-                  type="radio"
-                  name="rating"
-                  value="1"
-                  onChange={this.handleRateChange}
-                />
-                <input
-                  type="radio"
-                  name="rating"
-                  value="2"
-                  onChange={this.handleRateChange}
-                />
-                <input
-                  type="radio"
-                  name="rating"
-                  value="3"
-                  onChange={this.handleRateChange}
-                />
-                <SubmitButton
-                  onClick={this.handleSubmit}
-                  link={`/users/${displayedUser._id}`}
-                  label="Submit score"
-                />
-              </form>
+              {ratingForm}
             </div>
+          </div>
+          <div className="review-form-container">
+            <ReviewForm />
+          </div>
+          <div className="review-collection-container">
+            <ReviewCollection />
           </div>
         </div>
       </div>

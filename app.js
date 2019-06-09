@@ -9,6 +9,7 @@ const path = require("path");
 const users = require("./routes/api/users");
 const listings = require("./routes/api/listings");
 const bookings = require("./routes/api/bookings");
+const reviews = require("./routes/api/reviews");
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
@@ -33,6 +34,7 @@ app.use(bodyParser.json());
 app.use("/api/users", users);
 app.use("/api/listings", listings);
 app.use("/api/bookings", bookings);
+app.use("/api/reviews", reviews);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
