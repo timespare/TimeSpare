@@ -62,7 +62,7 @@ class ReviewForm extends React.Component {
           id="review-title-input"
         />
         <textarea
-          rows="15"
+          rows="8"
           //   cols="40"
           placeholder="write your review here!"
           value={this.state.body}

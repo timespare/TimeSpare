@@ -5,10 +5,10 @@
 
 .review-item-left {
   width: 25%;
-  display: flex;
 }
 .review-item-left div {
   font-size: 30px;
+  width: 100%;
 }
 
 .review-item-right {
