@@ -28,10 +28,12 @@ class ListingIndex extends React.Component {
     };
   }
 
-  handleSubmit() {
-    // e.preventDefault();
+  handleSubmit(e) {
     console.log("keyword on listing index", this.state.keyword);
-    this.props.getSearchedListings(this.state.keyword);
+    if (e.keyCode == 13) {
+      e.preventDefault();
+      this.props.getSearchedListings(this.state.keyword);
+    }
   }
 
   render() {

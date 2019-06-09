@@ -22,22 +22,16 @@ const searchBar = ({ keyword, onSubmit, onChange }) => {
     zIndex: "3"
   };
 
-  //   const keydown = function(event) {
-  //     if (event.keyCode === 13) {
-  //       document.getElementById("btnSearch").click();
-  //     }
+  //   window.onload = function() {
+  //     document
+  //       .getElementById("searchBar")
+  //       .addEventListener("keypress", function(e) {
+  //         var key = e.which || e.keyCode;
+  //         if (key === 13) {
+  //           onSubmit();
+  //         }
+  //       });
   //   };
-
-  window.onload = function() {
-    document
-      .getElementById("searchBar")
-      .addEventListener("keypress", function(e) {
-        var key = e.which || e.keyCode;
-        if (key === 13) {
-          onSubmit();
-        }
-      });
-  };
   return (
     <div style={SearchBarOuter}>
       <input
@@ -46,6 +40,7 @@ const searchBar = ({ keyword, onSubmit, onChange }) => {
         style={searchInput}
         placeholder="Search Listings..."
         value={keyword}
+        onKeyDown={onSubmit}
         onChange={onChange}
       />
     </div>
