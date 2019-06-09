@@ -86,12 +86,11 @@ class Splash extends React.Component {
                 </Modal>
             
             <div className="splash">
-                <div className="slide1"></div>
-                <div className="slide2"></div>
-                <div className="slide3"></div>
-                <div className="slide4"></div>
-                
                 <div className="splash-box">
+                        <div className="slide1"></div>
+                        <div className="slide2"></div>
+                        <div className="slide3"></div>
+                        <div className="slide4"></div>
                     <h1 className="splash-tagline">Share your talents with the world.</h1>
                     <br />
                         <h3 className="splash-description">Find unique experiences around you, and earn extra money

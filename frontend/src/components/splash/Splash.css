@@ -42,28 +42,30 @@ input[type="submit"] {
 
 .splash {
   position: absolute;
-  top: 0;
+  top: 65px;
   bottom: 0;
   right: 0;
   left: 0;
   z-index: -1;
   background-size: cover;
   width: 100%;
-  max-height: 630px;
+  max-height: 550px;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* object-fit: cover; */
 }
 
 .slide1, .slide2, .slide3, .slide4 {
   position: absolute;
   /* position: fixed; */
   width: 100%;
-  height: 80%;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* object-fit: cover; */
   /* width: 100%; */
   /* height: 500px; */
 }
@@ -71,11 +73,12 @@ input[type="submit"] {
 .slide1 {
   background-image: linear-gradient(
                      rgba(20, 20, 20, 0.3), 
-                     rgba(20,20,20, .3)), url("work.jpg");
+                     rgba(20,20,20, .3)), url("business.jpg");
   background-size: cover;
   animation: fade1 36s infinite;
   -webkit-animation: fade1 36s infinite;
   z-index: -2;
+  /* bottom: 50px; */
 }
 
 @keyframes fade1 {
@@ -89,7 +92,7 @@ input[type="submit"] {
 .slide2 {
   background-image: linear-gradient(
                      rgba(20, 20, 20, 0.3), 
-                     rgba(20,20,20, .3)), url("work2.jpg");
+                     rgba(20,20,20, .3)), url("coffee.jpg");
   background-size: cover;
   animation: fade2 36s infinite;
   -webkit-animation: fade2 36s infinite;
@@ -107,7 +110,7 @@ input[type="submit"] {
 .slide3 {
   background-image: linear-gradient(
                      rgba(20, 20, 20, 0.3), 
-                     rgba(20,20,20, .3)), url("work.jpg");
+                     rgba(20,20,20, .3)), url("cook.jpg");
   background-size: cover;
   animation: fade3 36s infinite;
   -webkit-animation: fade3 36s infinite;
@@ -177,7 +180,7 @@ input[type="submit"] {
   width: 678px;
   height: 60px;
   font-family: SourceSansPro;
-  font-size: 44px;
+  font-size: 48px;
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
@@ -193,7 +196,7 @@ input[type="submit"] {
   opacity: 0.9;
   font-family: SourceSansPro; 
   font-size: 20px;
-  font-weight: 150;
+  font-weight: 500;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -225,7 +228,7 @@ input[type="submit"] {
     /* position: absolute; */
     /* position: fixed; */
     /* bottom: 0; */
-    top: 560px;
+    top: 600px;
     overflow: auto;
     position: absolute;
     /* top: 0;
