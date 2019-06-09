@@ -1,6 +1,8 @@
 import React from "react";
 import ListingIndexItem from "./listing_index_item";
+import { fetchListingsSearchResult } from "../../util/listing_api_util";
 import SearchBar from "../searchBar";
+import { receiveListingErrors } from "../../actions/listing_actions";
 class ListingIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -29,13 +31,11 @@ class ListingIndex extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log("keyword on listing index", this.state.keyword);
     if (e.keyCode == 13) {
       e.preventDefault();
       this.props.getSearchedListings(this.state.keyword);
     }
   }
-
   render() {
     let listings = this.props.listings.map((listing, i) => {
       return (

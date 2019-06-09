@@ -13,8 +13,8 @@ export const fetchCurrentUserListings = () => {
 };
 
 export const fetchListingsSearchResult = keyword => {
-  console.log("keyword on listing util", keyword);
-  return axios.get(`/api/listings/search?keyword=${keyword}`);
+  let newKeyword = encodeURIComponent(keyword);
+  return axios.get(`/api/listings/search?keyword=${newKeyword}`);
 };
 
 // create a new listing

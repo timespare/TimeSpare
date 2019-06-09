@@ -40,21 +40,14 @@ router.get(
       );
   }
 );
-// { $regex: /req.body.keyword/ }
+
 router.get("/search", (req, res) => {
-  // let str = `${req.query.keyword}` + "/i";
-  // console.log(str);
-  let regex = new RegExp(`${req.query.keyword}`);
-  // console.log(regex);
-  Listing.find({
-    title: { $regex: regex }
-  })
-    .then(listings => res.json(listings))
-    .catch(error =>
-      res.status(404).json({
-        nolistingsfound: "No match listings are found with this keyword"
-      })
-    );
+  if (req.query.keyword.length === 0) {
+    res.redirect("/api/listings");
+  }
+  Listing.find({ $text: { $search: req.query.keyword } }).then(listings =>
+    res.json(listings)
+  );
 });
 
 router.get("/:id", (req, res) => {

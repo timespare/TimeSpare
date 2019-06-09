@@ -4,18 +4,18 @@ import {
   getAllListings,
   getCurrentUserListings,
   deleteListing,
-  receiveSearchedListings,
-  getSearchedListings
+  getSearchedListings,
+  receiveSearchedListings
 } from "../../actions/listing_actions";
-// import { fetchUsers } from '../../actions/user_actions';
 import { createBooking } from "../../actions/booking_actions";
 
 const mapStateToProps = state => {
   let listings = Object.values(state.entities.listings);
+
   return {
     listings: listings,
-    keyword: ""
-    // users: users
+    keyword: "",
+    errors: state.errors.listings
   };
 };
 
@@ -27,7 +27,6 @@ const mapDispatchToProps = dispatch => {
     getCurrentUserListings: () => dispatch(getCurrentUserListings()),
     deleteListing: id => dispatch(deleteListing(id)),
     createBooking: booking => dispatch(createBooking(booking))
-    // fetchUsers: () => dispatch(fetchUsers())
   };
 };
 

@@ -1,7 +1,6 @@
 import React from "react";
 const searchBar = ({ keyword, onSubmit, onChange }) => {
   const SearchBarOuter = {
-    // background: "pink",
     padding: "8px",
     width: "800px",
     marginBottom: "100px"
@@ -10,7 +9,6 @@ const searchBar = ({ keyword, onSubmit, onChange }) => {
   const searchInput = {
     fontSize: "16px",
     padding: "5px",
-    // background: "lightBlue",
     borderRadius: "5px",
     boxSizing: "border-box",
     width: "100%",
@@ -22,16 +20,6 @@ const searchBar = ({ keyword, onSubmit, onChange }) => {
     zIndex: "3"
   };
 
-  //   window.onload = function() {
-  //     document
-  //       .getElementById("searchBar")
-  //       .addEventListener("keypress", function(e) {
-  //         var key = e.which || e.keyCode;
-  //         if (key === 13) {
-  //           onSubmit();
-  //         }
-  //       });
-  //   };
   return (
     <div style={SearchBarOuter}>
       <input
