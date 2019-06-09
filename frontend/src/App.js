@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import Home from "./components/Home";
 import UserProfile from "./components/UserProfile";
-import Splash from "./components/splash/Splash";
+import Splash from "./components/splash/splash";
 import Footer from "./components/footer/Footer"
 
 function App() {

@@ -57,11 +57,95 @@ input[type="submit"] {
   align-items: center;
 }
 
-.splash-box {
- /* position: absolute; */
+.slide1, .slide2, .slide3, .slide4 {
+  position: absolute;
+  /* position: fixed; */
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  /* height: 500px; */
+}
+
+.slide1 {
+  background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.3), 
+                     rgba(20,20,20, .3)), url("work.jpg");
+  background-size: cover;
+  animation: fade1 36s infinite;
+  -webkit-animation: fade1 36s infinite;
+  z-index: -2;
+}
+
+@keyframes fade1 {
+  0%   {opacity:1}
+  25% { opacity: 0}
+  50% { opacity: 0}
+  75% { opacity: 0}
+  100% { opacity: 1}
+}
+
+.slide2 {
   background-image: linear-gradient(
                      rgba(20, 20, 20, 0.3), 
                      rgba(20,20,20, .3)), url("work2.jpg");
+  background-size: cover;
+  animation: fade2 36s infinite;
+  -webkit-animation: fade2 36s infinite;
+  z-index: -2;
+}
+
+@keyframes fade2 {
+  0%   {opacity:0}
+  25% { opacity: 1}
+  50% { opacity: 0}
+  75% { opacity: 0}
+  100% { opacity: 0}
+}
+
+.slide3 {
+  background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.3), 
+                     rgba(20,20,20, .3)), url("work.jpg");
+  background-size: cover;
+  animation: fade3 36s infinite;
+  -webkit-animation: fade3 36s infinite;
+  z-index: -2;
+}
+
+@keyframes fade3 {
+  0%   {opacity:0}
+  25% { opacity: 0}
+  50% { opacity: 1}
+  75% { opacity: 0}
+  100% { opacity: 0}
+}
+
+.slide4 {
+  background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.3), 
+                     rgba(20,20,20, .3)), url("work2.jpg");
+  background-size: cover;
+  animation: fade4 36s infinite;
+  -webkit-animation: fade4 36s infinite;
+  z-index: -2;
+}
+
+@keyframes fade4 {
+  0%   {opacity:0}
+  25% { opacity: 0}
+  50% { opacity: 0}
+  75% { opacity: 1}
+  100% { opacity: 0}
+}
+
+
+.splash-box {
+ /* position: absolute; */
+  /* background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.3), 
+                     rgba(20,20,20, .3)), url("work2.jpg"); */
   background-size: contain;
   /* height: auto; */
   /* background-color: #fd5c63; */
@@ -74,7 +158,7 @@ input[type="submit"] {
   /* position: relative; */
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  /* background-size: cover; */
   /* opacity: 0.5; */
 }
 
