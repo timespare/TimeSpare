@@ -1,22 +1,19 @@
 import React from "react";
-import "./App.css";
-
+import { Route } from "react-router-dom";
+import Home from "./components/Home";
+import UserProfile from "./components/UserProfile";
+import DisplayUser from "./components/DisplayUser";
+import Splash from "./components/splash/splash";
+import Footer from "./components/footer/Footer";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route exact path="/" component={Splash} />
+      <Route exact path="/" component={Footer} />
+      <Route exact path="/profile" component={UserProfile} />
+      <Route exact path="/users/:userId" component={DisplayUser} />
+      <Route exact path="/home" component={Home} />
+      {/* <Route path="/current" component={} /> */}
     </div>
   );
 }

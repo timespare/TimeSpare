@@ -5,7 +5,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "jwt-decode": "^2.2.0",
+    "moment": "^2.24.0",
     "react": "^16.8.6",
+    "react-datetime": "^2.16.3",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
@@ -39,12 +41,11 @@
     ]
   },
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.8",
-    "@storybook/react": "^5.0.11",
+    "@babel/core": "^7.4.4",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addons": "^5.0.11",
-    "@babel/core": "^7.4.4",
+    "@storybook/react": "^5.0.11",
     "babel-loader": "^8.0.5"
   }
 }

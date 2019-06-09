@@ -3,9 +3,15 @@
   width: 100vw;
   height: 100vh;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
-  padding-top: 150px;
+  padding-top: 100px;
   font-family: Montserrat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 2;
 }
 
 .modal-inner-container {
@@ -13,7 +19,9 @@
   background: #ffffff;
   min-height: 300px;
   box-shadow: 0 0 50px #d2b274;
-  overflow: hidden;
+  /* overflow: hidden; */
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
 .modal-header {

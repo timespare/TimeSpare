@@ -1,0 +1,239 @@
+.listing-item-outer-container {
+  /* background: pink; */
+  height: 200x;
+  width: 600px;
+  padding: 15px;
+  margin: auto;
+  width: 50%;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 8px 0 #efefef;
+  background-color: #ffffff;
+  /* display: flex;  */
+  /* flex-direction: column; */
+  /* align-items: flex-end; */
+  box-sizing: border-box;
+}
+
+.listing-item-header {
+  /* background-color: pink; */
+  height: 55px;
+  margin-bottom: 10px;
+  padding: 10px;
+  /* width: 944px; */
+  /* height: 70px; */
+  font-family: Poppins;
+  font-size: 27px;
+  font-weight: 600;
+  /* font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal; */
+  color: #484848;
+}
+
+.listing-item-middle-layer {
+  /* background: green; */
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  /* display: inline-block; */
+  /* overflow: auto; */
+  /* column-count: 2; */
+  /* justify-content: space-between; */
+  /* position: relative; */
+  /* dis */
+}
+
+.listing-item-lower-layer {
+  /* background: purple; */
+  height: 55px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px;
+  color: #484848;
+}
+
+.listing-item-middle-left {
+  /* font-size: 20px; */
+  font-family: Poppins;
+  /* font-size: 16px; */
+  /* float: left; */
+  margin-left: 0;
+  /* font-family: Poppins; */
+  /* font-size: 20px;/ */
+  font-weight: 600;
+  /* float: left; */
+  width: 55px;
+  height: 55px;
+  background-color: pink;
+}
+
+.listing-item-middle-right {
+  padding-left: 20px;
+  font-size: 12.5px;
+  /* float: right; */
+  /* margin-right:auto; */
+  margin-right: 0px;
+  color: #484848;
+}
+
+span {
+  display: block;
+}
+.listing-item-button {
+  height: 45px;
+}
+
+.btn {
+  /* width: 100%; */
+  border: 2px solid #ff5661;
+  background-color: white;
+  color: #ff5661;
+  /* padding: 5px 5px; */
+  font-size: 12px;
+  cursor: pointer;
+  /* margin-right: 0px; */
+  /* position: absolute;  */
+  /* margin-left: 345px; */
+  /* position: relative; */
+  float: right;
+}
+
+/* .listing-item-tags {
+  display: flex;
+  flex-direction: row;
+} */
+
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+}
+
+.tags li {
+  float: left; 
+}
+
+.tag {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #eee;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: crimson; 
+}
+
+/* a{
+    color:#47649F;
+}
+
+body{
+    font-family:'helvetica';    
+}
+
+.the-box {
+  width: 1030px;
+  height: 274px;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px 0 #efefef;
+  border: solid 1px #e5e5e5;
+  background-color: #ffffff;
+}
+
+.title{
+  width: 944px;
+  height: 70px;
+  font-family: Poppins;
+  font-size: 27px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #484848;
+}
+
+.photo-profile{
+    border:1px solid #DDD;    
+}
+
+.listing-username h4{
+  width: 128px;
+  height: 28px;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #484848;  
+}
+
+.listing-time{
+    color:#ADB2BB;
+    font-size: 18px;
+}
+
+.post-body {
+  width: 915px;
+  height: 57px;
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #484848;
+} */
+/* 
+.listing-index-container {
+  width: 1030px;
+  height: 274px;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px 0 #efefef;
+  border: solid 1px #e5e5e5;
+  background-color: #ffffff;
+}
+ */

@@ -1,11 +1,22 @@
 const express = require("express");
 const app = express();
-const db = require('./config/keys').mongoURI;
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const passport = require('passport');
+const db = require("./config/keys").mongoURI;
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const passport = require("passport");
+const path = require("path");
 
 const users = require("./routes/api/users");
+const listings = require("./routes/api/listings");
+const bookings = require("./routes/api/bookings");
+const reviews = require("./routes/api/reviews");
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("frontend/build"));
+  app.get("/", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+}
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -15,12 +26,15 @@ mongoose
 app.get("/", (req, res) => res.send("I know!"));
 
 app.use(passport.initialize());
-require('./config/passport')(passport);
+require("./config/passport")(passport);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
+app.use("/api/listings", listings);
+app.use("/api/bookings", bookings);
+app.use("/api/reviews", reviews);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

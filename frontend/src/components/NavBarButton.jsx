@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBarButton.css";
 const NavBarButton = props => {
-  // pass in onClick actions,link
   const { onClick, link, label, noBackground } = props;
   let additionalClass = "";
   if (noBackground) {
@@ -20,13 +19,13 @@ const NavBarButton = props => {
     );
   } else {
     return (
-      <a
+      <Link
         href="javascript:void 0"
         className={"nav-bar-button " + additionalClass}
         onClick={onClick}
       >
         {label}
-      </a>
+      </Link>
     );
   }
 };

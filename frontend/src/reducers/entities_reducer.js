@@ -1,6 +1,12 @@
 import { combineReducers } from "redux";
-import user from "./user_reducer";
 
+import listings from "./listings_reducer";
+import bookings from "./booking_reducer";
+import userDisplayed from "./user_displayed_reducer";
+import reviews from "./reviews_reducer";
 export default combineReducers({
-  user
+  listings,
+  bookings,
+  userDisplayed,
+  reviews
 });

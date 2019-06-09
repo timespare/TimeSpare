@@ -1,0 +1,42 @@
+.listing-show-container {
+  /* background: pink; */
+  padding: 15px;
+}
+.listing-show-img img {
+  border-radius: 50%;
+  height: 60px;
+}
+.listing-show-middle {
+  display: flex;
+}
+
+.listing-show-left {
+  width: 35%;
+}
+
+.listing-show-right {
+  width: 65%;
+}
+
+.listing-show-middle div {
+  padding: 15px;
+}
+
+.listing-show-bottom {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.listing-show-bottom div {
+  padding: 10px;
+}
+.listing-show-to {
+  line-height: 75px;
+}
+.listing-show-time {
+  border-radius: 30px;
+  background: #ff5661;
+  color: white;
+  font-family: Montserrat;
+  font-weight: bold;
+}
