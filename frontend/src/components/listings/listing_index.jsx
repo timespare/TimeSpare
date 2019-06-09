@@ -49,16 +49,20 @@ class ListingIndex extends React.Component {
         </div>
       );
     });
-    return (
-      <div className="listing-index-container">
-        <SearchBar
-          onChange={this.handleInput("keyword")}
-          onSubmit={this.handleSubmit}
-          keyword={this.state.keyword}
-        />
-        {listings}
-      </div>
-    );
+    if (this.props.isHome) {
+      return (
+        <div className="listing-index-container">
+          <SearchBar
+            onChange={this.handleInput("keyword")}
+            onSubmit={this.handleSubmit}
+            keyword={this.state.keyword}
+          />
+          {listings}
+        </div>
+      );
+    } else {
+      return <div className="listing-index-container">{listings}</div>;
+    }
   }
 }
 export default ListingIndex;
