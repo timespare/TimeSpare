@@ -1,4 +1,5 @@
 # TimeSpare Proposal
+[Live Link](http://time-spare.herokuapp.com/#/)
 
 ### TimeSpare 
 TimeSpare is an employment-oriented network service that provides users access to quick and temporary job openings in their local area.   
@@ -10,22 +11,16 @@ Sometimes, you find yourself with some free-time. You’re tired of laying aroun
 
 We believe that good things happen when people help each other, whether across town or towards their dreams. Opportunities appear, open up, and become reality.
 
-We will need to: 
-  -  
-  - 
-  - 
-  - 
-
 ## Functionality & MVP
 
-   - [X] User Authetication: sign up and log in
-   - [ ] Posting new listings, and a log of all listings
-   - [ ] Viewing and editing bookings 
-   - [ ] Search functionality based on categories or tags
-   - [ ] Calendar API
-   - [ ] Saving of user browsing data to database
+   - [X] User Authetication: sign up and log in modals
+   - [X] Posting new listings, and a log of all listings
+   - [X] Viewing and editing bookings 
+   - [X] Search functionality based on categories or tags
+   - [X] Calendar API
+   - [X] Saving of user browsing data to database
    - [ ] User profile page + Ratings
-   - [ ] Production README
+   - [X] Production README
 
 
 #### Bonus Features
@@ -36,15 +31,15 @@ We will need to:
 
 ## Technologies & Technical Challenges
 
-`HTML5` / `SCSS` / `MongoDB` / `Express.js` / `React.js` / `Redux` / `Node.js` / `JavaScript` / `Calendar API` / `Animate CSS`
+`MongoDB` / `Express.js` / `React.js` / `Redux` / `Node.js` / `JavaScript` / `Calendar API` / `Animate CSS` / `HTML5` / `SCSS`  
 
 Anticipated Challenges:
 
 - Learning Node, Express, and MongoDB to handle the back-end and database
 - Choosing the right Calendar API for bookings
-- Splitting the load between our front-end and our back-end
+- Delegating roles between our front-end and our back-end frameworks
 - Having the correct shapes of state for our data
-- 
+- 4 day project time frame
 
 
 ## Accomplished over the Weekend
@@ -89,9 +84,12 @@ Anticipated Challenges:
   - Background (user profile) - not required - **Jin**
 
 ### May 14
-  -
-  - 
-  - 
+  - Bookings button - **Matthew**
+  - Splash page - **Matthew**
+  - Search Functionality - **Mena**
+  - Fix bugs - **Yinglan**
+  - Polish seed data - **Jin**
+  - Push to Heroku - **Mena**
 
 ### May 15
   - Complete Production README.md - **Matthew** 
