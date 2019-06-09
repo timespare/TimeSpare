@@ -4,7 +4,6 @@ export default function ReviewItem({ review }) {
   return (
     <div className="review-item-container">
       <div className="review-item-left">
-        <img src="proficon.jpg" />
         <div>{review.author.username}</div>
       </div>
 

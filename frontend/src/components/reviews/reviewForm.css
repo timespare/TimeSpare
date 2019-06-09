@@ -2,7 +2,9 @@
   position: relative;
   padding: 20px 0;
 }
-.review-form > * {
+.review-form input,
+.review-form textarea,
+.review-form div {
   display: block;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -10,7 +12,6 @@
   height: 40px;
   width: 80%;
   line-height: 40px;
-  color: white;
   margin: auto;
 }
 

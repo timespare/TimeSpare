@@ -26,13 +26,34 @@ class ReviewForm extends React.Component {
     const review = Object.assign({}, this.state);
     review["ownerId"] = this.props.match.params.userId;
 
-    this.props.createReview(review);
+    this.props
+      .createReview(review)
+      .then(r => this.setState({ title: "", body: "" }));
+
     //TODO: error handler is missing....
+  }
+
+  renderErrors() {
+    const ErrorStyle = {
+      listStyle: "none",
+      paddingLeft: "10%"
+    };
+
+    return (
+      <ul>
+        {Object.values(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`} style={ErrorStyle}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
     return (
       <form className="review-form">
+        {this.renderErrors()}
         <input
           type="text"
           value={this.state.title}
@@ -63,13 +84,17 @@ class ReviewForm extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  errors: state.errors.reviews
+});
+
 const mapDispatchToProps = dispatch => ({
   createReview: review => dispatch(createReview(review))
 });
 
 export default withRouter(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )(ReviewForm)
 );
