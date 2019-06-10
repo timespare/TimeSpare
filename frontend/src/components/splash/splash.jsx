@@ -144,11 +144,11 @@ all on your free time.</h3>
                 <div className="description3">
                     <div class="container">
                         
-                        <div class="column-center">VIEW LISTINGS</div>
+                        <div class="column-center"></div>
 
-                        <div class="column-left">BOOK LISTINGS</div>
+                        <div class="column-left"></div>
 
-                        <div class="column-right">SOMETHING</div>
+                        <div class="column-right"></div>
                     </div>
 
 

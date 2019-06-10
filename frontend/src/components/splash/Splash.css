@@ -334,7 +334,7 @@ input[type="submit"] {
     /* position: absolute; */
     /* position: fixed; */
     /* bottom: 0; */
-    top: 1000px;
+    top: 970px;
     overflow: auto;
     position: absolute;
     /* top: 0;
@@ -441,62 +441,71 @@ input[type="submit"] {
   /* clear:both; */
   column-count: 3;
   /* column-gap: 50px; */
-  margin-left: 250px;
+  margin-left: 192px;
   margin-right: auto;
-  width: 65em;
+  width: 70em;
+  /* height: 1000px; */
+  /* height: 100%; */
 }
 
 .column-left {
+  /* border: 0.2px solid black; */
   /* float: left; */
   width: 33.333%;
-  background-color: white;;
+  background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.3), 
+                     rgba(20,20,20, .3)), url("business.jpg");
   background-size: contain;
     /* display: block; */
     flex-direction: column;
     justify-content: center; 
     align-items: center;
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 300px;
     /* position: relative; */
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size: cover;
-    box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.112);
+    /* box-shadow: .1em 1em 1em 0 rgba(0, 0, 0, 0.05); */
 }
 
 .column-right {
   /* float: right; */
   width: 33.333%;
-  background-color: white;
+  background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.3), 
+                     rgba(20,20,20, .3)), url("work2.jpg");
   background-size: contain;
     /* display: block; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 300px;
     /* position: relative; */
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size: cover;
-    box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.112);
+    /* box-shadow: 0em 1em 1em rgba(0, 0, 0, 0.05); */
 }
 
 .column-center {
   /* display: inline-block; */
   width: 33.333%;
-  background-color: white;
+  background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.3), 
+                     rgba(20,20,20, .3)), url("business.jpg");
   background-size: contain;
     /* display: block; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 300px;
     /* position: relative; */
     background-repeat: no-repeat;
     /* background-position: center; */
     background-size: cover;
-    box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.112);
+    /* box-shadow: .1em 1em 1em 0 rgba(0, 0, 0, 0.05); */
     
 }
