@@ -141,15 +141,15 @@ all on your free time.</h3>
                     </div>
                 </div>
 
-                <div className="description3">
+                {/* <div className="description3">
                     <div class="container">
                         
-                        <div class="column-center"></div>
+                        <div class="column-center">CONNECT</div>
 
                         <div class="column-left"></div>
 
                         <div class="column-right"></div>
-                    </div>
+                    </div> */}
 
 
                     {/* <div className="right">
@@ -172,7 +172,7 @@ all on your free time.</h3>
                     </div> */}
 
 
-                </div>
+                {/* </div> */}
 
             </div>
         );

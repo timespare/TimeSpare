@@ -286,7 +286,7 @@ input[type="submit"] {
 }
 
 .splash-box-2 {
-    background-image: url("work.jpg");
+    background-image: url("work2.jpg");
     background-size: contain;
     /* display: block; */
     flex-direction: column;
@@ -313,7 +313,7 @@ input[type="submit"] {
     /* position: absolute; */
     /* position: fixed; */
     /* bottom: 0; */
-    top: 1450px;
+    top: 1020px;
     overflow: auto;
     position: absolute;
     /* top: 0;
@@ -437,81 +437,3 @@ input[type="submit"] {
   /* color: #ffffff; */
 }
 
-.center-title {
-  text-align: center;
-}
-
-.container {
-  /* clear:both; */
-  column-count: 3;
-  /* column-gap: 50px; */
-  margin-left: 192px;
-  margin-right: auto;
-  width: 70em;
-  /* height: 1000px; */
-  /* height: 100%; */
-}
-
-.column-left {
-  /* border: 0.2px solid black; */
-  /* float: left; */
-  width: 33.333%;
-  background-image: linear-gradient(
-                     rgba(20, 20, 20, 0.125), 
-                     rgba(20,20,20, .3)), url("work2.jpg");
-  background-size: contain;
-  background-position: center; 
-    /* display: block; */
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    /* position: relative; */
-    background-repeat: no-repeat;
-    /* background-position: center; */
-    background-size: cover;
-    /* box-shadow: .1em 1em 1em 0 rgba(0, 0, 0, 0.05); */
-}
-
-.column-right {
-  /* float: right; */
-  width: 33.333%;
-  background-image: linear-gradient(
-                     rgba(20, 20, 20, 0.146), 
-                     rgba(20,20,20, .3)), url("work2.jpg");
-  background-size: contain;
-    /* display: block; */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    /* position: relative; */
-    background-repeat: no-repeat;
-    /* background-position: center; */
-    background-size: cover;
-    /* box-shadow: 0em 1em 1em rgba(0, 0, 0, 0.05); */
-}
-
-.column-center {
-  /* display: inline-block; */
-  width: 33.333%;
-  background-image: linear-gradient(
-                     rgba(20, 20, 20, 0.139), 
-                     rgba(20, 20, 20, 0.118)), url("work4.jpg");
-  background-size: contain;
-    /* display: block; */
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 300px;
-    /* position: relative; */
-    background-repeat: no-repeat;
-    /* background-position: center; */
-    background-size: cover;
-    background-position: center; 
-    /* box-shadow: .1em 1em 1em 0 rgba(0, 0, 0, 0.05); */
-    
-}
