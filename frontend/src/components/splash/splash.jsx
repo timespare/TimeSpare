@@ -152,12 +152,15 @@ all on your free time.</h3>
                 <div className="description3">
                     <div className="right">
 
-                        <div className="splash-box-2">
+                        <div className="splash-box-3">
 
                         </div>
                     </div>
 
                     <div className="left">
+                        <div className="left-title">
+                            How it Works
+                        </div>
                         <div className="left-description">
                             <p>Sometimes, you find yourself with some free-time. You’re tired of laying around in bed all Saturday, or waiting for your next customer as an Uber driver.<br />
 
