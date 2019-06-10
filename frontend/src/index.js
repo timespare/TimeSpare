@@ -28,7 +28,7 @@ import {
   deleteBooking,
   getCurrentUserBookings
 } from "./actions/booking_actions";
-
+import { createReview, getUserReviews } from "./actions/review_actions";
 // TODO: END
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -81,5 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.deleteBooking = deleteBooking;
   window.fetchAnotherUser = fetchAnotherUser;
   window.rateUser = rateUser;
+  window.createReview = createReview;
+  window.getUserReviews = getUserReviews;
   ReactDOM.render(<Root store={store} />, root);
 });

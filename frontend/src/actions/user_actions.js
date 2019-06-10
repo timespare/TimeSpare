@@ -98,7 +98,6 @@ export const logout = () => dispatch => {
 };
 
 export const rateUser = userRating => dispatch => {
-  debugger;
   return UserAPIUtil.rateUser(userRating).then(
     user => dispatch(receiveAnotherUser(user.data)),
     errors => dispatch(receiveCannotRateError(errors.response.data))

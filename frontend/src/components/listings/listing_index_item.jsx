@@ -54,9 +54,14 @@ class ListingIndexItem extends React.Component {
     } else {
       return (
         <div className="listing-item-button">
-          <button onClick={() => this.props.createBooking({ listing: listing })} className="btn book">Book Me!</button>
+          <button
+            onClick={() => this.props.createBooking({ listing: listing })}
+            className="btn book"
+          >
+            Book Me!
+          </button>
         </div>
-      )
+      );
     }
   }
 
@@ -77,7 +82,11 @@ class ListingIndexItem extends React.Component {
           </div>
           <div className="listing-item-middle-right">
             {/* <span>{listing.username}</span> */}
-            <span>{listing.user.username}</span>
+            <span>
+              <Link to={`/users/${listing.user._id}`}>
+                {listing.user.username}
+              </Link>
+            </span>
             <span>
               <b>Start</b>: {this.formatDate(listing.begin).date} @{" "}
               {this.formatDate(listing.begin).time}
@@ -97,11 +106,13 @@ class ListingIndexItem extends React.Component {
         </div>
         <div className="listing-item-tags">
           <ul className="tags">
-            {
-              listing.tags.map((tag, i) => {
-                return <li className="tag" key={i}>{tag}</li>
-              })
-            }
+            {listing.tags.map((tag, i) => {
+              return (
+                <li className="tag" key={i}>
+                  {tag}
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="listing-item-button">

@@ -1,0 +1,16 @@
+.review-item-container {
+  display: flex;
+  padding: 30px;
+}
+
+.review-item-left {
+  width: 25%;
+}
+.review-item-left div {
+  font-size: 30px;
+  width: 100%;
+}
+
+.review-item-right {
+  width: 75%;
+}

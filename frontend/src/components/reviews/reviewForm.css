@@ -1,0 +1,27 @@
+.review-form {
+  position: relative;
+  padding: 20px 0;
+}
+.review-form input,
+.review-form textarea,
+.review-form div {
+  display: block;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+#review-title-input {
+  height: 40px;
+  width: 80%;
+  line-height: 40px;
+  margin: auto;
+}
+
+#review-body-input {
+  width: 80%;
+  resize: none;
+  margin: 10px auto;
+}
+
+#review-button {
+  width: 40%;
+  margin: auto;
+}

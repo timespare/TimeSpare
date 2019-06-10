@@ -8,7 +8,7 @@ export const RECEIVE_LISTING_ERRORS = "RECEIVE_LISTING_ERRORS";
 export const RECEIVE_A_LISTING = "RECEIVE_A_LISTING";
 export const REMOVE_A_LISTING = "REMOVE_A_LISTING";
 export const REMOVE_LISTING_ERRORS = "REMOVE_LISTING_ERRORS";
-
+export const RECEIVE_SEARCHED_LISTINGS = "RECEIVE_SEARCHED_LISTINGS";
 const convertListingArrayToObject = arr => {
   let obj = {};
   for (let i = 0; i < arr.length; i++) {
@@ -31,6 +31,12 @@ const receiveCurrentUserListings = listings => {
   };
 };
 
+export const receiveSearchedListings = listings => {
+  return {
+    type: RECEIVE_SEARCHED_LISTINGS,
+    listings: convertListingArrayToObject(listings)
+  };
+};
 export const receiveListingErrors = errors => {
   return {
     type: RECEIVE_LISTING_ERRORS,
@@ -70,6 +76,11 @@ export const getCurrentUserListings = () => dispatch =>
     listings => dispatch(receiveCurrentUserListings(listings.data)),
     errors => dispatch(receiveListingErrors(errors.response.data))
   );
+export const getSearchedListings = keyword => dispatch =>
+  ListingAPIUtil.fetchListingsSearchResult(keyword).then(
+    listings => dispatch(receiveSearchedListings(listings.data)),
+    errors => dispatch(receiveListingErrors(errors.response.data))
+  );
 
 export const createListing = listing => dispatch => {
   return ListingAPIUtil.addListing(listing).then(
@@ -90,9 +101,8 @@ export const deleteListing = id => dispatch =>
     errors => dispatch(receiveListingErrors(errors.response.data))
   );
 
-export const getAnotherUserListings = userId => dispatch => {
-  return ListingAPIUtil.fetchAnotherUserListings(userId).then(
+export const getAnotherUserListings = userId => dispatch =>
+  ListingAPIUtil.fetchAnotherUserListings(userId).then(
     listings => dispatch(receiveAllListings(listings.data)),
     error => dispatch(receiveListingErrors(error.response.data))
   );
-};

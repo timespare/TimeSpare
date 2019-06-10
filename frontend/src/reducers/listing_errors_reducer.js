@@ -11,7 +11,6 @@ const listingErrorsReducer = (state = {}, action) => {
       if (typeof action.errors === "string") {
         return { LoginErr: action.errors };
       }
-
       return action.errors;
     case REMOVE_LISTING_ERRORS:
       return {};
