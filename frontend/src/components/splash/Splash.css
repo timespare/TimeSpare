@@ -308,8 +308,8 @@ input[type="submit"] {
 .description2 {
     /* background-color: lightcyan; */
     background-image: linear-gradient(
-                     rgba(20, 20, 20, 0.331), 
-                     rgba(20, 20, 20, 0.187)), url("bottom.jpg");
+                     rgba(20, 20, 20, 0.214), 
+                     rgba(20, 20, 20, 0.057)), url("bottom.jpg");
     /* position: absolute; */
     /* position: fixed; */
     /* bottom: 0; */
@@ -358,7 +358,7 @@ input[type="submit"] {
 }
 
 .splash-box-3 {
-    background-image: url("work4.jpg");
+    background-image: url("work.jpg");
     background-size: contain;
     /* display: block; */
     flex-direction: column;
