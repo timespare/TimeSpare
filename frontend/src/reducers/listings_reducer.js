@@ -10,7 +10,7 @@ const listingsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_LISTINGS:
-      return Object.assign({}, state, action.listings);
+      return Object.assign({}, action.listings);
     case RECEIVE_CURRENT_USER_LISTINGS:
       return Object.assign({}, action.listings);
     case RECEIVE_SEARCHED_LISTINGS:
