@@ -7,7 +7,7 @@ const ListingSchema = new Schema({
     ref: "users"
   },
   title: {
-    type: String, 
+    type: String,
     required: true
   },
   description: {
@@ -34,5 +34,7 @@ const ListingSchema = new Schema({
     default: Date.now
   }
 });
+
+ListingSchema.index({ title: "text" }, { default_language: "none" });
 
 module.exports = Listing = mongoose.model("listings", ListingSchema);

@@ -12,6 +12,11 @@ export const fetchCurrentUserListings = () => {
   return axios.get("/api/listings/current");
 };
 
+export const fetchListingsSearchResult = keyword => {
+  let newKeyword = encodeURIComponent(keyword);
+  return axios.get(`/api/listings/search?keyword=${newKeyword}`);
+};
+
 // create a new listing
 export const addListing = data => {
   return axios.post("/api/listings", data);
@@ -27,5 +32,5 @@ export const deleteListing = id => {
 };
 
 export const fetchAnotherUserListings = id => {
-  return axios.get(`api/user/${id}`);
+  return axios.get(`/api/listings/user/${id}`);
 };

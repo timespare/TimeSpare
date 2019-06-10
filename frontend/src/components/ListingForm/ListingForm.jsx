@@ -32,7 +32,6 @@ class ListingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     const listing = Object.assign({}, this.state);
     this.props.action(listing).then(
       listing => {
@@ -45,7 +44,6 @@ class ListingForm extends React.Component {
     );
     // .then(() => this.props.history.push("/"));
   }
-
   renderErrors() {
     const ErrorStyle = {
       listStyle: "none",
