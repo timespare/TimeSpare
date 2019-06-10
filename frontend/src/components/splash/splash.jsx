@@ -129,24 +129,14 @@ all on your free time.</h3>
             </div>
 
                 <div className="description2">
-                    <div className="left">
-                        
-                        {/* <div className="left-description">
-
-                            <p>Sometimes, you find yourself with some free-time. You’re tired of laying around in bed all Saturday, or waiting for your next customer as an Uber driver.<br />
-
-                                TimeSpare helps you fill those idle times with purposeful work by connecting you with locals around you who need your skills. <br />
-                                <br />
-                                We believe that good things happen when people help each other, whether across town or countries. Opportunities appear, open up, and become reality.
-                                With TimeSpare, a click of a button can lead to billions of moments of human connection as people around the world go all kinds of places with all kinds of skills with the help of our technology.</p>
-
-                        </div> */}
+                    <div className="splash-box2">
+                    {/* <h1 className="splash-tagline">Share/ your talents with the world.</h1> */}
+                    {/* <br /> */}
+                    <h1 className="splash-description">Find your next inspiration.</h1>
+                    <br />
+                    <br/>
+                    <Link to="/home" className="explore2">Explore Listings</Link>
                     </div>
-
-                    <div className="right">
-                        {/* <div className="splash-box-2"></div> */}
-                    </div>
-
                 </div>
 
                 <div className="description3">
@@ -162,12 +152,9 @@ all on your free time.</h3>
                             How it Works
                         </div>
                         <div className="left-description">
-                            <p>Sometimes, you find yourself with some free-time. You’re tired of laying around in bed all Saturday, or waiting for your next customer as an Uber driver.<br />
-
-                                TimeSpare helps you fill those idle times with purposeful work by connecting you with locals around you who need your skills. <br />
+                            <p>LOREPMADMKLADSDMA <br />
                                 <br />
-                                We believe that good things happen when people help each other, whether across town or countries. Opportunities appear, open up, and become reality.
-                                With TimeSpare, a click of a button can lead to billions of moments of human connection as people around the world go all kinds of places with all kinds of skills with the help of our technology.</p>
+                                ASDFKJNASMKDJF</p>
                         </div>
 
                     </div>
