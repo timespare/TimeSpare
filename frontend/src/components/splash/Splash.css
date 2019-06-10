@@ -49,7 +49,7 @@ input[type="submit"] {
   z-index: -1;
   background-size: cover;
   width: 100%;
-  max-height: 550px;
+  max-height: 600px;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -63,6 +63,7 @@ input[type="submit"] {
   /* position: fixed; */
   width: 100%;
   height: 100%;
+  /* height: auto; */
   /* justify-content: center; */
   /* align-items: center; */
   /* object-fit: cover; */
@@ -92,7 +93,7 @@ input[type="submit"] {
 .slide2 {
   background-image: linear-gradient(
                      rgba(20, 20, 20, 0.3), 
-                     rgba(20,20,20, .3)), url("coffee.jpg");
+                     rgba(20,20,20, .3)), url("barista.jpg");
   background-size: cover;
   animation: fade2 36s infinite;
   -webkit-animation: fade2 36s infinite;
@@ -127,8 +128,8 @@ input[type="submit"] {
 
 .slide4 {
   background-image: linear-gradient(
-                     rgba(20, 20, 20, 0.3), 
-                     rgba(20,20,20, .3)), url("work2.jpg");
+                     rgba(20, 20, 20, 0.077), 
+                     rgba(20, 20, 20, 0.536)), url("coffee.jpg");
   background-size: cover;
   animation: fade4 36s infinite;
   -webkit-animation: fade4 36s infinite;
@@ -142,7 +143,6 @@ input[type="submit"] {
   75% { opacity: 1}
   100% { opacity: 0}
 }
-
 
 .splash-box {
  /* position: absolute; */
@@ -281,7 +281,7 @@ input[type="submit"] {
 }
 
 .splash-box-2 {
-    background-image: url("work.jpg");
+    background-image: url("work3.png");
     background-size: contain;
     /* display: block; */
     flex-direction: column;
