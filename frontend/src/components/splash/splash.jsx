@@ -149,6 +149,27 @@ all on your free time.</h3>
 
                 </div>
 
+                <div className="description3">
+                    <div className="right">
+
+                        <div className="left-description">
+
+                            <p>Sometimes, you find yourself with some free-time. You’re tired of laying around in bed all Saturday, or waiting for your next customer as an Uber driver.<br />
+
+                                TimeSpare helps you fill those idle times with purposeful work by connecting you with locals around you who need your skills. <br />
+                                <br />
+                                We believe that good things happen when people help each other, whether across town or countries. Opportunities appear, open up, and become reality.
+                                With TimeSpare, a click of a button can lead to billions of moments of human connection as people around the world go all kinds of places with all kinds of skills with the help of our technology.</p>
+
+                        </div>
+                    </div>
+
+                    <div className="left">
+                        <div className="splash-box-2"></div>
+                    </div>
+
+                </div>
+
             </div>
         );
     }
