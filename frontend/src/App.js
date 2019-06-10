@@ -5,6 +5,7 @@ import UserProfile from "./components/UserProfile";
 import DisplayUser from "./components/DisplayUser";
 import Splash from "./components/splash/splash";
 import Footer from "./components/footer/Footer";
+
 function App() {
   return (
     <div className="App">
