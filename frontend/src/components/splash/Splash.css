@@ -301,14 +301,14 @@ input[type="submit"] {
 } */
 
 .description2 {
-    background-color: lightcyan;
+    /* background-color: lightcyan; */
     background-image: linear-gradient(
                      rgba(20, 20, 20, 0.3), 
                      rgba(20, 20, 20, 0.132)), url("sample.jpg");
     /* position: absolute; */
     /* position: fixed; */
     /* bottom: 0; */
-    top: 1350px;
+    top: 1390px;
     overflow: auto;
     position: absolute;
     /* top: 0;
