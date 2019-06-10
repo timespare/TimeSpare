@@ -140,7 +140,13 @@ all on your free time.</h3>
                 </div>
 
                 <div className="description3">
-                    <div className="right">
+                    <div className="center-title">
+                        How it Works
+                    </div>
+
+                    
+
+                    {/* <div className="right">
 
                         <div className="splash-box-3">
 
@@ -157,7 +163,8 @@ all on your free time.</h3>
                                 ASDFKJNASMKDJF</p>
                         </div>
 
-                    </div>
+                    </div> */}
+
 
                 </div>
 
