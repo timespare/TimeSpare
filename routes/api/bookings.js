@@ -30,9 +30,8 @@ router.post(
     });
     newBooking
       .save()
-      .then(booking => 
-        res.json(booking)
-      )
+      .then(booking => booking.populate("listing").execPopulate())
+      .then(booking => res.json(booking))
       .catch(err =>
         res.status(402).json({ createbookingerror: "cannot create booking" })
       );

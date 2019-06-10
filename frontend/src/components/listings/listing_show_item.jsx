@@ -12,6 +12,16 @@ function formatDate(input) {
 const listingShowItem = props => {
   let startTime = formatDate(props.listing.begin);
   let endTime = formatDate(props.listing.end);
+  let bookingButton = props.allowBooking ? (
+    <button
+      className="listing-book-button"
+      onClick={() =>
+        props.createBooking(props.listing).then(() => alert("booked!"))
+      }
+    >
+      Book
+    </button>
+  ) : null;
   return (
     <div className="listing-show-container">
       <div className="listing-show-middle">
@@ -22,19 +32,23 @@ const listingShowItem = props => {
           <p>price: ${props.listing.price}</p>
         </div>
         <div className="listing-show-right">
+          <p>
+            <b>{props.listing.title}</b>
+          </p>
           <p>{props.listing.description}</p>
         </div>
       </div>
       <div className="listing-show-bottom">
         <div className="listing-show-time">
-          <p>{startTime.date}</p>
-          <p>{startTime.time}</p>
+          <p>
+            {startTime.date} {startTime.time}
+          </p>
+          <p> to </p>
+          <p>
+            {endTime.date} {endTime.time}
+          </p>
         </div>
-        <div className="listing-show-to"> to </div>
-        <div className="listing-show-time">
-          <p>{endTime.date}</p>
-          <p>{endTime.time}</p>
-        </div>
+        <div className="listing-book-button-div">{bookingButton}</div>
       </div>
     </div>
   );
