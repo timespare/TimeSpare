@@ -80,6 +80,7 @@ input[type="submit"] {
   -webkit-animation: fade1 36s infinite;
   z-index: -2;
   /* bottom: 50px; */
+  background-position: center; 
 }
 
 @keyframes fade1 {
@@ -98,6 +99,7 @@ input[type="submit"] {
   animation: fade2 36s infinite;
   -webkit-animation: fade2 36s infinite;
   z-index: -2;
+  
 }
 
 @keyframes fade2 {
@@ -116,6 +118,7 @@ input[type="submit"] {
   animation: fade3 36s infinite;
   -webkit-animation: fade3 36s infinite;
   z-index: -2;
+  background-position: center; 
 }
 
 @keyframes fade3 {
@@ -134,6 +137,7 @@ input[type="submit"] {
   animation: fade4 36s infinite;
   -webkit-animation: fade4 36s infinite;
   z-index: -2;
+  background-position: center; 
 }
 
 @keyframes fade4 {
@@ -245,6 +249,7 @@ input[type="submit"] {
     display: flex;
     justify-content: center;
     align-items: center;
+  
 }
 
 .left {
@@ -281,7 +286,7 @@ input[type="submit"] {
 }
 
 .splash-box-2 {
-    background-image: url("work3.png");
+    background-image: url("work2.jpg");
     background-size: contain;
     /* display: block; */
     flex-direction: column;
@@ -299,3 +304,136 @@ input[type="submit"] {
     display: block;
     white-space: normal;
 } */
+
+.description2 {
+    /* background-color: lightcyan; */
+    background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.331), 
+                     rgba(20, 20, 20, 0.187)), url("bottom.jpg");
+    /* position: absolute; */
+    /* position: fixed; */
+    /* bottom: 0; */
+    top: 1400px;
+    overflow: auto;
+    position: absolute;
+    /* top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; */
+    z-index: -1;
+    background-size: cover;
+    width: 100%;
+    /* height: 100vh; */
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.description3 {
+  background-color:white;
+    /* position: absolute; */
+    /* position: fixed; */
+    /* bottom: 0; */
+    top: 950px;
+    overflow: auto;
+    position: absolute;
+    /* top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0; */
+    z-index: -1;
+    background-size: cover;
+    width: 100%;
+    /* height: 100vh; */
+    height: 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-box-3 {
+    background-image: url("work4.jpg");
+    background-size: contain;
+    /* display: block; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 490px;
+    height: 285px;
+    /* position: relative; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.explore2 {
+  background: #ff5661;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 12px 54px;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.explore2:hover {
+  transition: 0.2s;
+  background:  white;
+  color: #ff5661;
+}
+
+.splash-box2 {
+ position: absolute;
+  /* background-image: linear-gradient(
+                     rgba(20, 20, 20, 0.3), 
+                     rgba(20,20,20, .3)), url("work2.jpg"); */
+  background-size: contain;
+  /* height: auto; */
+  /* background-color: #fd5c63; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  /* position: relative; */
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: cover; */
+  overflow: hidden;
+  /* opacity: 0.5; */
+}
+
+.splash-box2 > h1 {
+  /* justify-self: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+  margin-top: 37.520px;
+  margin-bottom: 5px;
+  // text-shadow: 2px 2px darkgrey; */
+  color: white;
+  /* mix-blend-mode: difference; */
+  width: 678px;
+  height: 65px;
+  font-family: SourceSansPro;
+  font-size: 44px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  /* color: #ffffff; */
+}
+
