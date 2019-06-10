@@ -97,7 +97,9 @@ class Splash extends React.Component {
 all on your free time.</h3>
                     <br />
                     <Link to="/home" className="explore">Explore Listings</Link>
+                    
                 </div>
+                
                 
             </div>
 
@@ -140,11 +142,15 @@ all on your free time.</h3>
                 </div>
 
                 <div className="description3">
-                    <div className="center-title">
-                        How it Works
+                    <div class="container">
+                        
+                        <div class="column-center">VIEW LISTINGS</div>
+
+                        <div class="column-left">BOOK LISTINGS</div>
+
+                        <div class="column-right">SOMETHING</div>
                     </div>
 
-                    
 
                     {/* <div className="right">
 
