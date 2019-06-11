@@ -69,54 +69,52 @@ class ListingIndexItem extends React.Component {
     const { listing, isHome } = this.props;
     // debugger
     return (
-      <div className="listing-item-outer-container">
-        {/* <div className="listing-item-inner-container"> */}
-        <div className="listing-item-header">
-          <span>{listing.title}</span>
-        </div>
-        <div className="listing-item-middle-layer">
-          <div className="listing-item-middle-left">
-            {/* <Link to="">{listing.creatorImgUrl}</Link> */}
-            {/* Profile Picture */}
-            {/* <p className="emoji">🤓</p> */}
+      <div class="listing-item-outer-container">
+        <div className="listing-item-inner-container">
+          <div className="listing-item-header">
+            <span>{listing.title}</span>
           </div>
-          <div className="listing-item-middle-right">
-            {/* <span>{listing.username}</span> */}
-            <span>
-              <Link to={`/users/${listing.user._id}`}>
-                {listing.user.username}
-              </Link>
-            </span>
-            <span>
-              <b>Start</b>: {this.formatDate(listing.begin).date} @{" "}
-              {this.formatDate(listing.begin).time}
-            </span>
-            {/* <br></br> */}
-            <span>
-              <b>End</b>: {this.formatDate(listing.end).date} @{" "}
-              {this.formatDate(listing.end).time}
-            </span>
-            <span>
-              <b>Price</b>: ${listing.price}
-            </span>
+          <div className="listing-item-middle-layer">
+            <div className="listing-item-middle-left" />
+            <div className="listing-item-middle-right">
+              <div>
+                <Link
+                  to={`/users/${listing.user._id}`}
+                  className="listing-item-username"
+                >
+                  {listing.user.username}
+                </Link>
+              </div>
+              <span>
+                <b>Start</b>: {this.formatDate(listing.begin).date} @{" "}
+                {this.formatDate(listing.begin).time}
+              </span>
+              <span>
+                <b>End</b>: {this.formatDate(listing.end).date} @{" "}
+                {this.formatDate(listing.end).time}
+              </span>
+              <span>
+                <b>Price</b>: ${listing.price}
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="listing-item-lower-layer">
-          <span>{listing.description}</span>
-        </div>
-        <div className="listing-item-tags">
-          <ul className="tags">
-            {listing.tags.map((tag, i) => {
-              return (
-                <li className="tag" key={i}>
-                  {tag}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="listing-item-button">
-          {this.renderButton(listing, isHome)}
+          <div className="listing-item-lower-layer">
+            <span>{listing.description}</span>
+          </div>
+          <div className="listing-item-tags">
+            <ul className="tags">
+              {listing.tags.map((tag, i) => {
+                return (
+                  <li className="tag" key={i}>
+                    {tag}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <div className="listing-item-button">
+            {this.renderButton(listing, isHome)}
+          </div>
         </div>
       </div>
     );
