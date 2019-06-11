@@ -20,7 +20,8 @@ const NavBarButton = props => {
   } else {
     return (
       <Link
-        href="javascript:void 0"
+        // href="javascript:void 0"
+        to='#'
         className={"nav-bar-button " + additionalClass}
         onClick={onClick}
       >

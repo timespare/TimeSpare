@@ -14,10 +14,12 @@ class ListingForm extends React.Component {
       end: this.props.listing.end,
       price: this.props.listing.price,
       id: this.props.listing._id,
-      _id: this.props.listing._id
+      _id: this.props.listing._id,
+      tags: this.props.listing.tags
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.handleTags = this.handleTags.bind(this);
   }
 
   componentWillMount() {
@@ -44,6 +46,26 @@ class ListingForm extends React.Component {
     );
     // .then(() => this.props.history.push("/"));
   }
+
+  handleTags(e) {
+    // debugger
+    let arr = this.state.tags;
+
+    if (e.currentTarget.className === "tag-name-unselected") {
+      e.currentTarget.className = "tag-name-selected"
+      arr.push(e.currentTarget.innerText);
+    } else {   
+      e.currentTarget.className = "tag-name-unselected"
+      arr = arr.filter(tag => tag !== e.currentTarget.innerText);
+    }
+
+    return this.setState(
+      {
+        tags: arr
+      }
+    )
+  }
+
   renderErrors() {
     const ErrorStyle = {
       listStyle: "none",
@@ -62,6 +84,8 @@ class ListingForm extends React.Component {
   }
 
   render() {
+    const tags = this.props.listing.tags;
+    const defaults = ["math", "physics", "biology", "chemistry", "english"];
     return (
       <div>
         <form className="form">
@@ -80,6 +104,7 @@ class ListingForm extends React.Component {
               onChange={this.handleInput("description")}
             />
           </Field>
+          
           <Field label="Price">
             <input
               type="number"
@@ -102,6 +127,20 @@ class ListingForm extends React.Component {
               value={this.state.end}
               onChange={moment => this.setState({ end: moment.format("LLLL") })}
             />
+          </Field>
+
+          <Field label="Tags">
+            <div className="tags-selection">
+              {
+                defaults.map(ele => {
+                  if (tags.includes(ele)) {
+                    return <span className="tag-name-selected" onClick={this.handleTags}>{ele}</span>
+                  } else {
+                    return <span className="tag-name-unselected" onClick={this.handleTags}>{ele}</span>
+                  }
+                })
+              }
+            </div>
           </Field>
 
           {this.renderErrors()}

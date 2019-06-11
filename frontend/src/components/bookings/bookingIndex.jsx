@@ -8,6 +8,7 @@ class BookingIndex extends React.Component {
     // if (this.props.bookings.length === 0) {
     //   return null;
     // }
+
     return (
       <div>
         {this.props.bookings.map(booking => (

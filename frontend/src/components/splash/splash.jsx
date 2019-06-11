@@ -97,7 +97,9 @@ class Splash extends React.Component {
 all on your free time.</h3>
                     <br />
                     <Link to="/home" className="explore">Explore Listings</Link>
+                    
                 </div>
+                
                 
             </div>
 
@@ -127,6 +129,69 @@ all on your free time.</h3>
                 </div>
                     
             </div>
+
+                <div className="description3">
+                    <div className="right">
+                        <div className="splash-box-3"></div>
+                    </div>
+                    <div className="left">
+                        <div className="left-title">
+                            How it Works
+                    </div>
+                        <div className="left-description">
+                            <p>Explore any listing without sign-up charges, from a tutoring session to a barista oppotunity and everything in-between.<br /><br/>
+
+                                Choose your own schedule, prices, and requirements for your listings. We’re here to help accomodate both sides along the way.<br />
+                                <br />
+                                Once your listing is live, qualified members can reach out. You can message them with any questions about their qualifications and availability.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className="description2">
+                    <div className="splash-box2">
+                    {/* <h1 className="splash-tagline">Share/ your talents with the world.</h1> */}
+                    {/* <br /> */}
+                    <h1 className="splash-description">Find your next inspiration.</h1>
+                    <br />
+                    <br/>
+                    <Link to="/home" className="explore2">Explore Listings</Link>
+                    </div>
+                </div>
+
+                {/* <div className="description3">
+                    <div class="container">
+                        
+                        <div class="column-center">CONNECT</div>
+
+                        <div class="column-left"></div>
+
+                        <div class="column-right"></div>
+                    </div> */}
+
+
+                    {/* <div className="right">
+
+                        <div className="splash-box-3">
+
+                        </div>
+                    </div>
+
+                    <div className="left">
+                        <div className="left-title">
+                            How it Works
+                        </div>
+                        <div className="left-description">
+                            <p>LOREPMADMKLADSDMA <br />
+                                <br />
+                                ASDFKJNASMKDJF</p>
+                        </div>
+
+                    </div> */}
+
+
+                {/* </div> */}
 
             </div>
         );
