@@ -95,6 +95,7 @@ class ListingForm extends React.Component {
               value={this.state.title}
               onChange={this.handleInput("title")}
               label="Title"
+              className="title-input"
             />
           </Field>
 
@@ -102,6 +103,7 @@ class ListingForm extends React.Component {
             <textarea
               value={this.state.description}
               onChange={this.handleInput("description")}
+              className="des-input"
             />
           </Field>
           
@@ -110,15 +112,15 @@ class ListingForm extends React.Component {
               type="number"
               value={this.state.price}
               onChange={this.handleInput("price")}
+              className="price-input"
             />
           </Field>
 
           <Field label="Start Time">
             <DateTime
               value={this.state.begin}
-              onChange={moment =>
-                this.setState({ begin: moment.format("LLLL") })
-              }
+              onChange={moment => this.setState({ begin: moment.format("LLLL") })}
+              className="date-input"
             />
           </Field>
 
@@ -126,6 +128,7 @@ class ListingForm extends React.Component {
             <DateTime
               value={this.state.end}
               onChange={moment => this.setState({ end: moment.format("LLLL") })}
+              className="date-input"
             />
           </Field>
 
