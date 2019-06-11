@@ -155,12 +155,12 @@ span {
 }
 
 .tag:hover {
-  background-color: crimson;
+  background-color: #ff5661;
   color: white;
 }
 
 .tag:hover::after {
-   border-left-color: crimson; 
+   border-left-color: #ff5661; 
 }
 
 /* a{

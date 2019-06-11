@@ -6,7 +6,6 @@ import {
 } from "../../actions/listing_actions";
 import { connect } from "react-redux";
 import { addListing } from "../../util/listing_api_util";
-// import {}....
 
 const mapStateToProps = state => {
   const listing = {
@@ -14,7 +13,8 @@ const mapStateToProps = state => {
     description: "",
     begin: "",
     end: "",
-    price: ""
+    price: "",
+    tags: []
   };
   return {
     listing: listing,
@@ -28,7 +28,7 @@ const mapDispatchToProps = dispatch => ({
   removeErrors: () => dispatch(removeListingErrors()),
   receiveAListing: listing => dispatch(receiveAListing(listing.data)),
   receiveListingErrors: errors =>
-    dispatch(receiveListingErrors(errors.response.data))
+  dispatch(receiveListingErrors(errors.response.data))
 });
 
 export default connect(
