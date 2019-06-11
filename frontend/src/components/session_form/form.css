@@ -4,3 +4,41 @@
   align-items: stretch;
   padding: 0 25px 10px 25px;
 }
+
+.tags-selection {
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.tags-selection span {
+  float: left;
+}
+
+.tag-name-unselected {
+  background: #eee;
+  border-radius: 3px 0 0 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tag-name-selected {
+  background: #ff5661;
+  border-radius: 3px 0 0 3px;
+  color: white;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  cursor: pointer;
+}
