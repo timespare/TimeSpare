@@ -1,15 +1,19 @@
 import React from "react";
 import ListingIndexItem from "./listing_index_item";
 import SearchBar from "../searchBar";
+import NavBarButton from "../NavBarButton";
+
 class ListingIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      listhings: this.props.listings,
-      keyword: this.props.keyword
+      listings: this.props.listings,
+      keyword: this.props.keyword,
+      isAll: true
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDisplayByTags = this.handleDisplayByTags.bind(this);
   }
   componentDidMount() {
     if (this.props.isHome) {
@@ -17,6 +21,13 @@ class ListingIndex extends React.Component {
     } else {
       this.props.getCurrentUserListings();
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      listings: nextProps.listings,
+      isAll: true
+    })
   }
 
   handleInput(field) {
@@ -29,10 +40,28 @@ class ListingIndex extends React.Component {
   }
 
   handleSubmit(e) {
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
       e.preventDefault();
       this.props.getSearchedListings(this.state.keyword);
     }
+  }
+
+  handleDisplayByTags(e) {
+    const tag = e.currentTarget.innerText;
+    let arr = [];
+
+    if (tag === "all") {
+      arr = this.props.listings;
+    } else {
+      for (let i = 0; i < this.props.listings.length; i++) {
+        const listing = this.props.listings[i];
+        if (listing.tags.includes(tag)) arr.push(listing);
+      }   
+    }
+
+    this.setState({
+      listings: arr
+    })
   }
 
   render() {
@@ -67,6 +96,7 @@ class ListingIndex extends React.Component {
     } else if (!this.props.listings && !this.props.isHome) {
       return <div />;
     }
+
     return (
       <>
         <SearchBar
@@ -74,11 +104,19 @@ class ListingIndex extends React.Component {
           onSubmit={this.handleSubmit}
           keyword={this.state.keyword}
         />
+    
+        <NavBarButton label="all" onClick={this.handleDisplayByTags}/>
+        <NavBarButton label="math" onClick={this.handleDisplayByTags}/>
+        <NavBarButton label="physics" onClick={this.handleDisplayByTags}/>
+        <NavBarButton label="english" onClick={this.handleDisplayByTags}/>
+        <NavBarButton label="chemistry" onClick={this.handleDisplayByTags}/>
+        <NavBarButton label="biology" onClick={this.handleDisplayByTags}/>
+
         <div style={gridContainer}>
-          {this.props.listings.map((listing, i) => {
+          {this.state.listings.map((listing, i) => {
             return (
               // <div className="listing-index-box" key={i}>
-              <div style={gridItem}>
+              <div style={gridItem} key={i}>
                 <ListingIndexItem
                   listing={listing}
                   isHome={this.props.isHome}

@@ -11,9 +11,9 @@ class BookingIndex extends React.Component {
 
     return (
       <div>
-        {this.props.bookings.map(booking => (
-          <div>
-            <BookingIndexItem listing={booking.listing} key={booking.id} />
+        {this.props.bookings.map((booking, i) => (
+          <div key={i}>
+            <BookingIndexItem listing={booking.listing} />
           </div>
         ))}
       </div>

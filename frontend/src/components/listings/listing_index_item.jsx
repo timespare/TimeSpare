@@ -69,7 +69,7 @@ class ListingIndexItem extends React.Component {
     const { listing, isHome } = this.props;
     // debugger
     return (
-      <div class="listing-item-outer-container">
+      <div className="listing-item-outer-container">
         <div className="listing-item-inner-container">
           <div className="listing-item-header">
             <span>{listing.title}</span>
