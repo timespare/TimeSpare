@@ -2,7 +2,7 @@
 
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import "./DisplayUser.css";
 
 import NavBar from "./NavBar";
@@ -58,6 +58,7 @@ class DisplayedUser extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state);
     this.props.rateUser({
       id: this.props.displayedUser._id,
       rating: parseInt(this.state.rating)
@@ -133,61 +134,91 @@ class DisplayedUser extends React.Component {
 
     let ratingForm = (
       <form className="user-rating-form">
-        <input
-          type="radio"
-          name="rating"
-          value="1"
-          onChange={this.handleRateChange}
-        />
-        <input
-          type="radio"
-          name="rating"
-          value="2"
-          onChange={this.handleRateChange}
-        />
-        <input
-          type="radio"
-          name="rating"
-          value="3"
-          onChange={this.handleRateChange}
-        />
-        <input
-          type="radio"
-          name="rating"
-          value="4"
-          onChange={this.handleRateChange}
-        />
-        <input
-          type="radio"
-          name="rating"
-          value="5"
-          onChange={this.handleRateChange}
-        />
-        <SubmitButton
+        <fieldset className="rating">
+          <input
+            type="radio"
+            name="rating"
+            value="5"
+            id="star5"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star5" />
+          <input
+            type="radio"
+            name="rating"
+            value="4"
+            id="star4"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star4" />
+          <input
+            type="radio"
+            name="rating"
+            value="3"
+            id="star3"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star3" />
+          <input
+            type="radio"
+            name="rating"
+            value="2"
+            id="star2"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star2" />
+          <input
+            type="radio"
+            name="rating"
+            value="1"
+            id="star1"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star1" />
+        </fieldset>
+        {/* <SubmitButton
           onClick={this.handleSubmit}
           link={`/users/${displayedUser._id}`}
           label="Submit score"
-        />
+        /> */}
+        <Link
+          to={`/users/${displayedUser._id}`}
+          onClick={this.handleSubmit}
+          className="rating-submit"
+          title="Rate"
+        >
+          &#10148;
+          {/* &#10172; */}
+        </Link>
       </form>
     );
+
+    const usernameStyle = {
+      fontSize: "30px",
+      fontWeight: "600"
+    };
 
     return (
       <div className="du-container">
         {navBar}
         <div className="du-contents">
-          <div className="greeting-msg">
-            Hello, you are visiting {displayedUser.username}'s proifle page.
-          </div>
-          <div className="user-rating-container">
-            <div className="user-rating-show">{displayedUser.rating}</div>
-            <div className="user-rating-form-container">
-              rate the user:
-              {ratingForm}
+          <div className="du-contents-top">
+            <div className="du-contents-top-left">
+              <div className="greeting-msg" style={usernameStyle}>
+                {displayedUser.username}
+              </div>
+              <img src="proficon.jpg" id="user-avatar" />
+              <div className="user-rating-container">
+                <div className="user-rating-form-container">{ratingForm}</div>
+              </div>
             </div>
+            <div className="user-rating-show">{displayedUser.rating}</div>
+            <div className="du-contents-top-right">Placeholder</div>
           </div>
           <div className="review-form-container">
             <ReviewForm />
           </div>
+
           <div className="review-collection-container">
             <ReviewCollection />
           </div>
