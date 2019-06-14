@@ -4,8 +4,8 @@
 }
 
 .du-contents-top {
-  width: 80%;
-  height: 350px;
+  width: 800px;
+  /* height: 350px; */
   margin: auto;
   border: 1px solid black;
   display: flex;
@@ -14,6 +14,24 @@
   position: relative;
   padding: 15px;
   box-sizing: border-box;
+}
+
+.du-contents-top-right {
+  padding: 30px 15px;
+  box-sizing: border-box;
+}
+
+.review-container {
+  display: flex;
+  width: 800px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+.reviewer-picture {
+  width: 100px;
+  padding: 15px;
+  position: relative;
 }
 
 #user-avatar {
@@ -26,7 +44,7 @@
   display: block;
 }
 .review-form-container {
-  width: 800px;
+  width: 700px;
 }
 
 .review-collection-container {

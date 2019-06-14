@@ -197,6 +197,38 @@ class DisplayedUser extends React.Component {
       fontSize: "30px",
       fontWeight: "600"
     };
+    const backgroundStyle = {
+      border: "1px solid rgb(242, 239, 239)",
+      borderRadius: "3px",
+      background: "rgb(242, 239, 239)",
+      margin: "20px 0",
+      padding: "5px",
+      boxSizing: "border-box"
+    };
+
+    const reviewStyle = {
+      display: "center",
+      textAlign: "center",
+      paddingTop: "10px",
+      fontSize: "30px",
+      fontWeight: "600"
+    };
+
+    const reviewerImageStyle = {
+      width: "100px",
+      height: "100px",
+      border: "3px solid pink",
+      borderRadius: "50%",
+      left: "35px",
+      top: "50px",
+      position: "absolute"
+    };
+
+    const currentUserNameStyle = {
+      position: "absolute",
+      left: "50px",
+      top: "160px"
+    };
 
     return (
       <div className="du-container">
@@ -212,11 +244,40 @@ class DisplayedUser extends React.Component {
                 <div className="user-rating-form-container">{ratingForm}</div>
               </div>
             </div>
-            <div className="user-rating-show">{displayedUser.rating}</div>
-            <div className="du-contents-top-right">Placeholder</div>
+            <div className="du-contents-top-right">
+              <div className="user-background">
+                <b>About Me: </b>
+                <p style={backgroundStyle}>
+                  My teaching background is quite broad, for I have taught
+                  adults in four different countries and three different
+                  subjects. It began during my first degree (French and music)
+                  which included a year’s work teaching English in France. This
+                  was in a lycée and classes préparatoires, so the students were
+                  aged from 14 to 24. It principally involved conversation
+                  classes in groups of varying sizes, although with the older
+                  students (who were studying the extra years required for entry
+                  into France’s elite universities) it also included more formal
+                  large-group seminars.
+                </p>
+              </div>
+              <div className="user-rating-show">
+                My rating: {displayedUser.rating}
+              </div>
+            </div>
           </div>
-          <div className="review-form-container">
-            <ReviewForm />
+          <div className="review-container">
+            <div className="reviewer-picture">
+              <img
+                src="proficon.jpg"
+                alt="my-avatar"
+                style={reviewerImageStyle}
+              />
+              <div style={currentUserNameStyle}>{currentUser.username}</div>
+            </div>
+            <div className="review-form-container">
+              <div style={reviewStyle}>Leave a review!</div>
+              <ReviewForm />
+            </div>
           </div>
 
           <div className="review-collection-container">
