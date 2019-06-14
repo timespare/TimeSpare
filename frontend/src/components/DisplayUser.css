@@ -1,19 +1,50 @@
 .user-rating-form-container {
+  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+}
+
+.du-contents-top {
+  width: 800px;
+  /* height: 350px; */
   margin: auto;
-  width: 200px;
+  border: 1px solid black;
+  display: flex;
+}
+.du-contents-top-left {
   position: relative;
-  /* border: 1px solid grey; */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  box-sizing: border-box;
 }
-.du-contents > * {
-  width: 60%;
-  margin: 10px auto;
+
+.du-contents-top-right {
+  padding: 30px 15px;
+  box-sizing: border-box;
 }
+
+.review-container {
+  display: flex;
+  width: 800px;
+  margin: 20px auto;
+  border: 1px solid black;
+}
+
+.reviewer-picture {
+  width: 100px;
+  padding: 15px;
+  position: relative;
+}
+
+#user-avatar {
+  border-radius: 3px;
+  height: 200px;
+  width: 200px;
+}
+
 .user-rating-form {
-  display: inline;
+  display: block;
 }
 .review-form-container {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  width: 700px;
 }
 
 .review-collection-container {
@@ -24,4 +55,54 @@
   justify-content: center;
   padding: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* rating form styling */
+
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-weight: 900;
+  display: inline-block;
+  content: "\2605";
+}
+
+.rating-submit {
+  margin: 5px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 900;
+  color: rgb(247, 160, 54);
+  cursor: pointer;
+}
+
+.rating-submit:hover {
+  color: rgb(239, 104, 14);
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label {
+  color: #ffd700;
+} /* hover previous stars in list */
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+  color: #ffed85;
 }

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import "./DisplayUser.css";
 
 import NavBar from "./NavBar";
@@ -58,6 +58,7 @@ class DisplayedUser extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state);
     this.props.rateUser({
       id: this.props.displayedUser._id,
       rating: parseInt(this.state.rating)
@@ -133,61 +134,152 @@ class DisplayedUser extends React.Component {
 
     let ratingForm = (
       <form className="user-rating-form">
-        <input
-          type="radio"
-          name="rating"
-          value="1"
-          onChange={this.handleRateChange}
-        />
-        <input
-          type="radio"
-          name="rating"
-          value="2"
-          onChange={this.handleRateChange}
-        />
-        <input
-          type="radio"
-          name="rating"
-          value="3"
-          onChange={this.handleRateChange}
-        />
-        <input
-          type="radio"
-          name="rating"
-          value="4"
-          onChange={this.handleRateChange}
-        />
-        <input
-          type="radio"
-          name="rating"
-          value="5"
-          onChange={this.handleRateChange}
-        />
-        <SubmitButton
+        <fieldset className="rating">
+          <input
+            type="radio"
+            name="rating"
+            value="5"
+            id="star5"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star5" />
+          <input
+            type="radio"
+            name="rating"
+            value="4"
+            id="star4"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star4" />
+          <input
+            type="radio"
+            name="rating"
+            value="3"
+            id="star3"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star3" />
+          <input
+            type="radio"
+            name="rating"
+            value="2"
+            id="star2"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star2" />
+          <input
+            type="radio"
+            name="rating"
+            value="1"
+            id="star1"
+            onChange={this.handleRateChange}
+          />
+          <label htmlFor="star1" />
+        </fieldset>
+        {/* <SubmitButton
           onClick={this.handleSubmit}
           link={`/users/${displayedUser._id}`}
           label="Submit score"
-        />
+        /> */}
+        <Link
+          to={`/users/${displayedUser._id}`}
+          onClick={this.handleSubmit}
+          className="rating-submit"
+          title="Rate"
+        >
+          &#10148;
+          {/* &#10172; */}
+        </Link>
       </form>
     );
+
+    const usernameStyle = {
+      fontSize: "30px",
+      fontWeight: "600"
+    };
+    const backgroundStyle = {
+      border: "1px solid rgb(242, 239, 239)",
+      borderRadius: "3px",
+      background: "rgb(242, 239, 239)",
+      margin: "20px 0",
+      padding: "5px",
+      boxSizing: "border-box"
+    };
+
+    const reviewStyle = {
+      display: "center",
+      textAlign: "center",
+      paddingTop: "10px",
+      fontSize: "30px",
+      fontWeight: "600"
+    };
+
+    const reviewerImageStyle = {
+      width: "100px",
+      height: "100px",
+      border: "3px solid pink",
+      borderRadius: "50%",
+      left: "35px",
+      top: "50px",
+      position: "absolute"
+    };
+
+    const currentUserNameStyle = {
+      position: "absolute",
+      left: "50px",
+      top: "160px"
+    };
 
     return (
       <div className="du-container">
         {navBar}
         <div className="du-contents">
-          <div className="greeting-msg">
-            Hello, you are visiting {displayedUser.username}'s proifle page.
-          </div>
-          <div className="user-rating-container">
-            <div className="user-rating-show">{displayedUser.rating}</div>
-            <div className="user-rating-form-container">
-              rate the user:
-              {ratingForm}
+          <div className="du-contents-top">
+            <div className="du-contents-top-left">
+              <div className="greeting-msg" style={usernameStyle}>
+                {displayedUser.username}
+              </div>
+              <img src="proficon.jpg" id="user-avatar" />
+              <div className="user-rating-container">
+                <div className="user-rating-form-container">{ratingForm}</div>
+              </div>
+            </div>
+            <div className="du-contents-top-right">
+              <div className="user-background">
+                <b>About Me: </b>
+                <p style={backgroundStyle}>
+                  My teaching background is quite broad, for I have taught
+                  adults in four different countries and three different
+                  subjects. It began during my first degree (French and music)
+                  which included a year’s work teaching English in France. This
+                  was in a lycée and classes préparatoires, so the students were
+                  aged from 14 to 24. It principally involved conversation
+                  classes in groups of varying sizes, although with the older
+                  students (who were studying the extra years required for entry
+                  into France’s elite universities) it also included more formal
+                  large-group seminars.
+                </p>
+              </div>
+              <div className="user-rating-show">
+                My rating: {displayedUser.rating}
+              </div>
             </div>
           </div>
-          <div className="review-form-container">
-            <ReviewForm />
+          <div className="review-container">
+            <div className="reviewer-picture">
+              <img
+                src="proficon.jpg"
+                alt="my-avatar"
+                style={reviewerImageStyle}
+              />
+              <div style={currentUserNameStyle}>{currentUser.username}</div>
+            </div>
+            <div className="review-form-container">
+              <div style={reviewStyle}>Leave a review!</div>
+              <ReviewForm />
+            </div>
           </div>
+
           <div className="review-collection-container">
             <ReviewCollection />
           </div>
