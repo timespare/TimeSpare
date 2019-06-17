@@ -90,6 +90,7 @@ class ListingForm extends React.Component {
     const endTime = (this.state.end === "") ? "" : new Date(this.state.end);
     // debugger
 
+    // auto expand textarea??
     return (
       <div>
         <form className="form">
