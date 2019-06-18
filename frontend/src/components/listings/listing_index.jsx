@@ -2,6 +2,7 @@ import React from "react";
 import ListingIndexItem from "./listing_index_item";
 import SearchBar from "../searchBar";
 import NavBarButton from "../NavBarButton";
+import debounce from "lodash.debounce";
 
 class ListingIndex extends React.Component {
   constructor(props) {
@@ -9,12 +10,25 @@ class ListingIndex extends React.Component {
     this.state = {
       listings: this.props.listings,
       keyword: this.props.keyword,
-      isAll: true
+      // offset: 5
     };
+
+    // window.onscroll = debounce(() => {
+    //   console.log(window.innerHeight + ", " + document.documentElement.scrollTop + "," + document.documentElement.offsetHeight)
+    //   if (window.innerHeight + document.documentElement.scrollTop
+    //     === document.documentElement.offsetHeight) {
+    //       console.log("bottom hit")
+    //       this.setState(state => ({
+    //         offset: state.offset + 5
+    //       }))
+    //   }
+    // });
+
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDisplayByTags = this.handleDisplayByTags.bind(this);
   }
+
   componentDidMount() {
     if (this.props.isHome) {
       this.props.getAllListings();
@@ -24,10 +38,18 @@ class ListingIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    // initialize, gotta memorize where left over
+    // debugger
     this.setState({
-      listings: nextProps.listings,
-      isAll: true
+      listings: nextProps.listings
     })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // this.setState({
+    //   listings: this.props.listings.slice(0, this.state.offset)
+    // })
+    // debugger
   }
 
   handleInput(field) {
@@ -85,6 +107,7 @@ class ListingIndex extends React.Component {
 
       // textAlign: "center"
     };
+
     if (!this.props.listings && this.props.isHome) {
       return (
         <SearchBar
