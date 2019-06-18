@@ -10,19 +10,20 @@ class ListingIndex extends React.Component {
     this.state = {
       listings: this.props.listings,
       keyword: this.props.keyword,
-      // offset: 5
+      prev: 0,
+      next: 6
     };
 
-    // window.onscroll = debounce(() => {
-    //   console.log(window.innerHeight + ", " + document.documentElement.scrollTop + "," + document.documentElement.offsetHeight)
-    //   if (window.innerHeight + document.documentElement.scrollTop
-    //     === document.documentElement.offsetHeight) {
-    //       console.log("bottom hit")
-    //       this.setState(state => ({
-    //         offset: state.offset + 5
-    //       }))
-    //   }
-    // });
+    window.onscroll = debounce(() => {
+      console.log(window.innerHeight + ", " + document.documentElement.scrollTop + "," + document.documentElement.offsetHeight)
+      if (window.innerHeight + document.documentElement.scrollTop=== document.documentElement.offsetHeight) {
+          console.log("bottom hit")
+          this.setState(state => ({
+            prev: state.next,
+            next: state.next + 6
+          }))
+      }
+    });
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,14 +42,17 @@ class ListingIndex extends React.Component {
     // initialize, gotta memorize where left over
     // debugger
     this.setState({
-      listings: nextProps.listings
+      listings: nextProps.listings.slice(this.state.prev, this.state.next)
     })
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // this.setState({
-    //   listings: this.props.listings.slice(0, this.state.offset)
-    // })
+    if (prevState.prev !== this.state.prev) {
+      const nextListings = this.props.listings.slice(this.state.prev, this.state.next);
+      this.setState({
+        listings: prevState.listings.concat(nextListings)
+      })
+    }
     // debugger
   }
 
@@ -57,7 +61,7 @@ class ListingIndex extends React.Component {
       this.setState({
         [field]: e.currentTarget.value,
         keyword: e.currentTarget.value
-      });
+      })
     };
   }
 
@@ -71,18 +75,24 @@ class ListingIndex extends React.Component {
   handleDisplayByTags(e) {
     const tag = e.currentTarget.innerText;
     let arr = [];
-
+    
     if (tag === "all") {
-      arr = this.props.listings;
+      arr = this.props.listings.slice(0, 6);
     } else {
       for (let i = 0; i < this.props.listings.length; i++) {
-        const listing = this.props.listings[i];
-        if (listing.tags.includes(tag)) arr.push(listing);
+        const listing = this.state.listings[i];
+        if (listing.tags.length > 0 &&  listing.tags.includes(tag)) {
+          arr.push(listing);
+        }
+
+        if (arr.length === 6) break;
       }   
     }
-
+    
     this.setState({
-      listings: arr
+      listings: arr,
+      prev: 0,
+      next: 6
     })
   }
 
@@ -128,12 +138,12 @@ class ListingIndex extends React.Component {
           keyword={this.state.keyword}
         />
     
-        <NavBarButton label="all" onClick={this.handleDisplayByTags}/>
+        {/* <NavBarButton label="all" onClick={this.handleDisplayByTags}/>
         <NavBarButton label="math" onClick={this.handleDisplayByTags}/>
         <NavBarButton label="physics" onClick={this.handleDisplayByTags}/>
         <NavBarButton label="english" onClick={this.handleDisplayByTags}/>
         <NavBarButton label="chemistry" onClick={this.handleDisplayByTags}/>
-        <NavBarButton label="biology" onClick={this.handleDisplayByTags}/>
+        <NavBarButton label="biology" onClick={this.handleDisplayByTags}/> */}
 
         <div style={gridContainer}>
           {this.state.listings.map((listing, i) => {

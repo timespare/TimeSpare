@@ -9,7 +9,7 @@ const validateListingInput = require("../../validation/listings");
 router.get("/", (req, res) => {
   Listing.find()
     .sort({ date: -1 })
-    .limit(10)
+    // .limit(10)
     .populate("user")
     .then(listings => res.json(listings))
     .catch(err =>
