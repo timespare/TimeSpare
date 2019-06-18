@@ -27,7 +27,6 @@ const searchBar = ({ keyword, onSubmit, onChange }) => {
         value={keyword}
         style={searchInput}
         placeholder="Search Listings..."
-        value={keyword}
         onKeyDown={onSubmit}
         onChange={onChange}
       />

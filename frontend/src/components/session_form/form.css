@@ -69,3 +69,10 @@
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
+.form-control {
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

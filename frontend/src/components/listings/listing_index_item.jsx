@@ -15,12 +15,42 @@ class ListingIndexItem extends React.Component {
   }
 
   formatDate(input) {
-    let year = input.substring(0, 4);
-    let month = input.substring(5, 7);
-    let day = input.substring(8, 10);
-    let time = input.substring(11, 16);
+    // debugger
+    // let year = input.substring(0, 4);
+    // let month = input.substring(5, 7);
+    // let day = input.substring(8, 10);
+    // let time = input.substring(11, 16);
+    const days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
 
-    return { date: year + "/" + month + "/" + day, time: time };
+    let date = new Date(input);
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let d = date.getDate();
+    let day = days[date.getDay()];
+    let hr = date.getHours();
+    let min = date.getMinutes();
+    let ampm = "am";
+
+    if (month < 10) {
+      month = "0" + month;
+    }
+
+    if (d < 10) {
+      d = "0" + d;
+    }
+
+    if (min < 10) {
+      min = "0" + min;
+    }
+
+    if (hr > 12) {
+      hr = hr - 12;
+      ampm = "pm";
+    }
+    
+    const time = hr + ": " + min + " " + ampm;
+
+    return { date: day + " " + year + "/" + month + "/" + d, time: time };
   }
 
   renderButton(listing, isHome) {
@@ -67,7 +97,6 @@ class ListingIndexItem extends React.Component {
 
   render() {
     const { listing, isHome } = this.props;
-    // debugger
     return (
       <div className="listing-item-outer-container">
         <div className="listing-item-inner-container">

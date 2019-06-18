@@ -9,6 +9,7 @@ export const REMOVE_ERRORS = "REMOVE_ERRORS";
 export const RECEIVE_ANOTHER_USER = "RECEIVE_ANOTHER_USER";
 export const RECEIVE_NO_USER_ERRORS = "RECEIVE_NO_USER_ERRORS";
 export const RECEIVE_CANNOT_RATE_ERRORS = "RECEIVE_CANNOT_RATE_ERRORS";
+
 const receiveCurrentUser = user => {
   return {
     type: RECEIVE_CURRENT_USER,

@@ -86,6 +86,11 @@ class ListingForm extends React.Component {
   render() {
     const tags = this.props.listing.tags;
     const defaults = ["math", "physics", "biology", "chemistry", "english"];
+    const startTime = (this.state.begin === "") ? "" : new Date(this.state.begin);
+    const endTime = (this.state.end === "") ? "" : new Date(this.state.end);
+    // debugger
+
+    // auto expand textarea??
     return (
       <div>
         <form className="form">
@@ -118,7 +123,7 @@ class ListingForm extends React.Component {
 
           <Field label="Start Time">
             <DateTime
-              value={this.state.begin}
+              value={startTime}
               onChange={moment => this.setState({ begin: moment.format("LLLL") })}
               className="date-input"
             />
@@ -126,7 +131,7 @@ class ListingForm extends React.Component {
 
           <Field label="End Time">
             <DateTime
-              value={this.state.end}
+              value={endTime}
               onChange={moment => this.setState({ end: moment.format("LLLL") })}
               className="date-input"
             />
@@ -135,11 +140,11 @@ class ListingForm extends React.Component {
           <Field label="Tags">
             <div className="tags-selection">
               {
-                defaults.map(ele => {
+                defaults.map((ele, i) => {
                   if (tags.includes(ele)) {
-                    return <span className="tag-name-selected" onClick={this.handleTags}>{ele}</span>
+                    return <span key={i} className="tag-name-selected" onClick={this.handleTags}>{ele}</span>
                   } else {
-                    return <span className="tag-name-unselected" onClick={this.handleTags}>{ele}</span>
+                    return <span key={i} className="tag-name-unselected" onClick={this.handleTags}>{ele}</span>
                   }
                 })
               }
